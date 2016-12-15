@@ -1,0 +1,20 @@
+@font-face {
+    font-family: almendra;
+    src: url(../fonts/Almendra-Bold.ttf);
+}
+@font-face {
+    font-family: autur;
+    src: url(../fonts/AutourOne-Regular.ttf);
+}
+.head-logo a{
+	font-family: autur;
+	color :#3691e2;
+	text-decoration: none;
+	font-size: 33px;
+}
+.head-logo a img{
+	float: left;
+}
+.head-logo a span{
+	float: left;
+}
