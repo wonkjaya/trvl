@@ -10,6 +10,11 @@
 	font-family: autur;
 	color :#3691e2;
 	text-decoration: none;
+}
+.logo-xs{
+	font-size: 20px;
+}
+.logo-md{
 	font-size: 33px;
 }
 .head-logo a img{

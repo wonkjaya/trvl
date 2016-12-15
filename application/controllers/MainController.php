@@ -9,7 +9,8 @@ class MainController extends CI_Controller {
 		if ($this->agent->is_mobile('iphone')){
 			return '_smart';
 		}elseif ($this->agent->is_mobile()){
-			return '_mobile';
+			// return '_mobile';
+			return '_smart';
 		}else{
 			return '_web';
 		}

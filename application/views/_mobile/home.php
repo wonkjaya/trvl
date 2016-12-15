@@ -5,6 +5,7 @@
 	 <title>KuiRen Tour & Travel</title>
 	 <!--Custom Theme files-->
 	 <link href="assets/css/mob.css" rel="stylesheet" type="text/css" media="all" />
+	 <link href="assets/css/style.css" rel="stylesheet" type="text/css" media="all"/>
 	 <!--Custom Theme files-->
 	 <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
@@ -14,8 +15,11 @@
 	 <div id="header">
 	       <a name="home">
 			<a class="navicon" href="#menu-left"> </a>
-			<div class="logo">
-			<a href="index.html"><img src="assets/images/_mobile/logo.png" alt="" /></a>
+			<div class="logo head-logo logo-xs">
+				<a href="#">
+					<img src="assets/images/logo.png" id="section-1" class="img-responsive" alt="kuiren tour and travel"/>
+					<span class="">KuiRen Tour</span>
+				</a>
 			</div>
 	 </div>	
 	 <div class="header-info">

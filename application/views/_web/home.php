@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>KuiRen Tour & Travel</title>
-		<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+		<!-- <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'> -->
 		<link href="assets/css/bootstrap.css" rel='stylesheet' type='text/css'/>
 		<link href="assets/css/web.css" rel="stylesheet" type="text/css" media="all"/>
 		<link href="assets/css/style.css" rel="stylesheet" type="text/css" media="all"/>
@@ -29,10 +29,10 @@
 		 <!--container-->
 		<div class="container">
 			<div class="top-nav">
-				<div class="logo head-logo">
+				<div class="logo head-logo logo-md">
 					<a href="#">
-						<img src="assets/images/logo.png" id="section-1" class="img-responsive" alt="kuiren tour and travel"/>
-						<span>KuiRen Tour</span>
+						<img src="assets/images/_web/logo.png" id="section-1" class="img-responsive" alt="kuiren tour and travel"/>
+						<span class="">KuiRen Tour</span>
 					</a>
 				</div>
 				<div class="menu">
@@ -627,7 +627,7 @@
 				  </div>
 			  </div>
 		        <div class="map">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d193683.36875212385!2d-74.30999320395165!3d40.66730031841747!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1411724375639" frameborder="0" style="border:0"></iframe>
+				<!-- <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d193683.36875212385!2d-74.30999320395165!3d40.66730031841747!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1411724375639" frameborder="0" style="border:0"></iframe> -->
 			    <span></span>
 				</div>
 		  </div>
