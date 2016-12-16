@@ -3,15 +3,24 @@
 	<head>
 		<title>KuiRen Tour & Travel</title>
 		<!-- <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'> -->
-		<link href="assets/css/style.css" rel="stylesheet" type="text/css" media="all"/>
 		<link href="assets/css/bootstrap.css" rel='stylesheet' type='text/css'/>
 		<link href="assets/css/web.css" rel="stylesheet" type="text/css" media="all"/>
-		<link href="assets/css/owl.carousel.css" rel="stylesheet">
+		<link href="assets/css/style.css" rel="stylesheet" type="text/css" media="all"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script type="application/x-javascript"> 
 			addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
 		</script>
-		
+		<!--js--> 
+		<script src="assets/js/jquery.min.js"></script>
+
+		<!--/js-->
+		<!--animated-css-->
+		<link href="assets/css/animate.css" rel="stylesheet" type="text/css" media="all">
+		<script src="assets/js/wow.min.js"></script>
+		<script>
+		 new WOW().init();
+		</script>
+		<!--/animated-css-->
 	</head>
 	<body>
 	<!--header-->
@@ -43,55 +52,78 @@
 	</div>
 	<!--/sticky-->
 	<!--banner-->
-	<!-- Slideshow 4 -->
-		<div id="section-1" class="section">
-		    <div id="top" class="callbacks_container">
-		      <ul class="rslides" id="slider4">
-		        <li>
-		          <img src="assets/images/_web/banner.png" alt="">
-				  <div class="caption">
-		     	  		<div class="header-info">
-						<h2><a href="#">Get Away On This Weekend</a></h2>
-						<lable></lable>
-						<h1><a href="#">HEAVEN BEACH RESORT</a></h1>
-						</div>
-		          </div>
-		        </li>
-		        <li>
-		          <img src="assets/images/_web/beach2.jpg" alt="">
-		        <div class="caption">
-		          	<div class="header-info">
-						<h2><a href="#">Get Away On This Weekend</a></h2>
-						<lable></lable>
-						<h1><a href="#">HEAVEN BEACH RESORT</a></h1>
-						</div>
-		          </div>
-		        </li>
-		        <li>
-		          <img src="assets/images/_web/beach3.jpg" alt="">
-		          <div class="caption">
-		          	<div class="header-info">
-						<h2><a href="#">Get Away On This Weekend</a></h2>
-						<lable></lable>
-						<h1><a href="#">HEAVEN BEACH RESORT</a></h1>
-						</div>
-		          </div>
-		        </li>
-				<li>
-		          <img src="assets/images/_web/beach4.jpg" alt="">
-		          <div class="caption">
-		          	<div class="header-info">
-						<h2><a href="#">Get Away On This Weekend</a></h2>
-						<lable></lable>
-						<h1><a href="#">HEAVEN BEACH RESORT</a></h1>
-						</div>
-		          </div>
-		        </li>
-		      </ul>
-		    </div>	         
-		    <div class="clearfix"> </div>
-		</div>
-	<!-- //End-slider-->
+	<!--start-slider-script-->
+				<script src="assets/js/responsiveslides.min.js"></script>
+				 <script>
+				    // You can also use "$(window).load(function() {"
+				    $(function () {
+				      // Slideshow 4
+				      $("#slider4").responsiveSlides({
+				        auto: true,
+				        pager: true,
+				        nav: true,
+				        speed: 500,
+				        namespace: "callbacks",
+				        before: function () {
+				          $('.events').append("<li>before event fired.</li>");
+				        },
+				        after: function () {
+				          $('.events').append("<li>after event fired.</li>");
+				        }
+				      });
+				
+				    });
+				  </script>
+				<!--//End-slider-script-->
+				<!-- Slideshow 4 -->
+				<div id="section-1" class="section">
+				    <div id="top" class="callbacks_container">
+				      <ul class="rslides" id="slider4">
+				        <li>
+				          <img src="assets/images/_web/banner.png" alt="">
+						  <div class="caption">
+				     	  		<div class="header-info">
+								<h2><a href="#">Get Away On This Weekend</a></h2>
+								<lable></lable>
+								<h1><a href="#">HEAVEN BEACH RESORT</a></h1>
+								</div>
+				          </div>
+				        </li>
+				        <li>
+				          <img src="assets/images/_web/beach2.jpg" alt="">
+				        <div class="caption">
+				          	<div class="header-info">
+								<h2><a href="#">Get Away On This Weekend</a></h2>
+								<lable></lable>
+								<h1><a href="#">HEAVEN BEACH RESORT</a></h1>
+								</div>
+				          </div>
+				        </li>
+				        <li>
+				          <img src="assets/images/_web/beach3.jpg" alt="">
+				          <div class="caption">
+				          	<div class="header-info">
+								<h2><a href="#">Get Away On This Weekend</a></h2>
+								<lable></lable>
+								<h1><a href="#">HEAVEN BEACH RESORT</a></h1>
+								</div>
+				          </div>
+				        </li>
+						<li>
+				          <img src="assets/images/_web/beach4.jpg" alt="">
+				          <div class="caption">
+				          	<div class="header-info">
+								<h2><a href="#">Get Away On This Weekend</a></h2>
+								<lable></lable>
+								<h1><a href="#">HEAVEN BEACH RESORT</a></h1>
+								</div>
+				          </div>
+				        </li>
+				      </ul>
+				    </div>	         
+				    <div class="clearfix"> </div>
+				</div>
+			<!-- //End-slider-->
 	<!--banner-->	
 	<!--About-->
 	     <div class="about section" id="section-2">
@@ -223,7 +255,42 @@
 			</div>
 	</div>
 	</div>  
-	 
+	<!-- Script for gallery Here-->
+	<script type="text/javascript" src="assets/js/jquery.mixitup.min.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			var filterList = {
+			init: function () {
+	// MixItUp plugin
+	// http://mixitup.io
+					$('#portfoliolist').mixitup({
+						targetSelector: '.portfolio',
+						filterSelector: '.filter',
+						effects: ['fade'],
+						easing: 'snap',
+					// call the hover effect
+					onMixEnd: filterList.hoverEffect()
+		});				
+	},
+			hoverEffect: function () {
+	// Simple parallax effect
+			$('#portfoliolist .portfolio').hover(
+				function () {
+				$(this).find('.label').stop().animate({bottom: 0}, 200, 'easeOutQuad');
+				$(this).find('img').stop().animate({top: -30}, 500, 'easeOutQuad');				
+				},
+						function () {
+							$(this).find('.label').stop().animate({bottom: -40}, 200, 'easeInQuad');
+							$(this).find('img').stop().animate({top: 0}, 300, 'easeOutQuad');								
+				}		
+			);				
+		}
+	};
+	// Run the show!
+			filterList.init();
+		});	
+	</script>
+	<!--Gallery Script Ends-->	 
 	<!--/top-tours-->
 	<div class="tour-guides section" id="section-4" >
 		  <div class="tour-guides-head text-center">
@@ -235,7 +302,22 @@
 			  </div>
 		  </div>
 		  <div class="container">
-			
+			<!-- requried-jsfiles-for owl -->
+					<link href="assets/css/owl.carousel.css" rel="stylesheet">
+				    <script src="assets/js/owl.carousel.js"></script>
+				    <script>
+					    $(document).ready(function() {
+					      $("#owl-demo").owlCarousel({
+					        items : 1,
+					        lazyLoad : true,
+					        autoPlay : true,
+					        navigation : false,
+					        navigationText :  false,
+					        pagination : true,
+					      });
+					    });
+				    </script>
+				<!-- //requried-jsfiles-for owl -->
 			  <div id="owl-demo" class="owl-carousel">
 				  <div class="item text-center guide-sliders">
 					 <div class="col-md-3 image-grid">
@@ -456,6 +538,22 @@
 		     <div class="client-say-head text-center">
 				  <h3>CLIENT SAY</h3>
 				  <span></span><img src="assets/images/_web/face.png" alt=""><span></span>
+				  <!-- requried-jsfiles-for owl -->
+					<link href="assets/css/owl.carousel.css" rel="stylesheet">
+								    <script src="assets/js/owl.carousel.js"></script>
+								        <script>
+								    $(document).ready(function() {
+								      $("#owl-demo1").owlCarousel({
+								        items : 1,
+								        lazyLoad : true,
+								        autoPlay : true,
+								        navigation : false,
+								        navigationText :  false,
+								        pagination : true,
+								      });
+								    });
+								    </script>
+				 <!-- //requried-jsfiles-for owl -->
 			     <div id="owl-demo1" class="owl-carousel">
 					  <div class="item">
 						  <div class="client-say-info">
@@ -577,21 +675,9 @@
 	<div class="copyright text-center">
 	<p>Template by <a href="http://www.w3layouts.com">W3layouts</a></p>
 	</div>
-
-	<!--js--> 
-	<script src="assets/js/jquery.min.js"></script>
-
-	<!--/js-->
-	<!--animated-css-->
-	<link href="assets/css/animate.css" rel="stylesheet" type="text/css" media="all">
-	<script src="assets/js/wow.min.js"></script>
-	<script>
-	 new WOW().init();
-	</script>
-	<!--/animated-css-->
-	<script src="assets/js/jquery.scrollTo.js"></script>
-	<script src="assets/js/jquery.nav.js"></script>
-	<script type="text/javascript">
+	  <script src="assets/js/jquery.scrollTo.js"></script>
+		<script src="assets/js/jquery.nav.js"></script>
+		<script type="text/javascript">
 		$(document).ready(function() {
 			$('#nav').onePageNav({
 				begin: function() {
@@ -602,82 +688,7 @@
 				}
 			});
 		});
-	</script>
-	<!--start-slider-script-->
-	<script src="assets/js/responsiveslides.min.js"></script>
-	 <script>
-	    // You can also use "$(window).load(function() {"
-	    $(function () {
-	      // Slideshow 4
-	      $("#slider4").responsiveSlides({
-	        auto: true,
-	        pager: true,
-	        nav: true,
-	        speed: 500,
-	        namespace: "callbacks",
-	        before: function () {
-	          $('.events').append("<li>before event fired.</li>");
-	        },
-	        after: function () {
-	          $('.events').append("<li>after event fired.</li>");
-	        }
-	      });
-	
-	    });
-	  </script>
-	<!--//End-slider-script-->
-	<!-- Script for gallery Here-->
-	<script type="text/javascript" src="assets/js/jquery.mixitup.min.js"></script>
-	<script type="text/javascript">
-		$(function () {
-			var filterList = {
-			init: function () {
-			// MixItUp plugin
-			// http://mixitup.io
-				$('#portfoliolist').mixitup({
-					targetSelector: '.portfolio',
-					filterSelector: '.filter',
-					effects: ['fade'],
-					easing: 'snap',
-					// call the hover effect
-					onMixEnd: filterList.hoverEffect()
-				});				
-			},
-			hoverEffect: function () {
-			// Simple parallax effect
-				$('#portfoliolist .portfolio').hover(
-					function () {
-					$(this).find('.label').stop().animate({bottom: 0}, 200, 'easeOutQuad');
-					$(this).find('img').stop().animate({top: -30}, 500, 'easeOutQuad');
-					},
-					function () {
-						$(this).find('.label').stop().animate({bottom: -40}, 200, 'easeInQuad');
-						$(this).find('img').stop().animate({top: 0}, 300, 'easeOutQuad');		
-					}		
-				);				
-			}
-	};
-	// Run the show!
-			filterList.init();
-		});	
-	</script>
-	<!--Gallery Script Ends-->
-
-	<!-- requried-jsfiles-for owl -->
-    <script src="assets/js/owl.carousel.js"></script>
-    <script>
-	    $(document).ready(function() {
-	      $("#owl-demo").owlCarousel({
-	        items : 1,
-	        lazyLoad : true,
-	        autoPlay : true,
-	        navigation : false,
-	        navigationText :  false,
-	        pagination : true,
-	      });
-	    });
-    </script>
-<!-- //requried-jsfiles-for owl -->
-
+		</script>
+	  
 	</body>
 </html>
