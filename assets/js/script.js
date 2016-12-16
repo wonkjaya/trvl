@@ -50,44 +50,44 @@
 		filterList.init();
 	});	
 //Gallery Script Ends
-//owl
-	$(document).ready(function() {
-      $("#owl-demo").owlCarousel({
-        items : 1,
-        lazyLoad : true,
-        autoPlay : true,
-        navigation : false,
-        navigationText :  false,
-        pagination : true,
-      });
-    });
-    $(document).ready(function() {
-      $("#owl-demo1").owlCarousel({
-        items : 1,
-        lazyLoad : true,
-        autoPlay : true,
-        navigation : false,
-        navigationText :  false,
-        pagination : true,
-      });
-    });
-//end owl
-
-//nav
-	$(document).ready(function() {
-		$('#nav').onePageNav({
-			begin: function() {
-			console.log('start')
-			},
-			end: function() {
-			console.log('stop')
-			}
-		});
-	});
-// end nav
 
 // image
 	$(function(){
+	//owl
+		$(document).ready(function() {
+	      $("#owl-demo").owlCarousel({
+	        items : 1,
+	        lazyLoad : true,
+	        autoPlay : true,
+	        navigation : false,
+	        navigationText :  false,
+	        pagination : true,
+	      });
+	    });
+	    $(document).ready(function() {
+	      $("#owl-demo1").owlCarousel({
+	        items : 1,
+	        lazyLoad : true,
+	        autoPlay : true,
+	        navigation : false,
+	        navigationText :  false,
+	        pagination : true,
+	      });
+	    });
+	//end owl
+
+	//nav
+		$(document).ready(function() {
+			$('#nav').onePageNav({
+				begin: function() {
+				console.log('start')
+				},
+				end: function() {
+				console.log('stop')
+				}
+			});
+		});
+	// end nav
 	    $.each(document.images, function(){
 			var this_image = this;
 			var src = $(this_image).attr('src') || '' ;
