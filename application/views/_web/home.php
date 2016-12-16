@@ -53,7 +53,7 @@
 	<!--/sticky-->
 	<!--banner-->
 	<!--start-slider-script-->
-				<script src="assets/js/responsiveslides.min.js" async></script>
+				<script src="assets/js/responsiveslides.min.js" ></script>
 				 <script>
 				    // You can also use "$(window).load(function() {"
 				    $(function () {
@@ -304,7 +304,7 @@
 		  <div class="container">
 			<!-- requried-jsfiles-for owl -->
 					<link href="assets/css/owl.carousel.css" rel="stylesheet">
-				    <script src="assets/js/owl.carousel.js" async></script>
+				    <script src="assets/js/owl.carousel.js" ></script>
 				    <script>
 					    $(document).ready(function() {
 					      $("#owl-demo").owlCarousel({
@@ -675,7 +675,7 @@
 	<div class="copyright text-center">
 	<p>Template by <a href="http://www.w3layouts.com">W3layouts</a></p>
 	</div>
-	  <script src="assets/js/jquery.scrollTo.js" async></script>
+	  <script src="assets/js/jquery.scrollTo.js" ></script>
 		<script src="assets/js/jquery.nav.js"></script>
 		<script type="text/javascript">
 		$(document).ready(function() {
