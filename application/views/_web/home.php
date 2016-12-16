@@ -586,12 +586,12 @@
 		<!--js--> 
 		<script src="assets/js/jquery.min.js"></script>
 		<!--/js-->
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
 		<script src="assets/js/wow.min.js"></script>
 		<script>
 		 new WOW().init();
 		</script>
 
-		<script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
 		<script>
 			//from http://www.activewidgets.com/javascript.forum.6114.43/dynamic-load-javascript-from-javascript.html
 				function $import(src){
@@ -616,11 +616,15 @@
 	        	$import('assets/js/owl.carousel.js');
 	        	$import('assets/js/jquery.scrollTo.js');
 	        	$import('assets/js/jquery.nav.js');
+		    }
+		    function loadScript(){
 	        	$import('assets/js/script.js');
 		    }
 
 		    var delay = 5; // wait and then load the file
+		    var delayS = 10; // wait and then load the file
 		    setTimeout("loadDelayedScripts()", delay * 1000);
+		    setTimeout("loadScript()", delayS * 1000);
 		</script>
 	</body>
 </html>
