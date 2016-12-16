@@ -31,7 +31,7 @@
 			<div class="top-nav">
 				<div class="logo head-logo logo-md">
 					<a href="#">
-						<img src="assets/images/_web/logo.png" id="section-1" class="img-responsive" alt="kuiren tour and travel"/>
+						<img lsrc="assets/images/_web/logo.png" id="section-1" class="img-responsive" alt="kuiren tour and travel"/>
 						<span class="">KuiRen Tour</span>
 					</a>
 				</div>
@@ -53,7 +53,7 @@
 	<!--/sticky-->
 	<!--banner-->
 	<!--start-slider-script-->
-				<script src="assets/js/responsiveslides.min.js"></script>
+				<script src="assets/js/responsiveslides.min.js" async></script>
 				 <script>
 				    // You can also use "$(window).load(function() {"
 				    $(function () {
@@ -80,7 +80,7 @@
 				    <div id="top" class="callbacks_container">
 				      <ul class="rslides" id="slider4">
 				        <li>
-				          <img src="assets/images/_web/banner.png" alt="">
+				          <img lsrc="assets/images/_web/banner.png" alt="">
 						  <div class="caption">
 				     	  		<div class="header-info">
 								<h2><a href="#">Get Away On This Weekend</a></h2>
@@ -90,7 +90,7 @@
 				          </div>
 				        </li>
 				        <li>
-				          <img src="assets/images/_web/beach2.jpg" alt="">
+				          <img lsrc="assets/images/_web/beach2.jpg" alt="">
 				        <div class="caption">
 				          	<div class="header-info">
 								<h2><a href="#">Get Away On This Weekend</a></h2>
@@ -100,7 +100,7 @@
 				          </div>
 				        </li>
 				        <li>
-				          <img src="assets/images/_web/beach3.jpg" alt="">
+				          <img lsrc="assets/images/_web/beach3.jpg" alt="">
 				          <div class="caption">
 				          	<div class="header-info">
 								<h2><a href="#">Get Away On This Weekend</a></h2>
@@ -110,7 +110,7 @@
 				          </div>
 				        </li>
 						<li>
-				          <img src="assets/images/_web/beach4.jpg" alt="">
+				          <img lsrc="assets/images/_web/beach4.jpg" alt="">
 				          <div class="caption">
 				          	<div class="header-info">
 								<h2><a href="#">Get Away On This Weekend</a></h2>
@@ -129,7 +129,7 @@
 	     <div class="about section" id="section-2">
 			  <div class="about-head text-center">
 				  <h3>ABOUT US</h3>
-				  <span></span><img src="assets/images/_web/about-img.png" alt=""><span></span>
+				  <span></span><img lsrc="assets/images/_web/about-img.png" alt=""><span></span>
 			  </div>
 			   <div class="container">		  
 					<div class="col-md-4 about-grids">
@@ -155,7 +155,7 @@
 		<div id="portfolio" class="portfolio">
 			<div class="top-tours-head text-center">
 			  <h3>TOP TOURS</h3>
-			  <span></span><img src="assets/images/_web/star.png" alt=""><span></span>
+			  <span></span><img lsrc="assets/images/_web/star.png" alt=""><span></span>
 			  <div class="container">
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
 					   Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -172,7 +172,7 @@
 				<div class="portfolio card mix_all" data-cat="card" style="display: inline-block; opacity: 1;">
 					<div class="portfolio-wrapper wow bounceIn" data-wow-delay="0.4s">		
 						<a href="#" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
-					     <img src="assets/images/_web/t1.jpg" class="img-responsive" alt=""/></a>
+					     <img lsrc="assets/images/_web/t1.jpg" class="img-responsive" alt=""/></a>
 						<div class="tour-caption">
 						<span> </span>
 						<p>Phu Quoc Resort & Spa</p>
@@ -183,7 +183,7 @@
 				<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
 					<div class="portfolio-wrapper wow bounceIn" data-wow-delay="0.4s">		
 						<a href="#" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
-					     <img src="assets/images/_web/t2.jpg" class="img-responsive" alt=""/></a>
+					     <img lsrc="assets/images/_web/t2.jpg" class="img-responsive" alt=""/></a>
 						 <div class="tour-caption">
 						 <span> </span>
 						 <p>Phu Quoc Resort & Spa</p>
@@ -194,7 +194,7 @@
 				<div class="portfolio card mix_all" data-cat="card" style="display: inline-block; opacity: 1;">
 					<div class="portfolio-wrapper wow bounceIn" data-wow-delay="0.4s">		
 						<a href="#" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
-					     <img src="assets/images/_web/t3.jpg" class="img-responsive" alt=""/></a>
+					     <img lsrc="assets/images/_web/t3.jpg" class="img-responsive" alt=""/></a>
 						 <div class="tour-caption">
 						 <span> </span>
 						 <p>Phu Quoc Resort & Spa</p>
@@ -204,7 +204,7 @@
 				<div class="portfolio icon mix_all" data-cat="icon" style="display: inline-block; opacity: 1;">
 					<div class="portfolio-wrapper wow bounceIn" data-wow-delay="0.4s">		
 						<a href="#" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
-					     <img src="assets/images/_web/t4.jpg" class="img-responsive" alt=""/></a>
+					     <img lsrc="assets/images/_web/t4.jpg" class="img-responsive" alt=""/></a>
 						 <div class="tour-caption">
 						 <span> </span>
 						<p>Phu Quoc Resort & Spa</p>
@@ -214,7 +214,7 @@
 				<div class="portfolio card mix_all" data-cat="card" style="display: inline-block; opacity: 1;">
 					<div class="portfolio-wrapper wow bounceIn" data-wow-delay="0.4s">		
 						<a href="#" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
-					     <img src="assets/images/_web/t5.jpg" class="img-responsive" alt=""/></a>
+					     <img lsrc="assets/images/_web/t5.jpg" class="img-responsive" alt=""/></a>
 						 <div class="tour-caption">
 						 <span> </span>
 						 <p>Phu Quoc Resort & Spa</p>
@@ -224,7 +224,7 @@
 				<div class="portfolio fun mix_all" data-cat="fun" style="display: inline-block; opacity: 1;">
 					<div class="portfolio-wrapper wow bounceIn" data-wow-delay="0.4s">		
 						<a href="#" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
-					     <img src="assets/images/_web/t6.jpg" class="img-responsive" alt=""/></a>
+					     <img lsrc="assets/images/_web/t6.jpg" class="img-responsive" alt=""/></a>
 						 <div class="tour-caption">
 						 <span> </span>
 						<p>Phu Quoc Resort & Spa</p>
@@ -234,7 +234,7 @@
 			  <div class="portfolio fun mix_all" data-cat="fun" style="display: inline-block; opacity: 1;">
 					<div class="portfolio-wrapper wow bounceIn" data-wow-delay="0.4s">		
 						<a href="#" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
-						<img src="assets/images/_web/t7.jpg" class="img-responsive" alt=""/></a>
+						<img lsrc="assets/images/_web/t7.jpg" class="img-responsive" alt=""/></a>
 						<div class="tour-caption">
 						<span> </span>
 						<p>Phu Quoc Resort & Spa</p>
@@ -244,7 +244,7 @@
 			  <div class="portfolio icon mix_all" data-cat="fun" style="display: inline-block; opacity: 1;">
 					<div class="portfolio-wrapper wow bounceIn" data-wow-delay="0.4s">		
 						<a href="#" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
-					     <img src="assets/images/_web/t8.jpg" class="img-responsive" alt=""/></a>
+					     <img lsrc="assets/images/_web/t8.jpg" class="img-responsive" alt=""/></a>
 						 <div class="tour-caption">
 						 <span> </span>
 						 <p>Phu Quoc Resort & Spa</p>
@@ -295,7 +295,7 @@
 	<div class="tour-guides section" id="section-4" >
 		  <div class="tour-guides-head text-center">
 			  <h3>TOUR GUIDES</h3>
-			  <span></span><img src="assets/images/_web/guide.png" alt=""><span></span>
+			  <span></span><img lsrc="assets/images/_web/guide.png" alt=""><span></span>
 			  <div class="container">
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
 					   Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -304,7 +304,7 @@
 		  <div class="container">
 			<!-- requried-jsfiles-for owl -->
 					<link href="assets/css/owl.carousel.css" rel="stylesheet">
-				    <script src="assets/js/owl.carousel.js"></script>
+				    <script src="assets/js/owl.carousel.js" async></script>
 				    <script>
 					    $(document).ready(function() {
 					      $("#owl-demo").owlCarousel({
@@ -321,7 +321,7 @@
 			  <div id="owl-demo" class="owl-carousel">
 				  <div class="item text-center guide-sliders">
 					 <div class="col-md-3 image-grid">
-						 <img src="assets/images/_web/g1.jpg">
+						 <img lsrc="assets/images/_web/g1.jpg">
 						 <div class="guide-caption">
 						 <span></span>
 							<a href="#"><span class="twit"> </span></a>
@@ -331,7 +331,7 @@
 						 <p><a href="#">Elena Smith</a></p>
 						 </div>
 					 <div class="col-md-3 image-grid">
-						 <img src="assets/images/_web/g2.jpg">
+						 <img lsrc="assets/images/_web/g2.jpg">
 						 <div class="guide-caption">
 						 <span></span>
 							<a href="#"><span class="twit"> </span></a>
@@ -341,7 +341,7 @@
 						 <p><a href="#">John Wilson</a></p>
 					 </div>
 					 <div class="col-md-3 image-grid">
-						 <img src="assets/images/_web/g3.jpg">
+						 <img lsrc="assets/images/_web/g3.jpg">
 						 <div class="guide-caption">
 						 <span></span>
 							<a href="#"><span class="twit"> </span></a>
@@ -351,7 +351,7 @@
 						 <p><a href="#">Kelly Gomez</a></p>
 					 </div>
 					 <div class="col-md-3 image-grid">
-						 <img src="assets/images/_web/g4.jpg">
+						 <img lsrc="assets/images/_web/g4.jpg">
 						 <div class="guide-caption">
 						 <span></span>
 							<a href="#"><span class="twit"> </span></a>
@@ -363,7 +363,7 @@
 				  </div>
 				  <div class="item text-center guide-sliders">
 					 <div class="col-md-3 image-grid">
-						 <img src="assets/images/_web/g5.jpg">
+						 <img lsrc="assets/images/_web/g5.jpg">
 						 <div class="guide-caption">
 						 <span></span>
 							<a href="#"><span class="twit"> </span></a>
@@ -373,7 +373,7 @@
 						 <p><a href="#">John</a></p>
 					 </div>
 					 <div class="col-md-3 image-grid">
-						 <img src="assets/images/_web/g6.jpg">
+						 <img lsrc="assets/images/_web/g6.jpg">
 						 <div class="guide-caption">
 						 <span></span>
 							<a href="#"><span class="twit"> </span></a>
@@ -383,7 +383,7 @@
 						 <p><a href="#">Joe Winifred</a></p>
 					 </div>
 					 <div class="col-md-3 image-grid">
-						 <img src="assets/images/_web/g7.jpg">
+						 <img lsrc="assets/images/_web/g7.jpg">
 						 <div class="guide-caption">
 						 <span></span>
 							<a href="#"><span class="twit"> </span></a>
@@ -393,7 +393,7 @@
 						 <p><a href="#">Kevin</a></p>
 					 </div>
 					 <div class="col-md-3 image-grid">
-						 <img src="assets/images/_web/g8.jpg">
+						 <img lsrc="assets/images/_web/g8.jpg">
 						 <div class="guide-caption">
 						 <span></span>
 							<a href="#"><span class="twit"> </span></a>
@@ -405,7 +405,7 @@
 				  </div>
 				  <div class="item text-center guide-sliders">
 					 <div class="col-md-3 image-grid">
-						 <img src="assets/images/_web/g9.jpg">
+						 <img lsrc="assets/images/_web/g9.jpg">
 						 <div class="guide-caption">
 						 <span></span>
 							<a href="#"><span class="twit"> </span></a>
@@ -415,7 +415,7 @@
 						 <p><a href="#">Charles John</a></p>
 					 </div>
 					 <div class="col-md-3 image-grid">
-						 <img src="assets/images/_web/g10.jpg">
+						 <img lsrc="assets/images/_web/g10.jpg">
 						 <div class="guide-caption">
 						 <span></span>
 							<a href="#"><span class="twit"> </span></a>
@@ -425,7 +425,7 @@
 						 <p><a href="#">Sunny Martin</a></p>
 					 </div>
 					 <div class="col-md-3 image-grid">
-						 <img src="assets/images/_web/g11.jpg">
+						 <img lsrc="assets/images/_web/g11.jpg">
 						 <div class="guide-caption">
 						 <span></span>
 							<a href="#"><span class="twit"> </span></a>
@@ -435,7 +435,7 @@
 						 <p><a href="#">Alize Smith</a></p>
 					 </div>
 					 <div class="col-md-3 image-grid">
-						 <img src="assets/images/_web/g12.jpg">
+						 <img lsrc="assets/images/_web/g12.jpg">
 						 <div class="guide-caption">
 						 <span></span>
 							<a href="#"><span class="twit"> </span></a>
@@ -447,7 +447,7 @@
 				  </div>   
 				 <div class="item text-center guide-sliders">
 					 <div class="col-md-3 image-grid">
-						 <img src="assets/images/_web/g4.jpg">
+						 <img lsrc="assets/images/_web/g4.jpg">
 						 <div class="guide-caption">
 						 <span></span>
 							<a href="#"><span class="twit"> </span></a>
@@ -457,7 +457,7 @@
 						 <p><a href="#">Elena Smith</a></p>
 					 </div>
 					 <div class="col-md-3 image-grid">
-						 <img src="assets/images/_web/g3.jpg">
+						 <img lsrc="assets/images/_web/g3.jpg">
 						 <div class="guide-caption">
 						 <span></span>
 							<a href="#"><span class="twit"> </span></a>
@@ -467,7 +467,7 @@
 						 <p><a href="#">John Wilson</a></p>
 					 </div>
 					 <div class="col-md-3 image-grid">
-						 <img src="assets/images/_web/g2.jpg">
+						 <img lsrc="assets/images/_web/g2.jpg">
 						 <div class="guide-caption">
 						 <span></span>
 							<a href="#"><span class="twit"> </span></a>
@@ -477,7 +477,7 @@
 						 <p><a href="#">Kelly Gomez</a></p>
 					 </div>
 					 <div class="col-md-3 image-grid">
-						 <img src="assets/images/_web/g1.jpg">
+						 <img lsrc="assets/images/_web/g1.jpg">
 						 <div class="guide-caption">
 						 <span></span>
 							<a href="#"><span class="twit"> </span></a>
@@ -489,7 +489,7 @@
 				  </div>
 				  <div class="item text-center guide-slide">
 				  <div class="col-md-3 image-grid">
-						 <img src="assets/images/_web/g8.jpg">
+						 <img lsrc="assets/images/_web/g8.jpg">
 						 <div class="guide-caption">
 						 <span></span>
 							<a href="#"><span class="twit"> </span></a>
@@ -499,7 +499,7 @@
 						 <p><a href="#">John</a></p>
 					 </div>
 					 <div class="col-md-3 image-grid">
-						 <img src="assets/images/_web/g7.jpg">
+						 <img lsrc="assets/images/_web/g7.jpg">
 						 <div class="guide-caption">
 						 <span></span>
 							<a href="#"><span class="twit"> </span></a>
@@ -509,7 +509,7 @@
 						 <p><a href="#">Joe Winifred</a></p>
 					 </div>
 					 <div class="col-md-3 image-grid">
-						 <img src="assets/images/_web/g6.jpg">
+						 <img lsrc="assets/images/_web/g6.jpg">
 						 <div class="guide-caption">
 						 <span></span>
 							<a href="#"><span class="twit"> </span></a>
@@ -519,7 +519,7 @@
 						 <p><a href="#">Kevin</a></p>
 					 </div>
 					 <div class="col-md-3 image-grid">
-						 <img src="assets/images/_web/g5.jpg">
+						 <img lsrc="assets/images/_web/g5.jpg">
 						 <div class="guide-caption">
 						 <span></span>
 							<a href="#"><span class="twit"> </span></a>
@@ -537,7 +537,7 @@
 		 <div class="client-say-layer">
 		     <div class="client-say-head text-center">
 				  <h3>CLIENT SAY</h3>
-				  <span></span><img src="assets/images/_web/face.png" alt=""><span></span>
+				  <span></span><img lsrc="assets/images/_web/face.png" alt=""><span></span>
 				  <!-- requried-jsfiles-for owl -->
 					<link href="assets/css/owl.carousel.css" rel="stylesheet">
 								    <script src="assets/js/owl.carousel.js"></script>
@@ -557,40 +557,40 @@
 			     <div id="owl-demo1" class="owl-carousel">
 					  <div class="item">
 						  <div class="client-say-info">
-								<p><img src="assets/images/_web/dots1.png" alt="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-								Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.<img src="assets/images/_web/dots2.png" alt="#"></p>
+								<p><img lsrc="assets/images/_web/dots1.png" alt="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+								Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.<img lsrc="assets/images/_web/dots2.png" alt="#"></p>
 								<h4>Anna Smith</h4>
 							    <h6><span></span></h6>
 						  </div> 
 					  </div>
 					   <div class="item">
 						  <div class="client-say-info">
-								<p><img src="assets/images/_web/dots1.png" alt="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-								Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.<img src="assets/images/_web/dots2.png" alt="#"></p>
+								<p><img lsrc="assets/images/_web/dots1.png" alt="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+								Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.<img lsrc="assets/images/_web/dots2.png" alt="#"></p>
 								<h4>Anna Smith</h4>
 							    <h6><span></span></h6>
 						  </div> 
 					  </div>
 					   <div class="item">
 						   <div class="client-say-info">
-								<p><img src="assets/images/_web/dots1.png" alt="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-								Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.<img src="assets/images/_web/dots2.png" alt="#"></p>
+								<p><img lsrc="assets/images/_web/dots1.png" alt="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+								Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.<img lsrc="assets/images/_web/dots2.png" alt="#"></p>
 								<h4>Smith</h4>
 							    <h6><span></span></h6>
 						   </div> 
 					  </div>
 					  <div class="item">
 						  <div class="client-say-info">
-								<p><img src="assets/images/_web/dots1.png" alt="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-								Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.<img src="assets/images/_web/dots2.png" alt="#"></p>
+								<p><img lsrc="assets/images/_web/dots1.png" alt="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+								Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.<img lsrc="assets/images/_web/dots2.png" alt="#"></p>
 							    <h4>Amith</h4>
 							    <h6><span></span></h6>
 						  </div> 
 					  </div>
 					  <div class="item">
 						   <div class="client-say-info">
-								<p><img src="assets/images/_web/dots1.png" alt="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-								Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.<img src="assets/images/_web/dots2.png" alt="#"></p>
+								<p><img lsrc="assets/images/_web/dots1.png" alt="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+								Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.<img lsrc="assets/images/_web/dots2.png" alt="#"></p>
 								<h4>John Smith</h4>
 							    <h6><span></span></h6>
 						  </div> 
@@ -603,7 +603,7 @@
 	<div id="section-5" class="contact section">
 		  <div class="contact-head text-center">
 			  <h3>CONTACT US</h3>
-			  <span></span><img src="assets/images/_web/mail.png" alt=""><span></span>
+			  <span></span><img lsrc="assets/images/_web/mail.png" alt=""><span></span>
 			  <div class="contact-grids">
 				  <div class="container">
 					  <div class="col-md-4 address">
@@ -636,7 +636,7 @@
 		 <div class="container">
 			 <div class="fotter-grids">
 				 <div class="col-md-4 fotter-left">
-				 <img src="assets/images/_web/fotter-logo.png" alt="">
+				 <img lsrc="assets/images/_web/fotter-logo.png" alt="">
 				 <p>Voluptatem quia voluptas sit aspernatur aut odit aut fugit, 
 					sed quia consequuntur magni dolores eos qui ratione.</p>
 				 </div>
@@ -675,7 +675,7 @@
 	<div class="copyright text-center">
 	<p>Template by <a href="http://www.w3layouts.com">W3layouts</a></p>
 	</div>
-	  <script src="assets/js/jquery.scrollTo.js"></script>
+	  <script src="assets/js/jquery.scrollTo.js" async></script>
 		<script src="assets/js/jquery.nav.js"></script>
 		<script type="text/javascript">
 		$(document).ready(function() {
@@ -687,6 +687,23 @@
 				console.log('stop')
 				}
 			});
+		});
+		$(function(){
+		    $.each(document.images, function(){
+               var this_image = this;
+               var src = $(this_image).attr('src') || '' ;
+               if(!src.length > 0){
+                   //this_image.src = options.loading; // show loading
+                   var lsrc = $(this_image).attr('lsrc') || '' ;
+                   if(lsrc.length > 0){
+                       var img = new Image();
+                       img.src = lsrc;
+                       $(img).load(function() {
+                           this_image.src = this.src;
+                       });
+                   }
+               }
+           });
 		});
 		</script>
 	  
