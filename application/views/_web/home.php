@@ -10,16 +10,8 @@
 		<script type="application/x-javascript"> 
 			addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
 		</script>
-		<!--js--> 
-		<script src="assets/js/jquery.min.js"></script>
-
-		<!--/js-->
 		<!--animated-css-->
 		<link href="assets/css/animate.css" rel="stylesheet" type="text/css" media="all">
-		<script src="assets/js/wow.min.js"></script>
-		<script>
-		 new WOW().init();
-		</script>
 		<!--/animated-css-->
 	</head>
 	<body>
@@ -591,7 +583,15 @@
 		<div class="copyright text-center">
 		<p>Template by <a href="http://www.w3layouts.com">W3layouts</a></p>
 		</div>
+		<!--js--> 
+		<script src="assets/js/jquery.min.js"></script>
+		<!--/js-->
+		<script src="assets/js/wow.min.js"></script>
+		<script>
+		 new WOW().init();
+		</script>
 
+		<script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
 		<script>
 			//from http://www.activewidgets.com/javascript.forum.6114.43/dynamic-load-javascript-from-javascript.html
 				function $import(src){
