@@ -8,36 +8,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="keywords" content="The free My-tour Iphone web template, Andriod web template, Smartphone web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 	<!--js-->
-	<link type="text/css" rel="stylesheet" href="assets/css/jquery.mmenu.all.css" /> 
-	<script src="assets/js/jquery.min.js"></script>
-	<script type="text/javascript" src="assets/js/move-top.js"></script>
-	<script type="text/javascript" src="assets/js/easing.js"></script>
-	   <script type="text/javascript">
-			jQuery(document).ready(function($) {
-				$(".scroll").click(function(event){		
-					event.preventDefault();
-					$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
-				});
-			});
-		</script>
-		<script type="text/javascript" src="assets/js/jquery.mmenu.js"></script>
-			<script type="text/javascript">
-				//	The menu on the left
-				$(function() {
-					$('nav#menu-left').mmenu();
-				});
-			</script>
-	<!--/scroll -->
+	<link type="text/css" rel="stylesheet" href="assets/css/jquery.mmenu.all.css" /> 	
 	<!--/js-->
 	<!--animated-css-->
 	<link href="assets/css/animate.css" rel="stylesheet" type="text/css" media="all">
-	<script src="assets/js/wow.min.js"></script>
-	<script>
-	 new WOW().init();
-	</script>
 	<!--/animated-css-->
-
-
 </head>
 <body>
 <!--header-->
@@ -64,29 +39,6 @@
 	 </div>	
 <!--/header-->	
 <!---banner-->
-<!--start-slider-script-->
-			<script src="assets/js/responsiveslides.min.js"></script>
-			 <script>
-			    // You can also use "$(window).load(function() {"
-			    $(function () {
-			      // Slideshow 4
-			      $("#slider4").responsiveSlides({
-			        auto: true,
-			        pager: true,
-			        nav: true,
-			        speed: 500,
-			        namespace: "callbacks",
-			        before: function () {
-			          $('.events').append("<li>before event fired.</li>");
-			        },
-			        after: function () {
-			          $('.events').append("<li>after event fired.</li>");
-			        }
-			      });
-			
-			    });
-			  </script>
-			<!--//End-slider-script-->
 			<!-- Slideshow 4 -->
 			    <div id="top" class="callbacks_container">
 			      <ul class="rslides" id="slider4">
@@ -260,42 +212,6 @@
 				   <div class="clearfix"></div>	
 			  </div>
 		</div>	  
-		<!-- Script for gallery Here-->
-		<script type="text/javascript" src="assets/js/jquery.mixitup.min.js"></script>
-		<script type="text/javascript">
-			$(function () {
-				var filterList = {
-				init: function () {
-		// MixItUp plugin
-		// http://mixitup.io
-						$('#portfoliolist').mixitup({
-							targetSelector: '.portfolio',
-							filterSelector: '.filter',
-							effects: ['fade'],
-							easing: 'snap',
-						// call the hover effect
-						onMixEnd: filterList.hoverEffect()
-			});				
-		},
-				hoverEffect: function () {
-		// Simple parallax effect
-				$('#portfoliolist .portfolio').hover(
-					function () {
-					$(this).find('.label').stop().animate({bottom: 0}, 200, 'easeOutQuad');
-					$(this).find('img').stop().animate({top: -30}, 500, 'easeOutQuad');				
-					},
-							function () {
-								$(this).find('.label').stop().animate({bottom: -40}, 200, 'easeInQuad');
-								$(this).find('img').stop().animate({top: 0}, 300, 'easeOutQuad');								
-					}		
-				);				
-			}
-		};
-		// Run the show!
-				filterList.init();
-			});	
-		</script>
-		<!--Gallery Script Ends-->	 
 		<!--/top-tours-->
 		<div id="guides" class="tour-guides">
 			  <div class="tour-guides-head text-center">
@@ -307,20 +223,7 @@
 			  </div>
 			  <div class="container">
 				<!-- requried-jsfiles-for owl -->
-						<link href="assets/css/owl.carousel.css" rel="stylesheet">
-									    <script src="assets/js/owl.carousel.js"></script>
-									        <script>
-									    $(document).ready(function() {
-									      $("#owl-demo").owlCarousel({
-									        items : 1,
-									        lazyLoad : true,
-									        autoPlay : true,
-									        navigation : false,
-									        navigationText :  false,
-									        pagination : true,
-									      });
-									    });
-									    </script>
+				<link href="assets/css/owl.carousel.css" rel="stylesheet">
 					<!-- //requried-jsfiles-for owl -->
 				  <div id="owl-demo" class="owl-carousel">
 					  <div class="item text-center guide-sliders">
@@ -382,19 +285,6 @@
 					  <span></span><img src="assets/images/_smart/face.png" alt=""><span></span>
 					  <!-- requried-jsfiles-for owl -->
 						<link href="assets/css/owl.carousel.css" rel="stylesheet">
-									    <script src="assets/js/owl.carousel.js"></script>
-									        <script>
-									    $(document).ready(function() {
-									      $("#owl-demo1").owlCarousel({
-									        items : 1,
-									        lazyLoad : true,
-									        autoPlay : true,
-									        navigation : false,
-									        navigationText :  false,
-									        pagination : true,
-									      });
-									    });
-									    </script>
 					 <!-- //requried-jsfiles-for owl -->
 				     <div id="owl-demo1" class="owl-carousel">
 						  <div class="item">
@@ -464,7 +354,7 @@
 					  </div>
 				  </div>
 			        <div class="map">
-					<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d193683.36875212385!2d-74.30999320395165!3d40.66730031841747!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1411724375639" frameborder="0" style="border:0"></iframe>
+					<!-- <iframe src="https://www.google.com/maps/embed/v1/place?q=malang&key=AIzaSyAMTepnwk9iTN_Fd7KGtuzhqwiWlzLalRM" frameborder="0" style="border:0"></iframe> -->
 				    <span></span>
 					</div>
 			  </div>
@@ -512,6 +402,52 @@
 		<div class="copyright text-center">
 		<p>Template by <a href="http://www.w3layouts.com">W3layouts</a></p>
 		</div>
+
+		<script src="assets/js/jquery.min.js?v12"></script>
+		<!--/js-->
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
+		<script src="assets/js/wow.min.js?v12"></script>
+		<script>
+		 new WOW().init();
+		</script>
+
+		<script>
+			//from http://www.activewidgets.com/javascript.forum.6114.43/dynamic-load-javascript-from-javascript.html
+				function $import(src){
+				    var scriptElem = document.createElement('script');
+					scriptElem.setAttribute('src',src);
+					scriptElem.setAttribute('type','text/javascript');
+					document.getElementsByTagName('head')[0].appendChild(scriptElem);
+				}
+
+				// import with a random query parameter to avoid caching
+				function $importWithCache(src){
+				  var ms = new Date().getHours().toString();
+				  var seed = "?" + ms;
+				  
+				  $import(src + seed);
+				}
+
+
+			function loadDelayedScripts(){
+	        	$importWithCache('assets/js/jquery.cacheimage.js');
+	        	$importWithCache('assets/js/move-top.js');
+	        	$importWithCache('assets/js/easing.js');
+	        	$importWithCache('assets/js/jquery.mmenu.js');
+	        	$importWithCache('assets/js/wow.min.js');
+	        	$importWithCache('assets/js/responsiveslides.min.js');
+	        	$importWithCache('assets/js/jquery.mixitup.min.js');
+	        	$importWithCache('assets/js/owl.carousel.js');
+		    }
+		    function loadScript(){
+	        	$import('assets/js/mob-script.js');
+		    }
+
+		    var delay = 3; // wait and then load the file
+		    var delayS = 5; // wait and then load the file
+		    setTimeout("loadDelayedScripts()", delay * 1000);
+		    setTimeout("loadScript()", delayS * 1000);
+		</script>
 
 	</body>
 </html>
