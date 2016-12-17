@@ -1,3 +1,7 @@
+//cache imag
+
+//and cache image
+
 // You can also use "$(window).load(function() {"
     $(function () {
       // Slideshow 4
@@ -88,6 +92,9 @@
 			});
 		});
 	// end nav
+	// image cache
+		
+	//end cache
 	    $.each(document.images, function(){
 			var this_image = this;
 			var src = $(this_image).attr('src') || '' ;

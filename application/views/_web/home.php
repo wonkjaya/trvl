@@ -3,9 +3,9 @@
 	<head>
 		<title>KuiRen Tour & Travel</title>
 		<!-- <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'> -->
-		<link href="assets/css/bootstrap.css" rel='stylesheet' type='text/css'/>
-		<link href="assets/css/web.css" rel="stylesheet" type="text/css" media="all"/>
-		<link href="assets/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+		<link href="assets/css/bootstrap.css?v1" rel='stylesheet' type='text/css'/>
+		<link href="assets/css/web.css?v1.0" rel="stylesheet" type="text/css" media="all"/>
+		<link href="assets/css/style.css?v12" rel="stylesheet" type="text/css" media="all"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script type="application/x-javascript"> 
 			addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
@@ -584,10 +584,10 @@
 		<p>Template by <a href="http://www.w3layouts.com">W3layouts</a></p>
 		</div>
 		<!--js--> 
-		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.min.js?v12"></script>
 		<!--/js-->
 		<script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
-		<script src="assets/js/wow.min.js"></script>
+		<script src="assets/js/wow.min.js?v12"></script>
 		<script>
 		 new WOW().init();
 		</script>
@@ -602,27 +602,28 @@
 				}
 
 				// import with a random query parameter to avoid caching
-				function $importNoCache(src){
-				  var ms = new Date().getTime().toString();
+				function $importWithCache(src){
+				  var ms = new Date().getHours().toString();
 				  var seed = "?" + ms;
 				  
 				  $import(src + seed);
 				}
 
+
 			function loadDelayedScripts(){
-	        	$import('assets/js/responsiveslides.min.js');
-	        	$import('assets/js/jquery.mixitup.min.js');
-	        	$import('assets/js/owl.carousel.js');
-	        	$import('assets/js/owl.carousel.js');
-	        	$import('assets/js/jquery.scrollTo.js');
-	        	$import('assets/js/jquery.nav.js');
+	        	$importWithCache('assets/js/responsiveslides.min.js');
+	        	$importWithCache('assets/js/jquery.mixitup.min.js');
+	        	$importWithCache('assets/js/owl.carousel.js');
+	        	$importWithCache('assets/js/owl.carousel.js');
+	        	$importWithCache('assets/js/jquery.scrollTo.js');
+	        	$importWithCache('assets/js/jquery.nav.js');
 		    }
 		    function loadScript(){
 	        	$import('assets/js/script.js');
 		    }
 
-		    var delay = 5; // wait and then load the file
-		    var delayS = 10; // wait and then load the file
+		    var delay = 3; // wait and then load the file
+		    var delayS = 5; // wait and then load the file
 		    setTimeout("loadDelayedScripts()", delay * 1000);
 		    setTimeout("loadScript()", delayS * 1000);
 		</script>
