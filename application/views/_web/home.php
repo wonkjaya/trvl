@@ -611,6 +611,7 @@
 
 
 			function loadDelayedScripts(){
+	        	$importWithCache('assets/js/jquery.cacheimage.js');
 	        	$importWithCache('assets/js/responsiveslides.min.js');
 	        	$importWithCache('assets/js/jquery.mixitup.min.js');
 	        	$importWithCache('assets/js/owl.carousel.js');

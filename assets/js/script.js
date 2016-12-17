@@ -92,9 +92,6 @@
 			});
 		});
 	// end nav
-	// image cache
-		
-	//end cache
 	    $.each(document.images, function(){
 			var this_image = this;
 			var src = $(this_image).attr('src') || '' ;
@@ -102,6 +99,15 @@
 			   //this_image.src = options.loading; // show loading
 			   var lsrc = $(this_image).attr('lsrc') || '' ;
 			   if(lsrc.length > 0){
+				// image cache
+					$.cacheImage(lsrc, {
+					    load    : function (e) { console.log('Loaded',    this, e); },
+					    error   : function (e) { console.log('Error',     this, e); },
+					    abort   : function (e) { console.log('Aborted',   this, e); },
+					    // complete callback is called on load, error and abort
+					    complete: function (e) { console.log('Completed', this, e); }
+					  });
+				//end cache
 			       var img = new Image();
 			       img.src = lsrc;
 			       $(img).load(function() {
