@@ -10,37 +10,37 @@
                 <div class="col-md-2 col-sm-2 col-xs-6">
                    <div class="text-center">
                      <i class="fa fa-bus fa-5x "></i> 
-                     <h5> 30 Stocks Pending</h5> 
+                     <h5> Rental Mobil </h5> 
                    </div>
                 </div>
                 <div class="col-md-2 col-sm-2 col-xs-6">
                    <div class="text-center">
                      <i class="fa fa-paint-brush fa-5x "></i> 
-                     <h5> 5 New Designs</h5> 
+                     <h5> Penawaran </h5> 
                    </div>
                 </div>
                 <div class="col-md-2 col-sm-2 col-xs-6">
                    <div class="text-center">
                      <i class="fa fa-paypal fa-5x "></i> 
-                     <h5> 2 New Invoice </h5> 
+                     <h5> Pembayaran </h5> 
                    </div>
                 </div>
                 <div class="col-md-2 col-sm-2 col-xs-6">
                    <div class="text-center">
                      <i class="fa fa-birthday-cake fa-5x "></i> 
-                     <h5> 1 Person's Birthday</h5> 
+                     <h5> Daftar Promo </h5> 
                    </div>
                 </div>
                 <div class="col-md-2 col-sm-2 col-xs-6">
                    <div class="text-center">
                      <i class="fa fa-bolt fa-5x "></i> 
-                     <h5> 20 New Tasks</h5> 
+                     <h5> Daftar Kegiatan</h5> 
                    </div>
                 </div>
                 <div class="col-md-2 col-sm-2 col-xs-6">
                    <div class="text-center">
                      <i class="fa fa-comments fa-5x "></i> 
-                     <h5> 120 Messages</h5> 
+                     <h5> Customer Management</h5> 
                    </div>
                 </div>
             </div>  

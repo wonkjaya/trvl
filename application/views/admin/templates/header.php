@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-     <meta charset="utf-8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="" />
     <!--[if IE]>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <![endif]-->
-    <title>BEST ADMIN TEMPLATE</title>
+    <title>KuiRen Admin</title>
+    <link rel="icon" type="image/icon" href="favicon.ico">
     <!-- BOOTSTRAP CORE STYLE CSS -->
     <link href="<?=base_url('assets/css/bootstrap.css')?>" rel="stylesheet" />
     <!-- FONTAWESOME STYLE CSS -->
@@ -16,7 +17,7 @@
     <!-- CUSTOM STYLE CSS -->
     <link href="<?=base_url('assets/css/admin/style.css')?>" rel="stylesheet" />
     <!-- GOOGLE FONT CSS -->
-     <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css' />
+    <!-- <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css' /> -->
 
 </head>
 <body>
@@ -24,9 +25,12 @@
      <section class="sec-menu" >
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
-              <span class="menu-open-icon">  <i class="fa fa-bars pull-left fa-2x b-clr"   ></i> </span>  <i class="pull-right"> Wecome To The Admin Module </i>   
-                </div>
+              <div class="col-md-12">
+                <span class="menu-open-icon">
+                  <i class="fa fa-bars pull-left fa-2x b-clr"></i>
+                </span>
+                <i class="pull-right"> KuiRen Tour & Travel </i>   
+              </div>
             </div>
         </div>
     </section>

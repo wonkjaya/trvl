@@ -1,22 +1,4 @@
-﻿
-
-/*=============================================================
-    Authour URI: www.binarytheme.com
-    License: Commons Attribution 3.0
-
-    http://creativecommons.org/licenses/by/3.0/
-
-    100% Free To use For Personal And Commercial Use.
-    IN EXCHANGE JUST GIVE US CREDITS AND TELL YOUR FRIENDS ABOUT US
-   
-    ========================================================  */
-
-
-/*======================================
-    GENERAL STYLES
-======================================= */
-
-.b-clr {
+﻿.b-clr {
     color:#000;
 }
 .quick-info {
@@ -88,12 +70,6 @@
     cursor: pointer;
 }
 
-/*======================================
-    DASHBOARD STYLES
-======================================= */
-
-
-
 /* =============================================================
    FOOTER SECTION STYLES
  ============================================================ */
@@ -109,3 +85,9 @@
     .footer-section a, .footer-section a:hover {
         color:#000;
     }
+
+/* tambahan */
+.text-center i.fa-5x:hover{
+    color:blue;
+    cursor:pointer;
+}

@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                   &copy; 2014 Yourdomain.com |<a href="http://www.binarytheme.com/" target="_blank"  > Designed by : binarytheme.com</a> 
+                   &copy; 2014 KuiRenTour.com |<a href="http://www.kuirentour.com/" target="_blank"  > Designed by : malang software</a> 
                 </div>
 
             </div>
