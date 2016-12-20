@@ -14,6 +14,10 @@ class Admin extends AdminController {
 	}
 
 	function dashboard(){
+		if(!$this->check_permissions('author'))//when the user is not an andmin and author
+        {
+            redirect('admin/login');
+        }
 		$this->loadView('dashboard');
 	}
 
