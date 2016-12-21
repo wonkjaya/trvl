@@ -1,10 +1,11 @@
 <?php
-class Mdb extends CI_Model
+class Moffers extends CI_Model
 {
     function get_posts($number = 10, $start = 0)
     {
-        $this->db->select();
-        $this->db->from('posts');
+        $this->db->select(['p.*','u.username as author']);
+        $this->db->from('posts p');
+        $this->db->join('users u','u.user_id = p.user_id','left');
         $this->db->where('active',1);
         $this->db->order_by('date_added','desc');
         $this->db->limit($number, $start);

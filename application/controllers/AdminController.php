@@ -47,7 +47,7 @@ class AdminController extends CI_Controller {
                 $this->session->set_userdata('user_id', $user['user_id']);
                 $this->session->set_userdata('username', $user['username']);
                 $this->session->set_userdata('user_type',$user['user_type']);
-                redirect('main');
+                redirect('admin');
             }
         }
         $class_name = array(
@@ -61,7 +61,7 @@ class AdminController extends CI_Controller {
 
     function logout(){
         $this->session->sess_destroy();
-        redirect('admin/blog');
+        redirect('home');
     }
 
     function register(){

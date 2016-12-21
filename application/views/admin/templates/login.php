@@ -81,22 +81,35 @@
     display: block;
     margin-top: 10px;
 }
+.form-control{
+    line-height: 1.200;
+}
     </style>
 </head>
 <body>
 <div class="container">
     <div class="row">
-        <div class="col-sm-6 col-md-4 col-md-offset-4">
+        <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
             <?php
             if($error){
                 echo '<div class="alert alert-danger" >User and Password Salah. Coba Ulangi.</div>';
             }?>
             <h1 class="text-center login-title">Sign in to continue to Kuiren Admin</h1>
             <div class="account-wall">
-                <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
+                <img class="profile-img" src="<?=base_url('assets/images/admin/photo.png')?>"
                     alt="">
                 <form class="form-signin" method="post">
-                    <input class="form-control" type="text" placeholder="Username / Email" name="username" required autofocus />
+                    <div class="input-group">
+                        <div class="input-group-btn" style="width:100px;padding:0px">
+                            <select class="form-control" name="user_type" style="margin:0px;">
+                                <option value="admin">Admin</option>
+                                <option value="author">Author</option>
+                                <option value="user" selected>User</option>
+                            </select>
+                        </div>
+                        <input class="form-control" type="text" placeholder="Username / Email" name="username" required autofocus />
+                        
+                    </div>
                     <input class="form-control" type="password" placeholder="Password" name="password" value="" />
                     <button class="btn btn-lg btn-primary btn-block" type="submit">
                         Sign in</button>
@@ -121,11 +134,7 @@
                     <p><span>Username</span></p>
                     <p><span>Password</span></p>
                     <p><span>User Type</span>
-                        <select class="form-control" name="user_type">
-                        <option value="admin">Admin</option>
-                        <option value="author">Author</option>
-                        <option value="user" selected>User</option>
-                    </select>
+                        
                     <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="add" value="Login" /></p>
                 </div>
             </form>

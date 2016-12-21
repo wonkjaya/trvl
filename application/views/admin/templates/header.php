@@ -37,17 +37,35 @@
        <div id="side-menu"  >
 
         <ul>
-             <li style="border-bottom:0px;">
-             <a href="#" title="close"> <i class="fa fa-close fa-2x menu-close-icon b-clr"></i></a>
+            <li style="border-bottom:0px;">
+              <a href="#" title="close"> 
+                <i class="fa fa-close fa-2x menu-close-icon b-clr"></i>
+              </a>
             </li>
             <li>
-             <a href="<?=site_url('admin/dashboard')?>" title="Dashboard"> <i class="fa fa-home fa-2x "></i> </a>
+              <a href="<?=site_url('admin')?>" title="Dashboard"> 
+                <i class="fa fa-home fa-2x "></i> 
+              </a>
             </li>
             <li>
-              <a href="<?=site_url('admin/ui')?>" title="UI Elements"> <i class="fa fa-plug fa-2x "></i>  </a>
+              <a href="<?=site_url('admin/blogoffers')?>" title="Blog Penawaran">
+                <i class="fa fa-paint-brush fa-2x "></i>
+              </a>
             </li>
             <li>
-              <a href="<?=site_url('admin/form')?>" title="Forms"><i class="fa fa-rocket fa-2x "></i>  </a>
+              <a href="<?=site_url('admin/products')?>" title="Data Produk">
+                <i class="fa fa-bus fa-2x "></i>
+              </a>
+            </li> 
+            <li>
+              <a href="<?=site_url('admin/emailmessage')?>" title="Email">
+                <i class="fa fa-envelope fa-2x "></i>
+              </a>
+            </li> 
+            <li>
+              <a href="<?=site_url('admin/invoice')?>" title="Invoice">
+                <i class="fa fa-usd fa-2x "></i>
+              </a>
             </li>            
         </ul>
            

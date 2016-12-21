@@ -70,10 +70,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | The $query_builder variables lets you determine whether or not to load
 | the query builder class.
 */
-$active_group = 'default';
+if($_SERVER['HTTP_HOST'] != 'localhost' && $_SERVER['HTTP_HOST'] != '192.168.200.117')
+	$active_group = 'server';
+else
+	$active_group = 'default';
+
 $query_builder = TRUE;
-if($_SERVER['HTTP_HOST'] != 'localhost')
-	$db['default'] = array(
+// echo $_SERVER['HTTP_HOST'];
+	$db['server'] = array(
 		'dsn'	=> '',
 		'hostname' => 'rohman.web.id',
 		'username' => 'rohmanahmad_travel',
@@ -94,13 +98,12 @@ if($_SERVER['HTTP_HOST'] != 'localhost')
 		'failover' => array(),
 		'save_queries' => TRUE
 	);
-else
 	$db['default'] = array(
 		'dsn'	=> '',
 		'hostname' => 'localhost',
 		'username' => 'root',
 		'password' => '',
-		'database' => 'travel',
+		'database' => 'mlg_travel',
 		'dbdriver' => 'mysqli',
 		'dbprefix' => '',
 		'pconnect' => FALSE,
