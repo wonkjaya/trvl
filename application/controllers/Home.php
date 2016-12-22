@@ -7,7 +7,7 @@ class Home extends MainController {
 	function __construct(){
         parent::__construct();
         $this->load->helper(['url']);
-        $this->load->model('mdb', 'm');
+        $this->load->model('moffers', 'offers');
     }
 
     function index(){
@@ -15,12 +15,12 @@ class Home extends MainController {
 	}
 
 	function blog($start = 0){//index page
-        $data['posts'] = $this->m->get_posts(5, $start);
+        $data['posts'] = $this->offers->get_posts(5, $start);
         
         //pagination
         $this->load->library('pagination');
         $config['base_url'] = base_url().'index.php/blog/index/';//url to set pagination
-        $config['total_rows'] = $this->m->get_post_count();
+        $config['total_rows'] = $this->offers->get_post_count();
         $config['per_page'] = 5; 
         $this->pagination->initialize($config); 
         $data['pages'] = $this->pagination->create_links(); //Links of pages
