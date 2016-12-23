@@ -54,4 +54,17 @@ class Moffers extends CI_Model
         $this->db->where('post_id',$post_id);
         $this->db->delete('posts');
     }
+
+    function get_tour_destinations($start, $limit){
+        $this->db->limit(abs($limit), abs($start));
+        $this->db->where(['cat.category_slug'=>'tour-destination']);
+        $this->db->select(['posts.post_id as id','posts.post_title as title','img.image_value as thumbnail']);
+        $this->db->join('post_categories cat','cat.category_id = posts.category_id','left');
+        $this->db->join('post_images img','img.image_id = posts.post_id','left');
+        $query = $this->db->get('posts');
+        if($query->num_rows() > 0 ){
+            return $query->result();
+        }
+        return null;
+    }
 }

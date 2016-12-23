@@ -155,88 +155,26 @@
 					<li><span class="filter" data-filter="fun">Long Date Tour</span></li>
 			    </ul>
 			    <div id="portfoliolist">
+					<?php
+					$i = 0;
+					foreach ($tour_destinations as $r) { 
+						# code...
+					
+					?>
 					<div class="portfolio card mix_all" data-cat="card" style="display: inline-block; opacity: 1;">
 						<div class="portfolio-wrapper wow bounceIn" data-wow-delay="0.4s">		
 							<a href="#" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
-						     <img lsrc="assets/images/_web/t1.jpg" class="img-responsive" alt=""/></a>
-							<div class="tour-caption">
-							<span> </span>
-							<p>Phu Quoc Resort & Spa</p>
+						     <img lsrc="assets/images/uploads/post_thumb/<?=$r->thumbnail?>" class="img-responsive" alt=""/></a>
+							<div class="tour-caption" style="text-align:center">
+							<span>.</span>
+							<p><?=$r->title?></p>
 							</div>
 
 						</div>
-					</div>				
-					<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
-						<div class="portfolio-wrapper wow bounceIn" data-wow-delay="0.4s">		
-							<a href="#" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
-						     <img lsrc="assets/images/_web/t2.jpg" class="img-responsive" alt=""/></a>
-							 <div class="tour-caption">
-							 <span> </span>
-							 <p>Phu Quoc Resort & Spa</p>
-						     </div>
-
-						</div>
-					</div>		
-					<div class="portfolio card mix_all" data-cat="card" style="display: inline-block; opacity: 1;">
-						<div class="portfolio-wrapper wow bounceIn" data-wow-delay="0.4s">		
-							<a href="#" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
-						     <img lsrc="assets/images/_web/t3.jpg" class="img-responsive" alt=""/></a>
-							 <div class="tour-caption">
-							 <span> </span>
-							 <p>Phu Quoc Resort & Spa</p>
-							 </div>
-						</div>
-					</div>				
-					<div class="portfolio icon mix_all" data-cat="icon" style="display: inline-block; opacity: 1;">
-						<div class="portfolio-wrapper wow bounceIn" data-wow-delay="0.4s">		
-							<a href="#" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
-						     <img lsrc="assets/images/_web/t4.jpg" class="img-responsive" alt=""/></a>
-							 <div class="tour-caption">
-							 <span> </span>
-							<p>Phu Quoc Resort & Spa</p>
-							</div>
-						</div>
-					</div>	
-					<div class="portfolio card mix_all" data-cat="card" style="display: inline-block; opacity: 1;">
-						<div class="portfolio-wrapper wow bounceIn" data-wow-delay="0.4s">		
-							<a href="#" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
-						     <img lsrc="assets/images/_web/t5.jpg" class="img-responsive" alt=""/></a>
-							 <div class="tour-caption">
-							 <span> </span>
-							 <p>Phu Quoc Resort & Spa</p>
-							 </div>
-						</div>
-					</div>			
-					<div class="portfolio fun mix_all" data-cat="fun" style="display: inline-block; opacity: 1;">
-						<div class="portfolio-wrapper wow bounceIn" data-wow-delay="0.4s">		
-							<a href="#" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
-						     <img lsrc="assets/images/_web/t6.jpg" class="img-responsive" alt=""/></a>
-							 <div class="tour-caption">
-							 <span> </span>
-							<p>Phu Quoc Resort & Spa</p>
-							</div>
-						</div>
-			      </div>
-				  <div class="portfolio fun mix_all" data-cat="fun" style="display: inline-block; opacity: 1;">
-						<div class="portfolio-wrapper wow bounceIn" data-wow-delay="0.4s">		
-							<a href="#" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
-							<img lsrc="assets/images/_web/t7.jpg" class="img-responsive" alt=""/></a>
-							<div class="tour-caption">
-							<span> </span>
-							<p>Phu Quoc Resort & Spa</p>
-							</div>
-						</div>
-			      </div>
-				  <div class="portfolio icon mix_all" data-cat="fun" style="display: inline-block; opacity: 1;">
-						<div class="portfolio-wrapper wow bounceIn" data-wow-delay="0.4s">		
-							<a href="#" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
-						     <img lsrc="assets/images/_web/t8.jpg" class="img-responsive" alt=""/></a>
-							 <div class="tour-caption">
-							 <span> </span>
-							 <p>Phu Quoc Resort & Spa</p>
-							 </div>
-					   </div>
-			      </div>
+					</div>
+					<?php
+					}
+					?>
 				   <div class="clearfix"></div>	
 				</div>
 			</div>

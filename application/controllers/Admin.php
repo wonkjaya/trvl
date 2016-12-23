@@ -46,13 +46,6 @@ class Admin extends AdminController {
 	            // redirect(base_url().'index.php/blog/');
 	            echo "success";
 	        }else{
-	            
-	            $class_name = array(
-	            'home_class'=>'current', 
-	            'login_class' =>'', 
-	            'register_class' => '',
-	            'upload_class'=>'',
-	            'contact_class'=>'');
 				$this->loadView('blogoffers-form');
 	        }
 		}
@@ -65,6 +58,7 @@ class Admin extends AdminController {
 		}
 
 		function editoffers(){
+			$this->load->model('moffers','offers');  
 			$data['success'] = 0;
 	        
 	        if($this->input->post())
@@ -74,19 +68,23 @@ class Admin extends AdminController {
 	                'post' => $this->input->post('post'),
 	                'active' => 1
 	            );
-	            $this->m->update_post($post_id, $data);
+	            $this->offers->update_post($post_id, $data);
 	            $data['success'] = 1;
 	        }
-	        $data['post'] = $this->m->get_post($post_id);
+	        $data['post'] = $this->offers->get_post($post_id);
 	        
-	        $class_name = array(
-	            'home_class'=>'current', 
-	            'login_class' =>'', 
-	            'register_class' => '',
-	            'upload_class'=>'',
-	            'contact_class'=>'');
 	        $this->loadView('blogoffers-form',$data);
 		}
+
+		function deletepost($post_id){ //delete post page
+			$this->load->model('moffers','offers');  
+	        if(!$this->check_permissions('author'))//when the user is not an andmin and author
+	        {
+	            redirect(base_url().'index.php/users/login');
+	        }
+	        $this->offers->delete_post($post_id);
+	        redirect('admin/browseoffers');
+	    }
 // end blogoffers group
 
 
