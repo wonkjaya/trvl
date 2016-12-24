@@ -33,33 +33,9 @@
 	</head>
 	<body>
 	<!--header-->
-	<!--sticky-->
-	<div class="header-top">
-		 <!--container-->
-		<div class="container">
-			<div class="top-nav">
-				<div class="logo head-logo logo-md">
-					<a href="#">
-						<img src="assets/images/_web/logo.png" id="section-1" class="img-responsive" alt="kuiren tour and travel"/>
-						<span class="">KuiRen Tour</span>
-					</a>
-				</div>
-				<div class="menu">
-					<ul id="nav">
-						 <li><a href="#section-1">Home</a></li>
-						 <li><a href="#section-2">About</a></li>
-						 <li><a href="#section-3">Top tours</a></li>
-						 <li><a href="#section-4">Guides</a></li>
-						 <li><a href="#section-5">Contact</a></li>
-						 <div class="clearfix"></div>
-					 </ul>
-				</div>
-			</div>
-			<div class="clearfix"> </div>
-		</div>
-		<!--/container-->
-	</div>
-	<!--/sticky-->
+	<?php
+	$this->load->view('_web/header');
+	?>
 	<!--banner-->
 		<!-- Slideshow 4 -->
 		<div id="section-1" class="section">
@@ -192,221 +168,50 @@
 			  </div>
 			  <div class="container">
 				<!-- requried-jsfiles-for owl -->
-					<link href="assets/css/owl.carousel.css" rel="stylesheet">
-					<!-- //requried-jsfiles-for owl -->
-				  <div id="owl-demo" class="owl-carousel">
-					  <div class="item text-center guide-sliders">
-						 <div class="col-md-3 image-grid">
-							 <img lsrc="assets/images/_web/g1.jpg">
-							 <div class="guide-caption">
-							 <span></span>
-								<a href="#"><span class="twit"> </span></a>
-								<a href="#"><span class="fb"> </span></a>
-								<a href="#"><span class="gplus"> </span></a>
-							 </div>
-							 <p><a href="#">Elena Smith</a></p>
-							 </div>
-						 <div class="col-md-3 image-grid">
-							 <img lsrc="assets/images/_web/g2.jpg">
-							 <div class="guide-caption">
-							 <span></span>
-								<a href="#"><span class="twit"> </span></a>
-								<a href="#"><span class="fb"> </span></a>
-								<a href="#"><span class="gplus"> </span></a>
-							 </div>
-							 <p><a href="#">John Wilson</a></p>
-						 </div>
-						 <div class="col-md-3 image-grid">
-							 <img lsrc="assets/images/_web/g3.jpg">
-							 <div class="guide-caption">
-							 <span></span>
-								<a href="#"><span class="twit"> </span></a>
-								<a href="#"><span class="fb"> </span></a>
-								<a href="#"><span class="gplus"> </span></a>
-							 </div>
-							 <p><a href="#">Kelly Gomez</a></p>
-						 </div>
-						 <div class="col-md-3 image-grid">
-							 <img lsrc="assets/images/_web/g4.jpg">
-							 <div class="guide-caption">
-							 <span></span>
-								<a href="#"><span class="twit"> </span></a>
-								<a href="#"><span class="fb"> </span></a>
-								<a href="#"><span class="gplus"> </span></a>
-							 </div>
-							 <p><a href="#">Alex Franky</a></p>
-						 </div>   
-					  </div>
-					  <div class="item text-center guide-sliders">
-						 <div class="col-md-3 image-grid">
-							 <img lsrc="assets/images/_web/g5.jpg">
-							 <div class="guide-caption">
-							 <span></span>
-								<a href="#"><span class="twit"> </span></a>
-								<a href="#"><span class="fb"> </span></a>
-								<a href="#"><span class="gplus"> </span></a>
-							 </div>
-							 <p><a href="#">John</a></p>
-						 </div>
-						 <div class="col-md-3 image-grid">
-							 <img lsrc="assets/images/_web/g6.jpg">
-							 <div class="guide-caption">
-							 <span></span>
-								<a href="#"><span class="twit"> </span></a>
-								<a href="#"><span class="fb"> </span></a>
-								<a href="#"><span class="gplus"> </span></a>
-							 </div>
-							 <p><a href="#">Joe Winifred</a></p>
-						 </div>
-						 <div class="col-md-3 image-grid">
-							 <img lsrc="assets/images/_web/g7.jpg">
-							 <div class="guide-caption">
-							 <span></span>
-								<a href="#"><span class="twit"> </span></a>
-								<a href="#"><span class="fb"> </span></a>
-								<a href="#"><span class="gplus"> </span></a>
-							 </div>
-							 <p><a href="#">Kevin</a></p>
-						 </div>
-						 <div class="col-md-3 image-grid">
-							 <img lsrc="assets/images/_web/g8.jpg">
-							 <div class="guide-caption">
-							 <span></span>
-								<a href="#"><span class="twit"> </span></a>
-								<a href="#"><span class="fb"> </span></a>
-								<a href="#"><span class="gplus"> </span></a>
-							 </div>
-							 <p><a href="#">Fedora Willam</a></p>
-						 </div>   
-					  </div>
-					  <div class="item text-center guide-sliders">
-						 <div class="col-md-3 image-grid">
-							 <img lsrc="assets/images/_web/g9.jpg">
-							 <div class="guide-caption">
-							 <span></span>
-								<a href="#"><span class="twit"> </span></a>
-								<a href="#"><span class="fb"> </span></a>
-								<a href="#"><span class="gplus"> </span></a>
-							 </div>
-							 <p><a href="#">Charles John</a></p>
-						 </div>
-						 <div class="col-md-3 image-grid">
-							 <img lsrc="assets/images/_web/g10.jpg">
-							 <div class="guide-caption">
-							 <span></span>
-								<a href="#"><span class="twit"> </span></a>
-								<a href="#"><span class="fb"> </span></a>
-								<a href="#"><span class="gplus"> </span></a>
-							 </div>
-							 <p><a href="#">Sunny Martin</a></p>
-						 </div>
-						 <div class="col-md-3 image-grid">
-							 <img lsrc="assets/images/_web/g11.jpg">
-							 <div class="guide-caption">
-							 <span></span>
-								<a href="#"><span class="twit"> </span></a>
-								<a href="#"><span class="fb"> </span></a>
-								<a href="#"><span class="gplus"> </span></a>
-							 </div>
-							 <p><a href="#">Alize Smith</a></p>
-						 </div>
-						 <div class="col-md-3 image-grid">
-							 <img lsrc="assets/images/_web/g12.jpg">
-							 <div class="guide-caption">
-							 <span></span>
-								<a href="#"><span class="twit"> </span></a>
-								<a href="#"><span class="fb"> </span></a>
-								<a href="#"><span class="gplus"> </span></a>
-							 </div>
-							 <p><a href="#">Tom Crusis</a></p>
-						 </div>   
-					  </div>   
-					 <div class="item text-center guide-sliders">
-						 <div class="col-md-3 image-grid">
-							 <img lsrc="assets/images/_web/g4.jpg">
-							 <div class="guide-caption">
-							 <span></span>
-								<a href="#"><span class="twit"> </span></a>
-								<a href="#"><span class="fb"> </span></a>
-								<a href="#"><span class="gplus"> </span></a>
-							 </div>
-							 <p><a href="#">Elena Smith</a></p>
-						 </div>
-						 <div class="col-md-3 image-grid">
-							 <img lsrc="assets/images/_web/g3.jpg">
-							 <div class="guide-caption">
-							 <span></span>
-								<a href="#"><span class="twit"> </span></a>
-								<a href="#"><span class="fb"> </span></a>
-								<a href="#"><span class="gplus"> </span></a>
-							 </div>
-							 <p><a href="#">John Wilson</a></p>
-						 </div>
-						 <div class="col-md-3 image-grid">
-							 <img lsrc="assets/images/_web/g2.jpg">
-							 <div class="guide-caption">
-							 <span></span>
-								<a href="#"><span class="twit"> </span></a>
-								<a href="#"><span class="fb"> </span></a>
-								<a href="#"><span class="gplus"> </span></a>
-							 </div>
-							 <p><a href="#">Kelly Gomez</a></p>
-						 </div>
-						 <div class="col-md-3 image-grid">
-							 <img lsrc="assets/images/_web/g1.jpg">
-							 <div class="guide-caption">
-							 <span></span>
-								<a href="#"><span class="twit"> </span></a>
-								<a href="#"><span class="fb"> </span></a>
-								<a href="#"><span class="gplus"> </span></a>
-							 </div>
-							 <p><a href="#">Alex Franky</a></p>
-						 </div>   
-					  </div>
-					  <div class="item text-center guide-slide">
-					  <div class="col-md-3 image-grid">
-							 <img lsrc="assets/images/_web/g8.jpg">
-							 <div class="guide-caption">
-							 <span></span>
-								<a href="#"><span class="twit"> </span></a>
-								<a href="#"><span class="fb"> </span></a>
-								<a href="#"><span class="gplus"> </span></a>
-							 </div>
-							 <p><a href="#">John</a></p>
-						 </div>
-						 <div class="col-md-3 image-grid">
-							 <img lsrc="assets/images/_web/g7.jpg">
-							 <div class="guide-caption">
-							 <span></span>
-								<a href="#"><span class="twit"> </span></a>
-								<a href="#"><span class="fb"> </span></a>
-								<a href="#"><span class="gplus"> </span></a>
-							 </div>
-							 <p><a href="#">Joe Winifred</a></p>
-						 </div>
-						 <div class="col-md-3 image-grid">
-							 <img lsrc="assets/images/_web/g6.jpg">
-							 <div class="guide-caption">
-							 <span></span>
-								<a href="#"><span class="twit"> </span></a>
-								<a href="#"><span class="fb"> </span></a>
-								<a href="#"><span class="gplus"> </span></a>
-							 </div>
-							 <p><a href="#">Kevin</a></p>
-						 </div>
-						 <div class="col-md-3 image-grid">
-							 <img lsrc="assets/images/_web/g5.jpg">
-							 <div class="guide-caption">
-							 <span></span>
-								<a href="#"><span class="twit"> </span></a>
-								<a href="#"><span class="fb"> </span></a>
-								<a href="#"><span class="gplus"> </span></a>
-							 </div>
-							 <p><a href="#">Fedora Willam</a></p>
-						 </div> 
-					  </div>
-				  </div>
-				</div>
+				<link href="assets/css/owl.carousel.css" rel="stylesheet">
+				<!-- //requried-jsfiles-for owl -->
+				<div id="owl-demo" class="owl-carousel">
+				  <?php
+				  $tg_index = 1;
+				  	// echo count($tour_guides);
+				  foreach ($tour_guides as $tg) {
+				  	if($tg_index == 1) {
+				  		?>
+							<div class="item text-center guide-sliders">
+				  		<?php
+				  	}
+				  	if($tg_index%5 == 0){
+				  		if($tg_index > 1){
+				  			?>
+								</div> <!-- guide-sliders -->
+				  			<?php
+				  		}
+				  		?>
+							<div class="item text-center guide-sliders">
+						<?php
+				  	}
+				  ?>
+					<div class="col-md-3 image-grid">
+						<img lsrc="assets/images/uploads/post_thumb/<?=$tg->thumbnail?>">
+						<div class="guide-caption">
+							<span></span>
+							<a href="#"><span class="twit"> </span></a>
+							<a href="#"><span class="fb"> </span></a>
+							<a href="#"><span class="gplus"> </span></a>
+						</div>
+						<p><a href="<?=site_url('home/tour_guides/'.$tg->id)?>"><?=$tg->title?></a></p>
+					</div>
+				  <?php
+				  	if(count($tour_guides) == $tg_index){
+				  		?>
+							</div> <!-- guide-sliders -->
+				  		<?php
+				  	}
+				  	$tg_index++;
+				  }
+				  ?>
+				</div> <!-- owl-demo -->
+			  </div>
 		</div>
 	<!--client-say-->
 		<div class="client-say">
@@ -495,49 +300,9 @@
 					</div>
 			  </div>
 		</div>
-		<div class="fotter">	
-			 <div class="container">
-				 <div class="fotter-grids">
-					 <div class="col-md-4 fotter-left">
-					 <img lsrc="assets/images/_web/fotter-logo.png" alt="">
-					 <p>Voluptatem quia voluptas sit aspernatur aut odit aut fugit, 
-						sed quia consequuntur magni dolores eos qui ratione.</p>
-					 </div>
-					 <div class="col-md-4 fotter-middle">
-						 <h3>Latest News</h3>
-						 <div class="footer-list">
-								<ul>
-								<li><a href="#"><span></span>Sed ut perspiciatis unde omnis iste natus.</a></li> 
-								<li><a href="#"><span></span>Voluptatem accusantium.</a></li> 
-								<li><a href="#"><span></span>Totam rem aperiam,eaque ipsa quae.</a></li> 
-								<li><a href="#"><span></span>Inventore veritatis et quae.</a></li> 
-								<li><a href="#"><span></span>Nemo enim ipsum voluptatem quia voluptas.</a></li>
-								</ul>
-						 </div>
-					 </div>
-					 <div class="col-md-4 fotter-right">
-					 <h3>Newsletter</h3>
-					 <form>
-					 <input type="text" class="text" value="E-mail" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your mail';}">
-					 <input type="submit" value="Send">
-					 <div class="clearfix"></div>
-					 </form>
-					 <div class="social-icons">
-					 <a href="#"><span class="facebook"> </span></a>
-					 <a href="#"><span class="twitter"> </span></a>
-					 <a href="#"><span class="googleplus"> </span></a>
-					 <a href="#"><span class="pinterest"> </span></a>
-					 <a href="#"><span class="instagram"> </span></a>
-					 </div>
-					 <div class="clearfix"></div>
-			     </div>
-				 <div class="clearfix"></div>
-			 </div>
-			</div>
-		</div>  
-		<div class="copyright text-center">
-		<p>Template by <a href="http://www.w3layouts.com">W3layouts</a></p>
-		</div>
+		<?php
+		$this->load->view('_web/footer');
+		?>
 		<!--js--> 
 		<script src="assets/js/jquery.min.js?v12"></script>
 		<!--/js-->

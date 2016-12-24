@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 23, 2016 at 12:11 
+-- Generation Time: Dec 24, 2016 at 11:21 
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.20
 
@@ -73,7 +73,17 @@ INSERT INTO `posts` (`post_id`, `post_title`, `post_slug`, `post`, `active`, `da
 (7, 'Post 7', 'post-7', 'Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores. At solmen va esser necessi far uniform grammatica, pronunciation e plu sommun paroles. Ma quande lingues coalesce, li grammatica del resultant lingue es plu simplic e regulari quam ti del coalescent lingues. Li nov lingua franca va esser plu simplic e regulari quam li existent Europan lingues. It va esser tam simplic quam Occidental in fact, it va esser Occidental. A un Angleso it va semblar un simplificat Angles, quam un skeptic Cambridge amico dit me que Occidental es.Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores. At solmen va esser necessi far uniform grammatica, pronunciation e plu sommun paroles.', 1, '2014-08-18 18:24:00', 3, 1),
 (8, 'Post 8', 'post-8', 'The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in their grammar, their pronunciation and their most common words. Everyone realizes why a new common language would be desirable: one could refuse to pay expensive translators. To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words. If several languages coalesce, the grammar of the resulting language is more simple and regular than that of the individual languages. The new common language will be more simple and regular than the existing European languages. It will be as simple as Occidental; in fact, it will be Occidental. To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is.The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in their grammar, their pronunciation and their most common words. Everyone realizes why a new common language would be desirable: one could refuse to pay expensive translators. To', 1, '2014-08-18 18:24:11', 4, 1),
 (9, 'Post 9', 'post-9', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 1, '2014-08-18 18:24:18', 3, 1),
-(10, 'Post 10', 'post-10', 'hello world', 1, '2014-08-19 18:38:18', 3, 1);
+(10, 'Post 10', 'post-10', 'hello world', 1, '2014-08-19 18:38:18', 3, 1),
+(11, 'Om Hendro', 'om-hendro', 'ini deskripsi', 1, '2014-08-19 18:38:18', 3, 2),
+(12, 'Om Wawan', 'om-wawan', 'ini deskripsi', 1, '2014-08-19 18:38:18', 3, 2),
+(13, 'Agan Eko', 'agan-eko', 'ini deskripsi', 1, '2014-08-19 18:38:18', 3, 2),
+(14, 'Agan Aldo', 'agan-aldo', 'ini deskripsi', 1, '2014-08-19 18:38:18', 3, 2),
+(15, 'Neng Icha', 'neng-icha', 'ini deskripsi', 1, '2014-08-19 18:38:18', 3, 2),
+(16, 'Agan Ferdy', 'agan-ferdy', 'ini deskripsi', 1, '2014-08-19 18:38:18', 3, 2),
+(17, 'Om Setyo', 'om-setyo', 'ini deskripsi', 1, '2014-08-19 18:38:18', 3, 2),
+(18, 'Neng Mariska', 'neng-mariska', 'ini deskripsi', 1, '2014-08-19 18:38:18', 3, 2),
+(19, 'Neng Silvi', 'neng-silvi', 'ini deskripsi', 1, '2014-08-19 18:38:18', 3, 2),
+(20, 'Neng Riska', 'neng-riska', 'ini deskripsi', 1, '2014-08-19 18:38:18', 3, 2);
 
 -- --------------------------------------------------------
 
@@ -122,7 +132,19 @@ INSERT INTO `post_images` (`image_id`, `post_id`, `image_key`, `image_value`, `d
 (5, 5, 'thumnail', 'tour-5.jpg', ''),
 (6, 6, 'thumnail', 'tour-6.jpg', ''),
 (7, 7, 'thumnail', 'tour-7.jpg', ''),
-(8, 8, 'thumnail', 'tour-8.jpg', '');
+(8, 8, 'thumnail', 'tour-8.jpg', ''),
+(9, 9, 'thumnail', 'tour-9.jpg', ''),
+(10, 10, 'thumnail', 'tour-10.jpg', ''),
+(11, 11, 'thumnail', 'om-hendro.jpg', ''),
+(12, 12, 'thumnail', 'om-wawan.jpg', ''),
+(13, 13, 'thumnail', 'agan-eko.jpg', ''),
+(14, 14, 'thumnail', 'agan-aldo.jpg', ''),
+(15, 15, 'thumnail', 'neng-icha.jpg', ''),
+(16, 16, 'thumnail', 'agan-ferdy.jpg', ''),
+(17, 17, 'thumnail', 'om-setyo.jpg', ''),
+(18, 18, 'thumnail', 'neng-mariska.jpg', ''),
+(19, 19, 'thumnail', 'neng-silvi.jpg', ''),
+(20, 20, 'thumnail', 'neng-riska.jpg', '');
 
 -- --------------------------------------------------------
 
@@ -180,7 +202,14 @@ INSERT INTO `sessions` (`id`, `ip_address`, `timestamp`, `data`) VALUES
 ('l2av2el08jae02jrs6ev4i438mf0ijqh', '127.0.0.1', 1482488906, 0x5f5f63695f6c6173745f726567656e65726174657c693a313438323438383632393b),
 ('1ner519253a8bg95i2grdbm4vvrdbbtf', '127.0.0.1', 1482489194, 0x5f5f63695f6c6173745f726567656e65726174657c693a313438323438383934353b),
 ('ssppgbq8uaakebot6v8dkbt206vfb3uf', '127.0.0.1', 1482490692, 0x5f5f63695f6c6173745f726567656e65726174657c693a313438323439303339323b),
-('gnffp79gp3bapcmishvm5j3nvgte7c04', '127.0.0.1', 1482490994, 0x5f5f63695f6c6173745f726567656e65726174657c693a313438323439303733353b);
+('gnffp79gp3bapcmishvm5j3nvgte7c04', '127.0.0.1', 1482490994, 0x5f5f63695f6c6173745f726567656e65726174657c693a313438323439303733353b),
+('r1850eh4ro8529s9r1d229jgm54c8g5v', '127.0.0.1', 1482571401, 0x5f5f63695f6c6173745f726567656e65726174657c693a313438323537313132303b),
+('jo7pi55mcbm9c3g621re6jvlb4plbqer', '127.0.0.1', 1482571783, 0x5f5f63695f6c6173745f726567656e65726174657c693a313438323537313533363b),
+('fb5ufd4u9nd06k30c61lh5n11lms6ncg', '127.0.0.1', 1482572946, 0x5f5f63695f6c6173745f726567656e65726174657c693a313438323537323933343b),
+('0p5t0bgqksfrl5p48qmpalck22rctqtu', '127.0.0.1', 1482573540, 0x5f5f63695f6c6173745f726567656e65726174657c693a313438323537333236393b),
+('53f8eqdbfo1idtkk61jfmlh0elhbnabm', '127.0.0.1', 1482573857, 0x5f5f63695f6c6173745f726567656e65726174657c693a313438323537333632303b),
+('pnh0q04gce31s8k0d7seao4crlr9vjhj', '127.0.0.1', 1482574062, 0x5f5f63695f6c6173745f726567656e65726174657c693a313438323537333939393b),
+('qnsf99tmqi8b9l13khqi8vh1t7nt5aaa', '127.0.0.1', 1482574793, 0x5f5f63695f6c6173745f726567656e65726174657c693a313438323537343733363b);
 
 -- --------------------------------------------------------
 
@@ -260,7 +289,7 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `post_categories`
 --
@@ -270,7 +299,7 @@ ALTER TABLE `post_categories`
 -- AUTO_INCREMENT for table `post_images`
 --
 ALTER TABLE `post_images`
-  MODIFY `image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `users`
 --

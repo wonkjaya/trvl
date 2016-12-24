@@ -67,4 +67,17 @@ class Moffers extends CI_Model
         }
         return null;
     }
+
+    function get_tour_guides($start, $limit){
+        $this->db->limit(abs($limit), abs($start));
+        $this->db->where(['cat.category_slug'=>'tour-guide']);
+        $this->db->select(['posts.post_id as id','posts.post_title as title','img.image_value as thumbnail']);
+        $this->db->join('post_categories cat','cat.category_id = posts.category_id','left');
+        $this->db->join('post_images img','img.image_id = posts.post_id','left');
+        $query = $this->db->get('posts');
+        if($query->num_rows() > 0 ){
+            return $query->result();
+        }
+        return null;
+    }
 }

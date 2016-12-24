@@ -12,6 +12,7 @@ class Home extends MainController {
     function index(){
         $this->load->model('moffers', 'offers');
         $data['tour_destinations'] = $this->offers->get_tour_destinations(0,8); /*start, limit*/
+        $data['tour_guides'] = $this->offers->get_tour_guides(0,8); /*start, limit*/
         $this->loadView('home', $data);
     }
 
