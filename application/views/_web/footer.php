@@ -2,7 +2,7 @@
 	 <div class="container">
 		 <div class="fotter-grids">
 			 <div class="col-md-4 fotter-left">
-			 <img lsrc="assets/images/_web/fotter-logo.png" alt="">
+			 <img lsrc="<?=base_url('assets/images/_web/fotter-logo.png')?>" alt="">
 			 <p>Voluptatem quia voluptas sit aspernatur aut odit aut fugit, 
 				sed quia consequuntur magni dolores eos qui ratione.</p>
 			 </div>

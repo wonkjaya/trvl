@@ -61,9 +61,9 @@ class Moffers extends CI_Model
 
         $this->db->limit(abs($limit), abs($start));
         $this->db->where(['cat.category_slug'=>'tour-destination']);
-        $this->db->select(['posts.post_id as id','posts.post_title as title','img.image_value as thumbnail']);
+        $this->db->select(['posts.post_id as id','posts.post_title as title','posts.post_slug as slug','img.image_value as thumbnail']);
         $this->db->join('post_categories cat','cat.category_id = posts.category_id','left');
-        $this->db->join('post_images img','img.image_id = posts.post_id','left');
+        $this->db->join('post_images img','img.post_id = posts.post_id','left');
         $query = $this->db->get('posts');
         if($query->num_rows() > 0 ){
             $data['tour_destinations'] = $query->result();
@@ -79,9 +79,9 @@ class Moffers extends CI_Model
 
         $this->db->limit(abs($limit), abs($start));
         $this->db->where(['cat.category_slug'=>'tour-guide']);
-        $this->db->select(['posts.post_id as id','posts.post_title as title','img.image_value as thumbnail']);
+        $this->db->select(['posts.post_id as id','posts.post_title as title','posts.post_slug as slug','img.image_value as thumbnail']);
         $this->db->join('post_categories cat','cat.category_id = posts.category_id','left');
-        $this->db->join('post_images img','img.image_id = posts.post_id','left');
+        $this->db->join('post_images img','img.post_id = posts.post_id','left');
         $query = $this->db->get('posts');
         if($query->num_rows() > 0 ){
             $data['tour_guide'] = $query->result();
@@ -104,6 +104,24 @@ class Moffers extends CI_Model
         return null;
     }
 
+    function get_car_rent($start, $limit){
+        $data = [];
+        $data['cat'] = $this->get_category('car-rental');
+
+        $this->db->limit(abs($limit), abs($start));
+        $this->db->where(['cat.category_slug'=>'car-rental']);
+        $this->db->select(['posts.post_id as id','posts.post_title as title','posts.post_slug as slug','img.image_value as thumbnail']);
+        $this->db->join('post_categories cat','cat.category_id = posts.category_id','left');
+        $this->db->join('post_images img','img.post_id = posts.post_id','left');
+        $query = $this->db->get('posts');
+        if($query->num_rows() > 0 ){
+            $data['car_rental'] = $query->result();
+        }else{
+            $data['car_rental'] = null;
+        }
+        return $data;
+    }
+
     function get_category($slug){
         $this->db->limit(1);
         $this->db->where(['cat.category_slug'=>$slug]);
@@ -112,5 +130,29 @@ class Moffers extends CI_Model
             return $query->result();
         }
         return null;
+    }
+
+    function get_tour_destination($slug){
+        $data = [];
+
+        $this->db->limit(1);
+        $this->db->where(['posts.post_slug' => $slug]);
+        $this->db->select([
+            'posts.post_id as id',
+            'posts.post_title as title',
+            'posts.post_slug as slug',
+            'posts.post as content',
+            'posts.date_added as created',
+            'users.username as author',
+            ]);
+        $this->db->join('post_categories cat','cat.category_id = posts.category_id','left');
+        $this->db->join('users','users.user_id = posts.user_id','left');
+        $query = $this->db->get('posts');
+        if($query->num_rows() > 0 ){
+            $data['tour_destination'] = $query->row();
+        }else{
+            $data['tour_destination'] = null;
+        }
+        return $data;
     }
 }

@@ -115,7 +115,7 @@ div#portfoliolist{padding:0;margin:1% 0 0 0;}
 .tour-caption{display:none;top:0;width:100%;position:absolute;background:rgba(101, 178, 229, 0.93);height:100%;text-align:center;}
 .tour-caption span{background:url(../images/_web/plus.png) no-repeat;width:38px;height:38px;display:block;text-align:center;position:absolute;top:38%;right:45%;background-size:100%;}
 .portfolio-wrapper:hover div.tour-caption{display:block;transition:all 0.3s ease;-webkit-transition:all 0.3s ease;-moz-transition:all 0.3s ease;-o-transition:all 0.3s ease;}
-.tour-caption p{color:#fff;font-size:1.5em;margin-top:39%;}
+.tour-caption p{color:#fff;font-size:1.5em;margin-top:43%;}
 h6.b-animate.b-from-left.b-delay03{font-family:'Open Sans', sans-serif;font-weight:400;font-size:14px;color:#CCCCCC;margin:0;text-align:center;width:100%;}
 .guide-caption{display:none;top:0;width:95.3%;position:absolute;background:rgba(101, 178, 229, 0.93);height:86%;text-align:center;}
 .guide-caption span{background:url('../images/_web/guide-icons2.png') no-repeat 0px 0px;display:inline-block;margin:0 0.5em;width:57%;height:52px;display:block;text-align:center;position:absolute;top:42%;right:18%;background-size:100%;}

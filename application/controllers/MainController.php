@@ -16,7 +16,7 @@ class MainController extends CI_Controller {
 		}
 	}
 
-	public function loadView($view, $data){
+	public function loadView($view, $data=[]){
 		$group = $this->checkagent();
 		$this->load->view($group.'/'.$view, $data);
 	}

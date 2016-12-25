@@ -90,7 +90,7 @@
 	<!--About-->
 	     <div class="about section" id="section-2">
 			  <div class="about-head text-center">
-				  <h3>ABOUT US</h3>
+				  <h3>TENTANG KAMI</h3>
 				  <span></span><img lsrc="assets/images/_web/about-img.png" alt=""><span></span>
 			  </div>
 			   <div class="container">		  
@@ -116,7 +116,7 @@
 		<div  class="section" id="section-3">
 			<div id="portfolio" class="portfolio">
 				<div class="top-tours-head text-center">
-				  <h3>TOP TOURS</h3>
+				  <h3>TUJUAN WISATA</h3>
 				  <span></span><img lsrc="assets/images/_web/star.png" alt=""><span></span>
 				  <div class="container">
 						<p>
@@ -137,35 +137,106 @@
 					<li><span class="filter" data-filter="fun">Long Date Tour</span></li>
 			    </ul>
 			    <div id="portfoliolist">
+			    <style>
+			    	.custom-portofolio{
+			    		display: inline-block; opacity: 1;
+			    	}
+			    </style>
 						<?php
-					$i = 0;
 					if($tour_destinations['tour_destinations']):
 					foreach ($tour_destinations['tour_destinations'] as $r) { 
 						?>
-					<div class="portfolio card mix_all" data-cat="card" style="display: inline-block; opacity: 1;">
+					<div class="portfolio card mix_all custom-portofolio" data-cat="card">
 						<div class="portfolio-wrapper wow bounceIn" data-wow-delay="0.4s">		
-							<a href="#" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
-						     <img lsrc="assets/images/uploads/post_thumb/<?=$r->thumbnail?>" class="img-responsive" alt=""/></a>
-							<div class="tour-caption" style="text-align:center">
-							<span>.</span>
-							<p><?=$r->title?></p>
-							</div>
-
+							<a href="tour_destination/<?=$r->slug?>" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
+						     	<img lsrc="assets/images/uploads/post_thumb/<?=$r->thumbnail?>" class="img-responsive" alt=""/>
+								<div class="tour-caption" style="text-align:center">
+									<span></span>
+									<p><?=$r->title?></p>
+								</div>
+							</a>
 						</div>
 					</div>
 						<?php
 					}
 					endif;
 						?>
+						<div class="portfolio card mix_all custom-portofolio" data-cat="card">
+						<div class="portfolio-wrapper wow bounceIn" data-wow-delay="0.4s">		
+							<a href="tour_destinations" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
+							    <img lsrc="assets/images/uploads/post_thumb/loadmore.jpg" class="img-responsive" alt=""/>
+								<div class="tour-caption" style="text-align:center">
+									<span></span>
+									<p>Lihat Lainnya</p>
+								</div>
+						    </a>
+
+						</div>
+					</div>
 				   <div class="clearfix"></div>	
 				</div>
 			</div>
 		</div>  
 	
 	<!--/top-tours-->
+	<!--car rent-->	
+		<div  class="section" id="section-3">
+			<div id="portfolio" class="portfolio">
+				<div class="top-tours-head text-center">
+				  <h3>RENTAL MOBIL</h3>
+				  <span></span><img lsrc="assets/images/_web/star.png" alt=""><span></span>
+				  <div class="container">
+						<p>
+						<?php
+							if($car_rental['cat']){
+								echo $car_rental['cat'][0]->category_description;
+							}
+						?>
+								
+						</p>
+				  </div>
+				</div>
+			    <div id="portfoliolist">
+						<?php
+					if($car_rental['car_rental']):
+					foreach ($car_rental['car_rental'] as $r) { 
+						?>
+					<div class="portfolio card mix_all custom-portofolio" data-cat="card">
+						<div class="portfolio-wrapper wow bounceIn" data-wow-delay="0.4s">		
+							<a href="car_rent/<?=$r->slug?>" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
+						     	<img lsrc="assets/images/uploads/post_thumb/<?=$r->thumbnail?>" class="img-responsive" alt=""/>
+								<div class="tour-caption" style="text-align:center">
+									<span></span>
+									<p><?=$r->title?></p>
+								</div>
+							</a>
+						</div>
+					</div>
+						<?php
+					}
+					endif;
+						?>
+						<div class="portfolio card mix_all custom-portofolio" data-cat="card">
+						<div class="portfolio-wrapper wow bounceIn" data-wow-delay="0.4s">		
+							<a href="car_rent" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
+							    <img lsrc="assets/images/uploads/post_thumb/loadmore.jpg" class="img-responsive" alt=""/>
+								<div class="tour-caption" style="text-align:center">
+									<span></span>
+									<p>Lihat Lainnya</p>
+								</div>
+						    </a>
+
+						</div>
+					</div>
+				   <div class="clearfix"></div>	
+				</div>
+			</div>
+		</div>  
+	
+	<!--/car rent-->
 		<div class="tour-guides section" id="section-4" >
 			  <div class="tour-guides-head text-center">
-				  <h3>TOUR GUIDES</h3>
+				  <h3>PEMANDU WISATA</h3>
 				  <span></span><img lsrc="assets/images/_web/guide.png" alt=""><span></span>
 				  <div class="container">
 						<p>
@@ -211,7 +282,7 @@
 							<a href="#"><span class="fb"> </span></a>
 							<a href="#"><span class="gplus"> </span></a>
 						</div>
-						<p><a href="<?=site_url('home/tour_guides/'.$tg->id)?>"><?=$tg->title?></a></p>
+						<p><a href="<?=site_url('home/tour_guides/'.$tg->slug)?>"><?=$tg->title?></a></p>
 					</div>
 				  <?php
 				  	if(count($tour_guides['tour_guide']) == $tg_index){
@@ -230,7 +301,7 @@
 		<div class="client-say">
 			 <div class="client-say-layer">
 			     <div class="client-say-head text-center">
-					  <h3>CLIENT SAY</h3>
+					  <h3>APA KATA MEREKA?</h3>
 					  <span></span><img lsrc="assets/images/_web/face.png" alt=""><span></span>
 					  <!-- requried-jsfiles-for owl -->
 						<link href="assets/css/owl.carousel.css" rel="stylesheet">
@@ -260,7 +331,7 @@
 	<!--/client-say-->
 		<div id="section-5" class="contact section">
 			  <div class="contact-head text-center">
-				  <h3>CONTACT US</h3>
+				  <h3>HUBUNGI KAMI</h3>
 				  <span></span><img lsrc="assets/images/_web/mail.png" alt=""><span></span>
 				  <div class="contact-grids">
 					  <div class="container">
@@ -296,7 +367,7 @@
 		<!--js--> 
 		<script src="assets/js/jquery.min.js?v12"></script>
 		<!--/js-->
-		<script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
+		<script src='assets/js/jquery-ui.min.js?v12'></script>
 		<script src="assets/js/wow.min.js?v12"></script>
 		<script>
 		 new WOW().init();

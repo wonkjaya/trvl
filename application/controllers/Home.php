@@ -11,8 +11,9 @@ class Home extends MainController {
 
     function index(){
         $this->load->model('moffers', 'offers');
-        $data['tour_destinations'] = $this->offers->get_tour_destinations(0,8); /*start, limit*/
+        $data['tour_destinations'] = $this->offers->get_tour_destinations(0,7); /*start, limit*/
         $data['tour_guides'] = $this->offers->get_tour_guides(0,8); /*start, limit*/
+        $data['car_rental'] = $this->offers->get_car_rent(0,3); /*start, limit*/
         $data['testimonies'] = $this->offers->get_testimonies(0,4); /*start, limit*/
         $this->loadView('home', $data);
     }
@@ -72,5 +73,21 @@ class Home extends MainController {
         );
         $this->m_comment->add_comment($data);
         redirect(base_url().'index.php/blog/post/'.$postID);
+    }
+
+    function tour_destinations($pos=0){
+        $this->load->model('moffers', 'offers');
+        $data['tour_destinations'] = $this->offers->get_tour_destinations($pos,11); /*start, limit*/
+        $this->loadView('tour-destinations',$data);
+    }
+
+    function tour_destination($slug=''){
+        if(empty($slug)){
+            $this->tour_destinations();
+            return;
+        }
+        $this->load->model('moffers', 'offers');
+        $data['tour_destination'] = $this->offers->get_tour_destination($slug); /*start, limit*/
+        $this->loadView('single-post',$data);
     }
 }

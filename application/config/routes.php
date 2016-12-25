@@ -52,6 +52,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'home';
 $route['admin'] = 'admin';
 $route['offers'] = 'main/offers';
+// tour destination
+$route['tour_destinations'] = 'home/tour_destinations';
+$route['tour_destination'] = 'home/tour_destinations'; // untuk kemungkinan mis Type
+// end tour destination
+$route['tour_destination/(:any)'] = 'home/tour_destination/$1';
 $route['admin/blog'] = 'blog';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
