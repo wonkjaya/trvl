@@ -119,8 +119,14 @@
 				  <h3>TOP TOURS</h3>
 				  <span></span><img lsrc="assets/images/_web/star.png" alt=""><span></span>
 				  <div class="container">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-						   Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<p>
+						<?php
+							if($tour_destinations['cat']){
+								echo $tour_destinations['cat'][0]->category_description;
+							}
+						?>
+								
+						</p>
 				  </div>
 				</div>
 			    <ul id="filters" class="clearfix wow bounceIn" data-wow-delay="0.4s">
@@ -131,12 +137,11 @@
 					<li><span class="filter" data-filter="fun">Long Date Tour</span></li>
 			    </ul>
 			    <div id="portfoliolist">
-					<?php
+						<?php
 					$i = 0;
-					foreach ($tour_destinations as $r) { 
-						# code...
-					
-					?>
+					if($tour_destinations['tour_destinations']):
+					foreach ($tour_destinations['tour_destinations'] as $r) { 
+						?>
 					<div class="portfolio card mix_all" data-cat="card" style="display: inline-block; opacity: 1;">
 						<div class="portfolio-wrapper wow bounceIn" data-wow-delay="0.4s">		
 							<a href="#" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
@@ -148,9 +153,10 @@
 
 						</div>
 					</div>
-					<?php
+						<?php
 					}
-					?>
+					endif;
+						?>
 				   <div class="clearfix"></div>	
 				</div>
 			</div>
@@ -162,8 +168,13 @@
 				  <h3>TOUR GUIDES</h3>
 				  <span></span><img lsrc="assets/images/_web/guide.png" alt=""><span></span>
 				  <div class="container">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-						   Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<p>
+							<?php
+							if($tour_guides['cat']){
+								echo $tour_guides['cat'][0]->category_description;
+							}
+							?>
+						</p>
 				  </div>
 			  </div>
 			  <div class="container">
@@ -174,7 +185,8 @@
 				  <?php
 				  $tg_index = 1;
 				  	// echo count($tour_guides);
-				  foreach ($tour_guides as $tg) {
+				  if($tour_guides['tour_guide']):
+				  foreach ($tour_guides['tour_guide'] as $tg) {
 				  	if($tg_index == 1) {
 				  		?>
 							<div class="item text-center guide-sliders">
@@ -202,13 +214,14 @@
 						<p><a href="<?=site_url('home/tour_guides/'.$tg->id)?>"><?=$tg->title?></a></p>
 					</div>
 				  <?php
-				  	if(count($tour_guides) == $tg_index){
+				  	if(count($tour_guides['tour_guide']) == $tg_index){
 				  		?>
 							</div> <!-- guide-sliders -->
 				  		<?php
 				  	}
 				  	$tg_index++;
 				  }
+				  endif;
 				  ?>
 				</div> <!-- owl-demo -->
 			  </div>
@@ -223,47 +236,24 @@
 						<link href="assets/css/owl.carousel.css" rel="stylesheet">
 					 <!-- //requried-jsfiles-for owl -->
 				     <div id="owl-demo1" class="owl-carousel">
-						  <div class="item">
-							  <div class="client-say-info">
-									<p><img lsrc="assets/images/_web/dots1.png" alt="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-									Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.<img lsrc="assets/images/_web/dots2.png" alt="#"></p>
-									<h4>Anna Smith</h4>
-								    <h6><span></span></h6>
-							  </div> 
-						  </div>
-						   <div class="item">
-							  <div class="client-say-info">
-									<p><img lsrc="assets/images/_web/dots1.png" alt="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-									Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.<img lsrc="assets/images/_web/dots2.png" alt="#"></p>
-									<h4>Anna Smith</h4>
-								    <h6><span></span></h6>
-							  </div> 
-						  </div>
-						   <div class="item">
-							   <div class="client-say-info">
-									<p><img lsrc="assets/images/_web/dots1.png" alt="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-									Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.<img lsrc="assets/images/_web/dots2.png" alt="#"></p>
-									<h4>Smith</h4>
-								    <h6><span></span></h6>
-							   </div> 
-						  </div>
-						  <div class="item">
-							  <div class="client-say-info">
-									<p><img lsrc="assets/images/_web/dots1.png" alt="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-									Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.<img lsrc="assets/images/_web/dots2.png" alt="#"></p>
-								    <h4>Amith</h4>
-								    <h6><span></span></h6>
-							  </div> 
-						  </div>
-						  <div class="item">
-							   <div class="client-say-info">
-									<p><img lsrc="assets/images/_web/dots1.png" alt="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-									Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.<img lsrc="assets/images/_web/dots2.png" alt="#"></p>
-									<h4>John Smith</h4>
-								    <h6><span></span></h6>
-							  </div> 
-						  </div>
-					  </div>
+						    <?php
+						    foreach($testimonies as $tm){
+						    ?>
+							  <div class="item">
+								  <div class="client-say-info">
+										<p>
+											<img lsrc="assets/images/_web/dots1.png" alt="#">
+											<?=$tm->content?>
+											<img lsrc="assets/images/_web/dots2.png" alt="#">
+										</p>
+										<h4><?=$tm->title?></h4>
+									    <h6><span></span></h6>
+								  </div> 
+							  </div>
+						   <?php
+							}
+						   ?>
+					 </div>
 		          </div>
 		      </div>
 		</div>

@@ -56,6 +56,9 @@ class Moffers extends CI_Model
     }
 
     function get_tour_destinations($start, $limit){
+        $data = [];
+        $data['cat'] = $this->get_category('tour-destination');
+
         $this->db->limit(abs($limit), abs($start));
         $this->db->where(['cat.category_slug'=>'tour-destination']);
         $this->db->select(['posts.post_id as id','posts.post_title as title','img.image_value as thumbnail']);
@@ -63,18 +66,48 @@ class Moffers extends CI_Model
         $this->db->join('post_images img','img.image_id = posts.post_id','left');
         $query = $this->db->get('posts');
         if($query->num_rows() > 0 ){
-            return $query->result();
+            $data['tour_destinations'] = $query->result();
+        }else{
+            $data['tour_destinations'] = null;
         }
-        return null;
+        return $data;
     }
 
     function get_tour_guides($start, $limit){
+        $data = [];
+        $data['cat'] = $this->get_category('tour-guide');
+
         $this->db->limit(abs($limit), abs($start));
         $this->db->where(['cat.category_slug'=>'tour-guide']);
         $this->db->select(['posts.post_id as id','posts.post_title as title','img.image_value as thumbnail']);
         $this->db->join('post_categories cat','cat.category_id = posts.category_id','left');
         $this->db->join('post_images img','img.image_id = posts.post_id','left');
         $query = $this->db->get('posts');
+        if($query->num_rows() > 0 ){
+            $data['tour_guide'] = $query->result();
+        }else{
+            $data['tour_guide'] = null;
+        }
+        return $data;
+    }
+
+    function get_testimonies($start, $limit){
+        $this->db->limit(abs($limit), abs($start));
+        $this->db->where(['cat.category_slug'=>'testimony']);
+        $this->db->select(['posts.post_id as id','posts.post_title as title', 'posts.post as content'/*,'img.image_value as thumbnail'*/]);
+        $this->db->join('post_categories cat','cat.category_id = posts.category_id','left');
+        // $this->db->join('post_images img','img.image_id = posts.post_id','left');
+        $query = $this->db->get('posts');
+        if($query->num_rows() > 0 ){
+            return $query->result();
+        }
+        return null;
+    }
+
+    function get_category($slug){
+        $this->db->limit(1);
+        $this->db->where(['cat.category_slug'=>$slug]);
+        $query = $this->db->get('post_categories cat');
         if($query->num_rows() > 0 ){
             return $query->result();
         }
