@@ -29,6 +29,7 @@ $folder = str_replace('index.php','',$_SERVER['SCRIPT_NAME']);
 $base = $protocol.$host.$folder;
 if(isset($_GET['dev'])){
 	echo $base;
+	print_r($_SERVER);
 }
 $config['base_url'] = $base;
 
