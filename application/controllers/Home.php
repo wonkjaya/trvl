@@ -6,6 +6,7 @@ class Home extends MainController {
 
 	function __construct(){
         parent::__construct();
+        $this->output->set_header('Access-Control-Allow-Origin: *');
         $this->load->helper(['url']);
     }
 
