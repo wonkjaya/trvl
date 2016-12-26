@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
+// print_r($_SERVER);
 /*
 |--------------------------------------------------------------------------
 | Base Site URL
@@ -23,7 +23,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = '';
+$protocol = $_SERVER['REQUEST_SCHEME'].'://';
+$host = $_SERVER['HTTP_HOST'];
+$folder = str_replace('index.php','',$_SERVER['SCRIPT_NAME']);
+$base = $protocol.$host.$folder;
+$config['base_url'] = $base;
 
 /*
 |--------------------------------------------------------------------------
