@@ -23,7 +23,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$protocol = $_SERVER['REQUEST_SCHEME'].'://';
+if(isset($_SERVER['HTTP_X_FORWARDED_PROTO'])){
+	$protocol = 'https://';
+}else{
+	$protocol = 'http://';
+}
 $host = $_SERVER['HTTP_HOST'];
 $folder = str_replace('index.php','',$_SERVER['SCRIPT_NAME']);
 $base = $protocol.$host.$folder;
