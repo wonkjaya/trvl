@@ -40,9 +40,9 @@
 	     <div class="about section" id="section-2">
 			  <div class="container">
 			  	<div class="row">
-				  	<div class="col-md-9">
+				  	<div class="col-md-8">
 						<div class="about-head">
-						  <h3>
+						  <h3 id="title" slug="<?=$tour_destination['tour_destination']->slug?>">
 						  	<?=($tour_destination['tour_destination'])
 						  	?$tour_destination['tour_destination']->title:'No title'?>
 						  </h3>
@@ -55,15 +55,80 @@
 				  			?$tour_destination['tour_destination']->content
 				  			:'No Content';
 				  		?>
+				  		<div class="row" style="margin-top:50px">
+				  			<div class="col-md-12">
+						  		<div class="about-head text-center">
+								  <h4>
+								  	Anda Ingin Berwisata Ke "<?=$tour_destination['tour_destination']->title?>" ? Hubungi Kami Disini.
+								  </h4>
+								  <span style="width: 45%"></span>
+								  <img lsrc="<?=base_url('assets/images/_web/about-img.png')?>" alt="">
+								  <span style="width: 45%"></span>
+								</div>
+								<style>
+									.input-group-lg .input,.input-group-xs .input{
+										border-radius: 0px;
+									}
+								</style>
+								<div class="col-md-12" id="related_content" style="padding-top:20px">
+									<form method="POST">
+									  <div class="form-group col-md-6 input-group-lg">
+									    <!-- <label for="email">Email</label> -->
+									    <input name="email" type="email" class="form-control input" placeholder="Email">
+									  </div>
+									  <div class="form-group col-md-6 input-group-lg">
+									    <!-- <label for="notelp">No Telp</label> -->
+									    <input name="telp" type="text" class="form-control input" placeholder="No Telp">
+									  </div>
+									  <div class="form-group col-md-6 input-group-lg">
+									    <!-- <label for="nama">Nama</label> -->
+									    <input name="name" type="text" class="form-control input" placeholder="Nama Anda">
+									  </div>
+									  <div class="form-group col-md-6 input-group-lg">
+									    <label for="waktu" style="width:25%;float:left;margin-top:10px">Waktu</label>
+									    <select name="time" class="form-control input" style="width:74%;float:left">
+									    	<option value="1"> 1 Hari</option>
+									    	<option value="2"> 2 Hari</option>
+									    	<option value="3"> 3 Hari</option>
+									    	<option value="4"> 4 Hari</option>
+									    	<option value="5"> 5 Hari</option>
+									    	<option value="6"> 6 Hari</option>
+									    	<option value="7"> 7 Hari</option>
+									    	<option value="8"> 8 Hari</option>
+									    	<option value="9"> 9 Hari</option>
+									    	<option value="10"> Lebih Dari 10 Hari</option>
+									    </select>
+									  </div>
+									  <div class="form-group col-md-12 input-group-lg">
+									    <!-- <label for="nama">Nama</label> -->
+									    <input name="location" type="text" class="form-control input" placeholder="Berangkat Dari...">
+									  </div>
+									  <div class="form-group col-md-12 input-group-xs">
+									    <!-- <label for="nama">Nama</label> -->
+									    <textarea name="description" class="form-control input" cols="30" rows="10" placeholder="Masukkan Keinginan Anda" style="height: 200px"></textarea>
+									  </div>
+									  <div class="form-group col-md-12">
+									    <!-- <label for="nama">Nama</label> -->
+									    <button class="btn btn-primary pull-right" type="submit">Minta Penawaran</button>
+									  </div>
+									</form>
+								</div>
+						  	</div>
+				  		</div>
 				  	</div>
-				  	<div class="col-md-3">
+				  	<div class="col-md-4">
 				  		<div class="about-head text-center">
 						  <h3>
-						  	Other Posts
+						  	Tempat Lainnya
 						  </h3>
 						  <span style="width: 30%"></span>
 						  <img lsrc="<?=base_url('assets/images/_web/about-img.png')?>" alt="">
 						  <span style="width: 40%"></span>
+						</div>
+						<div class="col-md-12" id="related_content" style="padding-top:20px">
+							<ul class="media-list" id="otherPosts">
+
+							</ul>						
 						</div>
 				  	</div>
 			  	</div>
@@ -79,47 +144,63 @@
 		<!--/js-->
 		<script src="<?=base_url('assets/js/jquery-ui.min.js?v12')?>"></script>
 		<script src="<?=base_url('assets/js/wow.min.js?v12')?>"></script>
+		<script src="<?=base_url('assets/js/web_loader.js?v12')?>"></script>
 		<script>
 		 new WOW().init();
 		</script>
 
 		<script>
-			//from http://www.activewidgets.com/javascript.forum.6114.43/dynamic-load-javascript-from-javascript.html
-				function $import(src){
-				    var scriptElem = document.createElement('script');
-					scriptElem.setAttribute('src',src);
-					scriptElem.setAttribute('type','text/javascript');
-					document.getElementsByTagName('head')[0].appendChild(scriptElem);
+			$(document).ready(function(){
+				/* loader init */
+				var base_url = "<?=base_url()?>";
+				var loader_url = "'"+base_url+"'";
+				var delay = 3; // wait and then load the file
+				var delayS = 5; // wait and then load the file
+				setTimeout("loadDelayedScripts("+loader_url+")", delay * 1000);
+				setTimeout("loadScript("+loader_url+")", delayS * 1000);
+				/* end of loader sections */
+				function get_related(){
+					var except_slug = document.getElementById('title').getAttribute("slug");
+					$.ajax({
+						url : base_url + 'home/get_related_tour_destinations/' + except_slug + '/json',
+						method : 'GET',
+						success : function(r){
+							sendToPage(r); /* call function */
+						}
+					}).done(function(r){
+						console.info("done");
+					});
 				}
 
-				// import with a random query parameter to avoid caching
-				function $importWithCache(src){
-				  var ms = new Date().getHours().toString();
-				  var seed = "?" + ms;
-				  
-				  $import(src + seed);
+				function sendToPage(x){
+					var jsonData = JSON.parse(x);
+					var template= function(t, l, c, i){
+						var a = '<li class="media">\
+							    <div class="media-body" style="width:75%;float:right;">\
+							      <h4 class="media-heading">\
+							      	<a href="'+ l +'">'+ t +'</a></h4>\
+							      '+ c +'\
+							    </div>\
+							    <div class="media-left" style="width:70px">\
+							      <a href="'+ l +'">\
+							        <img class="media-object" width="50px" lsrc="' + base_url + i + '" alt="...">\
+							      </a>\
+							    </div><hr>\
+							  </li>';
+						$('#otherPosts').append(a);
+					}
+					for (var i = jsonData.length - 1; i >= 0; i--) {
+						var t = jsonData[i].title;
+						var l = jsonData[i].slug;
+						var c = jsonData[i].content + '...';
+						c = c.replace(/<\/?[^>]+(>|$)/g, "");
+						var img = 'assets/images/uploads/post_thumb/' + jsonData[i].thumbnail;
+						template(t, l, c, img);
+					}
 				}
 
-			var base_url = "<?=base_url()?>";
-			// console.log(base_url);
-
-			function loadDelayedScripts(){
-	        	$importWithCache(base_url + 'assets/js/jquery.cacheimage.js');
-	        	$importWithCache(base_url + 'assets/js/responsiveslides.min.js');
-	        	$importWithCache(base_url + 'assets/js/jquery.mixitup.min.js');
-	        	$importWithCache(base_url + 'assets/js/owl.carousel.js');
-	        	$importWithCache(base_url + 'assets/js/owl.carousel.js');
-	        	$importWithCache(base_url + 'assets/js/jquery.scrollTo.js');
-	        	$importWithCache(base_url + 'assets/js/jquery.nav.js');
-		    }
-		    function loadScript(){
-	        	$import(base_url + 'assets/js/script.js');
-		    }
-
-		    var delay = 3; // wait and then load the file
-		    var delayS = 5; // wait and then load the file
-		    setTimeout("loadDelayedScripts()", delay * 1000);
-		    setTimeout("loadScript()", delayS * 1000);
+				get_related();
+			});
 		</script>
 	</body>
 </html>

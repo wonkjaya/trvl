@@ -91,4 +91,11 @@ class Home extends MainController {
         $data['tour_destination'] = $this->offers->get_tour_destination($slug); /*start, limit*/
         $this->loadView('single-post',$data);
     }
+
+    function get_related_tour_destinations($except_slug, $type=''){
+        $this->load->model('moffers', 'offers');
+        $data = $this->offers->get_related_tour_destinations($except_slug);
+        if($type == 'json') echo json_encode($data['related_destinations']);
+        return $data;
+    }
 }
