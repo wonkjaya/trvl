@@ -55,30 +55,80 @@
 				  			?$tour_destination['tour_destination']->content
 				  			:'No Content';
 				  		?>
+				  		<div class="row" style="margin-top:50px">
+				  			<div class="col-md-12">
+						  		<div class="about-head text-center">
+								  <h4>
+								  	Anda Ingin Berwisata Ke "<?=$tour_destination['tour_destination']->title?>" ? Hubungi Kami Disini.
+								  </h4>
+								  <span style="width: 45%"></span>
+								  <img lsrc="<?=base_url('assets/images/_web/about-img.png')?>" alt="">
+								  <span style="width: 45%"></span>
+								</div>
+								<style>
+									.input-group-lg .input,.input-group-xs .input{
+										border-radius: 0px;
+									}
+								</style>
+								<div class="col-md-12" id="related_content" style="padding-top:20px">
+									<form method="POST">
+									  <div class="form-group col-md-6 input-group-lg">
+									    <!-- <label for="email">Email</label> -->
+									    <input name="email" type="email" class="form-control input" placeholder="Email">
+									  </div>
+									  <div class="form-group col-md-6 input-group-lg">
+									    <!-- <label for="notelp">No Telp</label> -->
+									    <input name="telp" type="text" class="form-control input" placeholder="No Telp">
+									  </div>
+									  <div class="form-group col-md-6 input-group-lg">
+									    <!-- <label for="nama">Nama</label> -->
+									    <input name="name" type="text" class="form-control input" placeholder="Nama Anda">
+									  </div>
+									  <div class="form-group col-md-6 input-group-lg">
+									    <label for="waktu" style="width:25%;float:left;margin-top:10px">Waktu</label>
+									    <select name="time" class="form-control input" style="width:74%;float:left">
+									    	<option value="1"> 1 Hari</option>
+									    	<option value="2"> 2 Hari</option>
+									    	<option value="3"> 3 Hari</option>
+									    	<option value="4"> 4 Hari</option>
+									    	<option value="5"> 5 Hari</option>
+									    	<option value="6"> 6 Hari</option>
+									    	<option value="7"> 7 Hari</option>
+									    	<option value="8"> 8 Hari</option>
+									    	<option value="9"> 9 Hari</option>
+									    	<option value="10"> Lebih Dari 10 Hari</option>
+									    </select>
+									  </div>
+									  <div class="form-group col-md-12 input-group-lg">
+									    <!-- <label for="nama">Nama</label> -->
+									    <input name="location" type="text" class="form-control input" placeholder="Berangkat Dari...">
+									  </div>
+									  <div class="form-group col-md-12 input-group-xs">
+									    <!-- <label for="nama">Nama</label> -->
+									    <textarea name="description" class="form-control input" cols="30" rows="10" placeholder="Masukkan Keinginan Anda" style="height: 200px"></textarea>
+									  </div>
+									  <div class="form-group col-md-12">
+									    <!-- <label for="nama">Nama</label> -->
+									    <button class="btn btn-primary pull-right" type="submit">Minta Penawaran</button>
+									  </div>
+									</form>
+								</div>
+						  	</div>
+				  		</div>
 				  	</div>
 				  	<div class="col-md-4">
 				  		<div class="about-head text-center">
 						  <h3>
-						  	Other Posts
+						  	Tempat Lainnya
 						  </h3>
 						  <span style="width: 30%"></span>
 						  <img lsrc="<?=base_url('assets/images/_web/about-img.png')?>" alt="">
 						  <span style="width: 40%"></span>
 						</div>
-						<div class="col-md-12" id="related_content">
-<ul class="media-list">
-  <li class="media">
-    <div class="media-left">
-      <a href="#">
-        <img class="media-object" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNTkzYWJjZjZlMSB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1OTNhYmNmNmUxIj48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMi41NDY4NzUiIHk9IjM2LjUiPjY0eDY0PC90ZXh0PjwvZz48L2c+PC9zdmc+" alt="...">
-      </a>
-    </div>
-    <div class="media-body">
-      <h4 class="media-heading">Media heading</h4>
-      ...
-    </div>
-  </li>
-</ul>						
+						<div class="col-md-12" id="related_content" style="padding-top:20px">
+							<ul class="media-list" id="otherPosts">
+
+							</ul>						
 						</div>
 				  	</div>
 			  	</div>
@@ -124,8 +174,28 @@
 
 				function sendToPage(x){
 					var jsonData = JSON.parse(x);
+					var template= function(t, l, c, i){
+						var a = '<li class="media">\
+							    <div class="media-body" style="width:75%;float:right;">\
+							      <h4 class="media-heading">\
+							      	<a href="'+ l +'">'+ t +'</a></h4>\
+							      '+ c +'\
+							    </div>\
+							    <div class="media-left" style="width:70px">\
+							      <a href="'+ l +'">\
+							        <img class="media-object" width="50px" lsrc="' + base_url + i + '" alt="...">\
+							      </a>\
+							    </div><hr>\
+							  </li>';
+						$('#otherPosts').append(a);
+					}
 					for (var i = jsonData.length - 1; i >= 0; i--) {
-						console.log(jsonData[i]);
+						var t = jsonData[i].title;
+						var l = jsonData[i].slug;
+						var c = jsonData[i].content + '...';
+						c = c.replace(/<\/?[^>]+(>|$)/g, "");
+						var img = 'assets/images/uploads/post_thumb/' + jsonData[i].thumbnail;
+						template(t, l, c, img);
 					}
 				}
 

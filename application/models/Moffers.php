@@ -148,6 +148,7 @@ class Moffers extends CI_Model
             'posts.post_id as id',
             'posts.post_title as title',
             'posts.post_slug as slug',
+            'SUBSTR(posts.post,1, 20) as content',
             'img.image_value as thumbnail'
             ]);
         $this->db->join('post_images img','img.post_id = posts.post_id','left');
