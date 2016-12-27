@@ -40,9 +40,9 @@
 	     <div class="about section" id="section-2">
 			  <div class="container">
 			  	<div class="row">
-				  	<div class="col-md-9">
+				  	<div class="col-md-8">
 						<div class="about-head">
-						  <h3>
+						  <h3 id="title" slug="<?=$tour_destination['tour_destination']->slug?>">
 						  	<?=($tour_destination['tour_destination'])
 						  	?$tour_destination['tour_destination']->title:'No title'?>
 						  </h3>
@@ -56,7 +56,7 @@
 				  			:'No Content';
 				  		?>
 				  	</div>
-				  	<div class="col-md-3">
+				  	<div class="col-md-4">
 				  		<div class="about-head text-center">
 						  <h3>
 						  	Other Posts
@@ -64,6 +64,21 @@
 						  <span style="width: 30%"></span>
 						  <img lsrc="<?=base_url('assets/images/_web/about-img.png')?>" alt="">
 						  <span style="width: 40%"></span>
+						</div>
+						<div class="col-md-12" id="related_content">
+<ul class="media-list">
+  <li class="media">
+    <div class="media-left">
+      <a href="#">
+        <img class="media-object" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNTkzYWJjZjZlMSB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1OTNhYmNmNmUxIj48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMi41NDY4NzUiIHk9IjM2LjUiPjY0eDY0PC90ZXh0PjwvZz48L2c+PC9zdmc+" alt="...">
+      </a>
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">Media heading</h4>
+      ...
+    </div>
+  </li>
+</ul>						
 						</div>
 				  	</div>
 			  	</div>
@@ -79,47 +94,43 @@
 		<!--/js-->
 		<script src="<?=base_url('assets/js/jquery-ui.min.js?v12')?>"></script>
 		<script src="<?=base_url('assets/js/wow.min.js?v12')?>"></script>
+		<script src="<?=base_url('assets/js/web_loader.js?v12')?>"></script>
 		<script>
 		 new WOW().init();
 		</script>
 
 		<script>
-			//from http://www.activewidgets.com/javascript.forum.6114.43/dynamic-load-javascript-from-javascript.html
-				function $import(src){
-				    var scriptElem = document.createElement('script');
-					scriptElem.setAttribute('src',src);
-					scriptElem.setAttribute('type','text/javascript');
-					document.getElementsByTagName('head')[0].appendChild(scriptElem);
+			$(document).ready(function(){
+				/* loader init */
+				var base_url = "<?=base_url()?>";
+				var loader_url = "'"+base_url+"'";
+				var delay = 3; // wait and then load the file
+				var delayS = 5; // wait and then load the file
+				setTimeout("loadDelayedScripts("+loader_url+")", delay * 1000);
+				setTimeout("loadScript("+loader_url+")", delayS * 1000);
+				/* end of loader sections */
+				function get_related(){
+					var except_slug = document.getElementById('title').getAttribute("slug");
+					$.ajax({
+						url : base_url + 'home/get_related_tour_destinations/' + except_slug + '/json',
+						method : 'GET',
+						success : function(r){
+							sendToPage(r); /* call function */
+						}
+					}).done(function(r){
+						console.info("done");
+					});
 				}
 
-				// import with a random query parameter to avoid caching
-				function $importWithCache(src){
-				  var ms = new Date().getHours().toString();
-				  var seed = "?" + ms;
-				  
-				  $import(src + seed);
+				function sendToPage(x){
+					var jsonData = JSON.parse(x);
+					for (var i = jsonData.length - 1; i >= 0; i--) {
+						console.log(jsonData[i]);
+					}
 				}
 
-			var base_url = "<?=base_url()?>";
-			// console.log(base_url);
-
-			function loadDelayedScripts(){
-	        	$importWithCache(base_url + 'assets/js/jquery.cacheimage.js');
-	        	$importWithCache(base_url + 'assets/js/responsiveslides.min.js');
-	        	$importWithCache(base_url + 'assets/js/jquery.mixitup.min.js');
-	        	$importWithCache(base_url + 'assets/js/owl.carousel.js');
-	        	$importWithCache(base_url + 'assets/js/owl.carousel.js');
-	        	$importWithCache(base_url + 'assets/js/jquery.scrollTo.js');
-	        	$importWithCache(base_url + 'assets/js/jquery.nav.js');
-		    }
-		    function loadScript(){
-	        	$import(base_url + 'assets/js/script.js');
-		    }
-
-		    var delay = 3; // wait and then load the file
-		    var delayS = 5; // wait and then load the file
-		    setTimeout("loadDelayedScripts()", delay * 1000);
-		    setTimeout("loadScript()", delayS * 1000);
+				get_related();
+			});
 		</script>
 	</body>
 </html>
