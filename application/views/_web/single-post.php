@@ -55,7 +55,7 @@
 				  			?$tour_destination['tour_destination']->content
 				  			:'No Content';
 				  		?>
-				  		<div class="row" style="margin-top:50px">
+				  		<div class="row" style="margin-top:50px" >
 				  			<div class="col-md-12">
 						  		<div class="about-head text-center">
 								  <h4>
@@ -70,7 +70,8 @@
 										border-radius: 0px;
 									}
 								</style>
-								<div class="col-md-12" id="related_content" style="padding-top:20px">
+								<div class="col-md-12" id="form-offer" 
+									display="<?=(!isset($display_form))?false:true?>" style="padding-top:20px">
 									<form method="POST">
 									  <div class="form-group col-md-6 input-group-lg">
 									    <!-- <label for="email">Email</label> -->
@@ -86,28 +87,53 @@
 									  </div>
 									  <div class="form-group col-md-6 input-group-lg">
 									    <label for="waktu" style="width:25%;float:left;margin-top:10px">Waktu</label>
-									    <select name="time" class="form-control input" style="width:74%;float:left">
-									    	<option value="1"> 1 Hari</option>
-									    	<option value="2"> 2 Hari</option>
-									    	<option value="3"> 3 Hari</option>
-									    	<option value="4"> 4 Hari</option>
-									    	<option value="5"> 5 Hari</option>
-									    	<option value="6"> 6 Hari</option>
-									    	<option value="7"> 7 Hari</option>
-									    	<option value="8"> 8 Hari</option>
-									    	<option value="9"> 9 Hari</option>
-									    	<option value="10"> Lebih Dari 10 Hari</option>
-									    </select>
+									    <?php
+									    $dropdownData=[
+									    	'1'  => '1 Hari',
+									    	'2'  => '2 Hari',
+									    	'3'  => '3 Hari',
+									    	'4'  => '4 Hari',
+									    	'5'  => '5 Hari',
+									    	'6'  => '6 Hari',
+									    	'7'  => '7 Hari',
+									    	'8'  => '8 Hari',
+									    	'9'  => '9 Hari',
+									    	'other' => '10 Hari Lebih'
+									    ];
+									    echo form_dropdown('time',$dropdownData,'','class="form-control input" style="width:74%;float:left"');
+									    ?>
 									  </div>
 									  <div class="form-group col-md-12 input-group-lg">
 									    <!-- <label for="nama">Nama</label> -->
-									    <input name="location" type="text" class="form-control input" placeholder="Berangkat Dari...">
+									    <input name="location" type="text" class="form-control input" placeholder="Berangkat Dari Kota...">
+									  </div>
+									  <div class="checkbox">
+									  	<b>Penginapan</b>
+									    <label>
+									      <input name="lodging" type="radio" value=""> None
+									    </label>
+									    <label>
+									      <input name="lodging" type="radio" value="hotel"> Hotel
+									    </label>
+									    <label>
+									      <input name="lodging" type="radio" value="motel"> Motel
+									    </label>
+									    <label>
+									      <input name="lodging" type="radio" value="guest_house"> Guest House
+									    </label>
+									    <label>
+									      <input name="lodging" type="radio" value="home_stay"> Home Stay
+									    </label>
 									  </div>
 									  <div class="form-group col-md-12 input-group-xs">
 									    <!-- <label for="nama">Nama</label> -->
 									    <textarea name="description" class="form-control input" cols="30" rows="10" placeholder="Masukkan Keinginan Anda" style="height: 200px"></textarea>
 									  </div>
-									  <div class="form-group col-md-12">
+									  <div class="form-group col-md-8">
+									    <!-- <label for="nama">Nama</label> -->
+									    <div class="g-recaptcha" data-sitekey="6Lfy5w8UAAAAAGi_w2i5ciFZmGJDwWM6EKfyE3iK"></div>
+									  </div>
+									  <div class="form-group col-md-4">
 									    <!-- <label for="nama">Nama</label> -->
 									    <button class="btn btn-primary pull-right" type="submit">Minta Penawaran</button>
 									  </div>
@@ -148,9 +174,24 @@
 		<script>
 		 new WOW().init();
 		</script>
+			<?php
+		if(isset($display_form)){
+			?>
 
+			<script src='https://www.google.com/recaptcha/api.js'></script>
+			
+			<?php
+		}
+			?>
+		
 		<script>
 			$(document).ready(function(){
+				var disp = document.getElementById('form-offer')
+				var dispAttr = disp.getAttribute('display');
+				if(!dispAttr){
+					disp.style.display='none';
+				}else{
+				}
 				/* loader init */
 				var base_url = "<?=base_url()?>";
 				var loader_url = "'"+base_url+"'";

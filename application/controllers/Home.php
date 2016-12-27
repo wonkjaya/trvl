@@ -88,6 +88,11 @@ class Home extends MainController {
             return;
         }
         $this->load->model('moffers', 'offers');
+        if($_POST){
+            $data['default'] = $this->offers->new_request($slug);
+        }
+        $this->load->helper('form');
+        $data['display_form']= true;
         $data['tour_destination'] = $this->offers->get_tour_destination($slug); /*start, limit*/
         $this->loadView('single-post',$data);
     }

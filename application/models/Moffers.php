@@ -12,6 +12,25 @@ class Moffers extends CI_Model
         $query = $this->db->get();
         return $query->result_array();
     }
+    function new_request($tour_destination){
+        $data = [
+            "email"=>$this->input->post('email'),
+            "telp_number"=>$this->input->post('telp'),
+            "name"=>$this->input->post('name'),
+            "from_city"=>$this->input->post('location'),
+            "tour_destination"=>$tour_destination,
+            "description"=>$this->input->post('description')
+        ];
+        print_r($_POST);exit;
+        if(empty($data['email']) and empty($data['telp_number'])){
+          $data['error'] = 'Harap Cantumkan Info Kontak Anda Untuk Konfirmasi';
+          return $data;  
+        }
+        if(empty($_POST['g-recaptcha-response'])){
+          $data['error'] = 'Mohon masukkan Captcha Kembali';
+          return $data;  
+        }
+    }
 	function search_posts($query)
 	{
 		$this->db->select();

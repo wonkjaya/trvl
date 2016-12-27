@@ -11,11 +11,11 @@
 			</div>
 			<div class="menu">
 				<ul id="nav">
-					 <li><a href="#section-1">Home</a></li>
-					 <li><a href="#section-2">About</a></li>
-					 <li><a href="#section-3">Our Services</a></li>
-					 <li><a href="#section-4">Guides</a></li>
-					 <li><a href="#section-5">Contact</a></li>
+					 <li><a href="<?=site_url()?>#section-1">Home</a></li>
+					 <li><a href="<?=site_url()?>#section-2">About</a></li>
+					 <li><a href="<?=site_url()?>#section-3">Our Services</a></li>
+					 <li><a href="<?=site_url()?>#section-4">Guides</a></li>
+					 <li><a href="<?=site_url()?>#section-5">Contact</a></li>
 					 <div class="clearfix"></div>
 				 </ul>
 			</div>
