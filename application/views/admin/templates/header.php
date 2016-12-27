@@ -48,12 +48,17 @@
               </a>
             </li>
             <li>
-              <a href="<?=site_url('admin/blogoffers')?>" title="Blog Penawaran">
+              <a href="<?=site_url('admin/blogoffers')?>" title="Penawaran">
                 <i class="fa fa-paint-brush fa-2x "></i>
               </a>
             </li>
             <li>
-              <a href="<?=site_url('admin/products')?>" title="Data Produk">
+              <a href="<?=site_url('admin/tour_destination')?>" title="Destinasi Tour">
+                <i class="fa fa-picture-o fa-2x "></i>
+              </a>
+            </li> 
+            <li>
+              <a href="<?=site_url('admin/products')?>" title="Rental Mobil">
                 <i class="fa fa-bus fa-2x "></i>
               </a>
             </li> 

@@ -37,23 +37,6 @@ class Moffers extends CI_Model
         $query = $this->db->get();
         return $query->first_row('array');
     }
-    function insert_post($data)
-    {
-        $this->db->insert('posts',$data);
-        return $this->db->insert_id();
-    }
-    
-    function update_post($post_id, $data)
-    {
-        $this->db->where('post_id',$post_id);
-        $this->db->update('posts',$data);
-    }
-    
-    function delete_post($post_id)
-    {
-        $this->db->where('post_id',$post_id);
-        $this->db->delete('posts');
-    }
 
     function get_tour_destinations($start, $limit){
         $data = [];
