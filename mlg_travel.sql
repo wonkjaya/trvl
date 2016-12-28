@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 28, 2016 at 12:38 
--- Server version: 10.1.13-MariaDB
--- PHP Version: 5.6.20
+-- Generation Time: Dec 28, 2016 at 03:03 
+-- Server version: 10.1.19-MariaDB
+-- PHP Version: 5.5.38
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -63,6 +63,30 @@ INSERT INTO `post_images` (`image_id`, `post_id`, `image_key`, `image_value`, `d
 (31, 3, 'gallery', 'tanah-lot-7.jpg', ''),
 (32, 3, 'gallery', 'tanah-lot-8.jpg', '');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `request_offers`
+--
+
+DROP TABLE IF EXISTS `request_offers`;
+CREATE TABLE IF NOT EXISTS `request_offers` (
+  `request_id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(200) NOT NULL,
+  `telp_number` varchar(16) NOT NULL,
+  `name` varchar(40) NOT NULL,
+  `from_city` varchar(30) NOT NULL,
+  `tour_destination` varchar(100) NOT NULL,
+  `penginapan` varchar(30) DEFAULT NULL,
+  `description` tinytext NOT NULL,
+  PRIMARY KEY (`request_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Truncate table before insert `request_offers`
+--
+
+TRUNCATE TABLE `request_offers`;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
