@@ -72,6 +72,7 @@
 								    	}
 								    </style>
 											<?php
+										if($gallery['images']):
 										foreach($gallery['images'] as $img) { 
 											?>
 										<div class="portfolio card mix_all custom-portofolio" data-cat="card">
@@ -87,6 +88,7 @@
 										</div>
 											<?php
 										}
+										endif;
 											?>
 									   <div class="clearfix"></div>	
 									</div>

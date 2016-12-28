@@ -104,9 +104,10 @@ class Admin extends AdminController {
 	}
 // tour group
 		function newtour(){
+	        $this->load->model('main_admin_model','main');
+	        $this->load->helper('form');
 	        if($this->input->post())
 	        {
-	        	$this->load->model('main_admin_model','main');
 	            $data = array(
 	                'post_title' => $this->input->post('post_title'),
 	                'post' => $this->input->post('post'),
@@ -116,7 +117,8 @@ class Admin extends AdminController {
 	            // redirect(base_url().'index.php/blog/');
 	            echo "success";
 	        }else{
-				$this->loadView('tour-form');
+	        	$data['categories']= $this->main->get_categories();
+				$this->loadView('tour-form', $data);
 	        }
 		}
 

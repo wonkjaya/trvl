@@ -2,28 +2,99 @@
 <?php
 $type = "location_upload_ganti";
 ?>
+<style>
+  .custom-border{
+    border-radius: 0px;
+  }
+  .img{
+    margin-top:10px;
+  }
+  .uploadImage{
+    position: absolute;
+    top: 10px;
+    opacity: 0;
+    height: 90px;
+    width: 100%;
+    cursor: pointer;
+  }
+</style>
 <div class="content-wrapper">
   <div class="container">
     <div class="row pad-botm">
       <div class="col-md-12">
-        <h4 class="header-line">Offers Product</h4>
+        <h3 class="header-line">Product Offers</h3>
       </div>
     </div>
-	  <form action="" method="post">
       <div class="row">
+	     <form action="" method="post">
         <div class="col-md-8">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Title...">
+            <input type="text" class="form-control custom-border" placeholder="Title...">
           </div>
           <div class="form-group">
-            <textarea name="content" id="editor" placeholder="Insert Text"></textarea>
+            <?php
+            echo form_dropdown('category', $categories, '', 'class="form-control custom-border"');
+            ?>
+          </div>
+          <div class="form-group">
+            <textarea name="content" id="editor" placeholder="Insert Text" height="500px"></textarea>
           </div>
         </div>
+	     </form>
         <div class="col-md-4">
-          ...
+            <button class="btn btn-warning btn-lg col-md-5 custom-border" type="button">Draft</button>
+            <button class="btn btn-primary btn-lg col-md-5 custom-border" type="submit" style="margin-left:10px">Publish</button>
+          <hr>
+            <h3 class="col-md-12">Thumbnail Image</h3>
+          <hr>
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <img src="<?=base_url('assets/images/uploads/no-image.png')?>" alt="..." class="img">
+              <input type="file" class="uploadImage" accept="image/jpeg"/>
+              <p>400x300 (*.jpg)</p>
+            </div>
+          </div>
+            <h3 class="col-md-12">Gallery</h3>
+          <hr>
+          <div class="row">
+            <div class="col-md-4 col-xs-6" style="overflow: hidden;">
+              <img src="<?=base_url('assets/images/uploads/no-image.png')?>" alt="..." class="img">
+              <input type="file" class="uploadImage" accept="image/jpeg"/>
+            </div>
+            <div class="col-md-4 col-xs-6">
+              <img src="<?=base_url('assets/images/uploads/no-image.png')?>" alt="..." class="img">
+              <input type="file" class="uploadImage" accept="image/jpeg"/>
+            </div>
+            <div class="col-md-4 col-xs-6">
+              <img src="<?=base_url('assets/images/uploads/no-image.png')?>" alt="..." class="img">
+              <input type="file" class="uploadImage" accept="image/jpeg"/>
+            </div>
+            <div class="col-md-4 col-xs-6">
+              <img src="<?=base_url('assets/images/uploads/no-image.png')?>" alt="..." class="img">
+              <input type="file" class="uploadImage" accept="image/jpeg"/>
+            </div>
+            <div class="col-md-4 col-xs-6">
+              <img src="<?=base_url('assets/images/uploads/no-image.png')?>" alt="..." class="img">
+              <input type="file" class="uploadImage" accept="image/jpeg"/>
+            </div>
+            <div class="col-md-4 col-xs-6">
+              <img src="<?=base_url('assets/images/uploads/no-image.png')?>" alt="..." class="img">
+              <input type="file" class="uploadImage" accept="image/jpeg"/>
+            </div>
+            <div class="col-md-4 col-xs-6">
+              <img src="<?=base_url('assets/images/uploads/no-image.png')?>" alt="..." class="img">
+              <input type="file" class="uploadImage" accept="image/jpeg"/>
+            </div>
+            <div class="col-md-4 col-xs-6">
+              <img src="<?=base_url('assets/images/uploads/no-image.png')?>" alt="..." class="img">
+              <input type="file" class="uploadImage" accept="image/jpeg"/>
+            </div>
+            <div class="col-md-4 hidden-xs">
+              <img src="<?=base_url('assets/images/uploads/no-image.png')?>" alt="..." class="img">
+            </div>
+          </div>
         </div>
       </div>
-	  </form>
   </div>
 </div>
 <script src="<?=base_url('assets/js/editor/tinymce.min.js')?>"></script>
@@ -32,6 +103,7 @@ $type = "location_upload_ganti";
   var upload_folder = "<?=$type?>";
   tinymce.init({ 
     selector:'#editor',
+    height : "400",
     file_picker_callback: function(callback, value, meta) {
       // Provide file and text for the link dialog
       if (meta.filetype == 'file') {
