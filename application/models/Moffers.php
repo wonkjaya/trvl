@@ -19,9 +19,12 @@ class Moffers extends CI_Model
             "name"=>$this->input->post('name'),
             "from_city"=>$this->input->post('location'),
             "tour_destination"=>$tour_destination,
+            "lodging"=>$this->input->post('lodging'),
+            "time"=>$this->input->post('time'),
             "description"=>$this->input->post('description')
         ];
-        print_r($_POST);exit;
+        // print_r($data);exit;
+        
         if(empty($data['email']) and empty($data['telp_number'])){
           $data['error'] = 'Harap Cantumkan Info Kontak Anda Untuk Konfirmasi';
           return $data;  
@@ -30,6 +33,9 @@ class Moffers extends CI_Model
           $data['error'] = 'Mohon masukkan Captcha Kembali';
           return $data;  
         }
+        $this->db->insert('request_offers', $data);
+        $this->session->set_flashdata('success', 'Terima Kasih. Permintaan Anda Akan Kami Proses Secepatnya.');
+        redirect('tour_destination/'.$tour_destination);
     }
 	function search_posts($query)
 	{
@@ -154,6 +160,24 @@ class Moffers extends CI_Model
             $data['tour_destination'] = $query->row();
         }else{
             $data['tour_destination'] = null;
+        }
+        return $data;
+    }
+
+    function get_gallery($slug){
+        $data = [];
+
+        $this->db->limit(8);
+        $this->db->where(['posts.post_slug' => $slug, 'img.image_key'=>'gallery']);
+        $this->db->select([
+            'img.image_value as image',
+        ]);
+        $this->db->join('post_images img','posts.post_id = img.post_id','left');
+        $query = $this->db->get('posts');
+        if($query->num_rows() > 0 ){
+            $data['images'] = $query->result();
+        }else{
+            $data['images'] = null;
         }
         return $data;
     }

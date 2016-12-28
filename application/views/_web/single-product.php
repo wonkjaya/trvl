@@ -56,7 +56,42 @@
 				  			:'No Content';
 				  		?>
 				  		<div class="row" style="margin-top:50px" >
-				  			<div class="col-md-12">
+							<div class="col-md-12">
+								<div class="about-head text-center">
+								  <h4>
+								  	Gallery Dari "<?=$tour_destination['tour_destination']->title?>"
+								  </h4>
+								  <span style="width: 45%"></span>
+								  <img lsrc="<?=base_url('assets/images/_web/about-img.png')?>" alt="">
+								  <span style="width: 45%"></span>
+								</div>
+								<div id="portfoliolist">
+								    <style>
+								    	.custom-portofolio{
+								    		display: inline-block; opacity: 1;
+								    	}
+								    </style>
+											<?php
+										foreach($gallery['images'] as $img) { 
+											?>
+										<div class="portfolio card mix_all custom-portofolio" data-cat="card">
+											<div class="portfolio-wrapper wow bounceIn" data-wow-delay="0.4s">		
+												<a href="tour_destination" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
+											     	<img lsrc="<?=base_url('assets/images/uploads/gallery/'.$img->image)?>" alt="..." class="img-responsive" alt=""/>
+													<div class="tour-caption" style="text-align:center">
+														<span></span>
+														<p>...</p>
+													</div>
+												</a>
+											</div>
+										</div>
+											<?php
+										}
+											?>
+									   <div class="clearfix"></div>	
+									</div>
+							</div>
+				  			<div class="col-md-12" style="margin-top:40px">
 						  		<div class="about-head text-center">
 								  <h4>
 								  	Anda Ingin Berwisata Ke "<?=$tour_destination['tour_destination']->title?>" ? Hubungi Kami Disini.
@@ -72,18 +107,34 @@
 								</style>
 								<div class="col-md-12" id="form-offer" 
 									display="<?=(!isset($display_form))?false:true?>" style="padding-top:20px">
+						  			<?php
+						  			if($this->session->flashdata('success')){
+						  				echo '
+						  					<div class="alert alert-success">'
+						  						.$this->session->flashdata('success').
+						  					'</div>';
+						  			}
+						  			?>
+						  			<?php
+						  			if(isset($default)){
+						  				echo '
+						  					<div class="alert alert-danger">'
+						  						.$default['error'].
+						  					'</div>';
+						  			}
+						  			?>
 									<form method="POST">
 									  <div class="form-group col-md-6 input-group-lg">
 									    <!-- <label for="email">Email</label> -->
-									    <input name="email" type="email" class="form-control input" placeholder="Email">
+									    <input name="email" type="email" class="form-control input" placeholder="Email" value="<?=(isset($default)?$default['email']:'')?>">
 									  </div>
 									  <div class="form-group col-md-6 input-group-lg">
 									    <!-- <label for="notelp">No Telp</label> -->
-									    <input name="telp" type="text" class="form-control input" placeholder="No Telp">
+									    <input name="telp" type="text" class="form-control input" placeholder="No Telp" value="<?=(isset($default)?$default['telp_number']:'')?>" required>
 									  </div>
 									  <div class="form-group col-md-6 input-group-lg">
 									    <!-- <label for="nama">Nama</label> -->
-									    <input name="name" type="text" class="form-control input" placeholder="Nama Anda">
+									    <input name="name" type="text" class="form-control input" placeholder="Nama Anda" value="<?=(isset($default)?$default['name']:'')?>" required>
 									  </div>
 									  <div class="form-group col-md-6 input-group-lg">
 									    <label for="waktu" style="width:25%;float:left;margin-top:10px">Waktu</label>
@@ -100,17 +151,17 @@
 									    	'9'  => '9 Hari',
 									    	'other' => '10 Hari Lebih'
 									    ];
-									    echo form_dropdown('time',$dropdownData,'','class="form-control input" style="width:74%;float:left"');
+									    echo form_dropdown('time',$dropdownData, (isset($default)?$default['time']:''),'class="form-control input" style="width:74%;float:left"');
 									    ?>
 									  </div>
 									  <div class="form-group col-md-12 input-group-lg">
 									    <!-- <label for="nama">Nama</label> -->
-									    <input name="location" type="text" class="form-control input" placeholder="Berangkat Dari Kota...">
+									    <input name="location" type="text" class="form-control input" placeholder="Berangkat Dari Kota..." value="<?=(isset($default)?$default['from_city']:'')?>">
 									  </div>
 									  <div class="checkbox">
 									  	<b>Penginapan</b>
 									    <label>
-									      <input name="lodging" type="radio" value=""> None
+									      <input name="lodging" type="radio" value="" checked> None
 									    </label>
 									    <label>
 									      <input name="lodging" type="radio" value="hotel"> Hotel
@@ -127,7 +178,7 @@
 									  </div>
 									  <div class="form-group col-md-12 input-group-xs">
 									    <!-- <label for="nama">Nama</label> -->
-									    <textarea name="description" class="form-control input" cols="30" rows="10" placeholder="Masukkan Keinginan Anda" style="height: 200px"></textarea>
+									    <textarea name="description" class="form-control input" cols="30" rows="10" placeholder="Masukkan Keinginan Anda" style="height: 200px"> <?=(isset($default)?$default['description']:'')?></textarea>
 									  </div>
 									  <div class="form-group col-md-8">
 									    <!-- <label for="nama">Nama</label> -->
@@ -209,7 +260,7 @@
 							sendToPage(r); /* call function */
 						}
 					}).done(function(r){
-						console.info("done");
+						//console.info("done");
 					});
 				}
 
