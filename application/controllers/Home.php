@@ -104,4 +104,26 @@ class Home extends MainController {
         if($type == 'json') echo json_encode($data['related_destinations']);
         return $data;
     }
+
+    function car_rentals($pos=0){
+        $this->load->model('moffers', 'offers');
+        $data['cars'] = $this->offers->get_car_rent($pos,11); /*start, limit*/
+        $this->loadView('cars-rental',$data);
+    }
+
+    function car_rental($slug=''){
+        if(empty($slug)){
+            $this->car_rentals();
+            return;
+        }
+        $this->load->model('moffers', 'offers');
+        if($_POST){
+            $data['default'] = $this->offers->new_request($slug);
+        }
+        $this->load->helper('form');
+        $data['display_form']= true;
+        $data['car_rental'] = $this->offers->get_car($slug); /*start, limit*/
+        $data['gallery'] = $this->offers->get_gallery($slug);
+        $this->loadView('single-product',$data);
+    }
 }
