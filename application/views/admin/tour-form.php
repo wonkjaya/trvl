@@ -17,6 +17,9 @@ $type = "location_upload_ganti";
     width: 100%;
     cursor: pointer;
   }
+  .submit{
+    margin-left:10px;
+  }
 </style>
 <div class="content-wrapper">
   <div class="container">
@@ -25,6 +28,11 @@ $type = "location_upload_ganti";
         <h3 class="header-line">Tour Offers</h3>
       </div>
     </div>
+    <?php
+      echo ($this->session->flashdata('success_message'))?'<div class="alert alert-success">'
+      .$this->session->flashdata('success_message').
+      '</div>':'';
+    ?>
       <div class="row">
 	     <form id="form" action="" method="post">
         <div class="col-md-8">
@@ -40,12 +48,12 @@ $type = "location_upload_ganti";
             <textarea name="content" id="editor" placeholder="Insert Text" height="500px"></textarea>
           </div>
         </div>
-	     </form>
+       </form>
         <div class="col-md-4">
-            <button class="btn btn-warning btn-lg col-md-5 custom-border" type="button">Draft</button>
-            <button class="btn btn-primary btn-lg col-md-5 custom-border" type="submit" style="margin-left:10px" onclick="submit_form();">Publish</button>
+            <button name="draft" type="button" class="btn btn-warning btn-lg col-md-5 custom-border" onclick="submit_form('draft');">Draft</button>
+            <button name="submit" type="buttom" class="btn btn-primary btn-lg col-md-5 custom-border submit" onclick="submit_form('submit');">Publish</button>
           <hr>
-            <?=(isset($default))?'<span class="label label-danger">'.$default['error'].'</span>':''?>
+            <?=(isset($default['error']))?'<span class="label label-danger">'.$default['error'].'</span>':''?>
           <br>
             <h3 class="col-md-12">Thumbnail Image</h3>
           <hr>
@@ -101,8 +109,14 @@ $type = "location_upload_ganti";
 </div>
 <script src="<?=base_url('assets/js/editor/tinymce.min.js')?>"></script>
 <script>
-  function submit_form(){
-    document.getElementById("form").submit();
+  function submit_form(type){
+      var form = document.getElementById('form');
+    if(type === 'draft'){
+      form.setAttribute("action","?draft");
+    }else{
+      form.setAttribute("action","?submit");
+    }
+    document.getElementById("form").submit({});
   }
   var base_url = "<?=base_url()?>";
   var upload_folder = "<?=$type?>";

@@ -29,8 +29,8 @@ class Main_admin_model extends Admin_model {
     	$page = (isset($_GET['p']))?$_GET['p']:0; // page position
         $this->db->where(['cat.category_slug'=>'offers']);
         $this->db->select(['p.post_title as title','p.post as content','p.date_added as created','u.username as author']);
-        $this->db->join('post_categories cat','cat.category_id = p.category_id','left');
-        $this->db->join('users u','u.user_id = p.user_id','left');
+        $this->db->join('post_categories cat','cat.category_slug = p.category','left');
+        $this->db->join('users u','u.username = p.author','left');
         $q = $this->db->get('posts p');
         if($q->num_rows() > 0) return $q->result();
         return null;
@@ -41,11 +41,12 @@ class Main_admin_model extends Admin_model {
     function get_post_tour_destination()
     {
     	$page = (isset($_GET['p']))?$_GET['p']:0; // page position
+        $this->db->order_by('p.post_id','DESC');
         $this->db->where(['cat.category_slug'=>'tour-destination']);
         $this->db->select(['p.post_title as title','SUBSTR(p.post,1,100) as content','p.date_added as created',
-        	'u.username as author', 'p.post_slug as slug']);
-        $this->db->join('post_categories cat','cat.category_id = p.category_id','left');
-        $this->db->join('users u','u.user_id = p.user_id','left');
+        	'u.username as author', 'p.post_slug as slug', 'p.status']);
+        $this->db->join('post_categories cat','cat.category_slug = p.category','left');
+        $this->db->join('users u','u.username = p.author','left');
         $q = $this->db->get('posts p');
         if($q->num_rows() > 0) return $q->result();
         return null;

@@ -5,7 +5,7 @@ class Moffers extends CI_Model
     {
         $this->db->select(['p.*','u.username as author']);
         $this->db->from('posts p');
-        $this->db->join('users u','u.user_id = p.user_id','left');
+        $this->db->join('users u','u.username = p.author','left');
         $this->db->where('active',1);
         $this->db->order_by('date_added','desc');
         $this->db->limit($number, $start);
@@ -70,7 +70,7 @@ class Moffers extends CI_Model
         $this->db->limit(abs($limit), abs($start));
         $this->db->where(['cat.category_slug'=>'tour-destination']);
         $this->db->select(['posts.post_id as id','posts.post_title as title','posts.post_slug as slug','img.image_value as thumbnail']);
-        $this->db->join('post_categories cat','cat.category_id = posts.category_id','left');
+        $this->db->join('post_categories cat','cat.category_slug = posts.category','left');
         $this->db->join('post_images img','img.post_id = posts.post_id','left');
         $query = $this->db->get('posts');
         if($query->num_rows() > 0 ){
@@ -88,7 +88,7 @@ class Moffers extends CI_Model
         $this->db->limit(abs($limit), abs($start));
         $this->db->where(['cat.category_slug'=>'tour-guide']);
         $this->db->select(['posts.post_id as id','posts.post_title as title','posts.post_slug as slug','img.image_value as thumbnail']);
-        $this->db->join('post_categories cat','cat.category_id = posts.category_id','left');
+        $this->db->join('post_categories cat','cat.category_slug = posts.category','left');
         $this->db->join('post_images img','img.post_id = posts.post_id','left');
         $query = $this->db->get('posts');
         if($query->num_rows() > 0 ){
@@ -103,7 +103,7 @@ class Moffers extends CI_Model
         $this->db->limit(abs($limit), abs($start));
         $this->db->where(['cat.category_slug'=>'testimony']);
         $this->db->select(['posts.post_id as id','posts.post_title as title', 'posts.post as content'/*,'img.image_value as thumbnail'*/]);
-        $this->db->join('post_categories cat','cat.category_id = posts.category_id','left');
+        $this->db->join('post_categories cat','cat.category_slug = posts.category','left');
         // $this->db->join('post_images img','img.image_id = posts.post_id','left');
         $query = $this->db->get('posts');
         if($query->num_rows() > 0 ){
@@ -119,7 +119,7 @@ class Moffers extends CI_Model
         $this->db->limit(abs($limit), abs($start));
         $this->db->where(['cat.category_slug'=>'car-rental']);
         $this->db->select(['posts.post_id as id','posts.post_title as title','posts.post_slug as slug','img.image_value as thumbnail']);
-        $this->db->join('post_categories cat','cat.category_id = posts.category_id','left');
+        $this->db->join('post_categories cat','cat.category_slug = posts.category','left');
         $this->db->join('post_images img','img.post_id = posts.post_id','left');
         $query = $this->db->get('posts');
         if($query->num_rows() > 0 ){
@@ -153,8 +153,8 @@ class Moffers extends CI_Model
             'posts.date_added as created',
             'users.username as author',
             ]);
-        $this->db->join('post_categories cat','cat.category_id = posts.category_id','left');
-        $this->db->join('users','users.user_id = posts.user_id','left');
+        $this->db->join('post_categories cat','cat.category_slug = posts.category','left');
+        $this->db->join('users','users.username = posts.author','left');
         $query = $this->db->get('posts');
         if($query->num_rows() > 0 ){
             $data['tour_destination'] = $query->row();

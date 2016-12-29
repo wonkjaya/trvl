@@ -36,7 +36,18 @@ if(!$type){
                     ?>
                     <tr>
                         <td><?=$no?></td>
-                        <td><?=$r->created?></td>
+                        <td>
+                            <?php 
+                                echo $r->created.'<br>';
+                                if($r->status == 1){
+                                    echo '<span class="label label-primary">published</span>';
+                                }elseif($r->status == 2){
+                                    echo '<span class="label label-warning">draft</span>';
+                                }else{
+                                    echo '<span class="label label-danger">not published</span>';
+                                }
+                            ?>
+                        </td>
                         <td>
                             <b><?=$r->title?></b><hr>
                             <p><?php

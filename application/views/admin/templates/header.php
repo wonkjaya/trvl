@@ -9,7 +9,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <![endif]-->
     <title>KuiRen Admin</title>
-    <link rel="icon" type="image/icon" href="favicon.ico">
+    <link rel="icon" type="image/icon" href="<?=base_url('favicon.ico')?>">
     <!-- BOOTSTRAP CORE STYLE CSS -->
     <link href="<?=base_url('assets/css/bootstrap.css')?>" rel="stylesheet" />
     <!-- FONTAWESOME STYLE CSS -->

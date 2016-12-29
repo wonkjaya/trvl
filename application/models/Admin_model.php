@@ -3,28 +3,38 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Admin_model extends CI_Model {
 	
+// public functions 
+
 	function get_categories(){
 		$q = $this->db->get('post_categories');
 		$cat[''] = 'Select Category';
 		foreach($q->result() as $r){
-			$cat[$r->category_id] = $r->category_name;
+			$cat[$r->category_slug] = $r->category_name;
 		}
 		return $cat;
 	}
 
 	function insert_post(){
-		if(!$_POST) return '';
+		if(!$_POST || !$_GET) return '';
+		if(isset($_GET['draft'])){
+			$type = 2; // draft
+		}else{
+			$type = 1; // publish
+		}
 		$data = array(
-	                'title' => $title = $this->input->post('title'),
+	                'post_title' => $title = $this->input->post('title'),
+	                'post_slug' => str_replace(' ', '-', strtolower($this->input->post('title'))),
 	                'category' => $category = $this->input->post('category'),
-	                'content' => $content = $this->input->post('content'),
+	                'post' => $content = $this->input->post('content'),
+	                'author' => $this->session->userdata('username'),
+	                'status' => $type,
 	            );
 		if(empty($title) || empty($category)){
 			$data['error'] = "Judul dan Category Kosong";
 			return $data;
 		}
-		print_r($_SESSION);
-		$this->db->insert('post', $data);
+		$this->db->insert('posts', $data);
+		$this->session->set_flashdata('success_message', 'Data Berhasil Diinputkan');
 		redirect('admin/tour_destination');
 	}
 }
