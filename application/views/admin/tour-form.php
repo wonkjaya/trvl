@@ -22,14 +22,14 @@ $type = "location_upload_ganti";
   <div class="container">
     <div class="row pad-botm">
       <div class="col-md-12">
-        <h3 class="header-line">Product Offers</h3>
+        <h3 class="header-line">Tour Offers</h3>
       </div>
     </div>
       <div class="row">
-	     <form action="" method="post">
+	     <form id="form" action="" method="post">
         <div class="col-md-8">
           <div class="form-group">
-            <input type="text" class="form-control custom-border" placeholder="Title...">
+            <input type="text" required name="title" class="form-control custom-border" placeholder="Title...">
           </div>
           <div class="form-group">
             <?php
@@ -43,8 +43,10 @@ $type = "location_upload_ganti";
 	     </form>
         <div class="col-md-4">
             <button class="btn btn-warning btn-lg col-md-5 custom-border" type="button">Draft</button>
-            <button class="btn btn-primary btn-lg col-md-5 custom-border" type="submit" style="margin-left:10px">Publish</button>
+            <button class="btn btn-primary btn-lg col-md-5 custom-border" type="submit" style="margin-left:10px" onclick="submit_form();">Publish</button>
           <hr>
+            <?=(isset($default))?'<span class="label label-danger">'.$default['error'].'</span>':''?>
+          <br>
             <h3 class="col-md-12">Thumbnail Image</h3>
           <hr>
           <div class="row">
@@ -99,6 +101,9 @@ $type = "location_upload_ganti";
 </div>
 <script src="<?=base_url('assets/js/editor/tinymce.min.js')?>"></script>
 <script>
+  function submit_form(){
+    document.getElementById("form").submit();
+  }
   var base_url = "<?=base_url()?>";
   var upload_folder = "<?=$type?>";
   tinymce.init({ 

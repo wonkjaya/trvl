@@ -106,20 +106,10 @@ class Admin extends AdminController {
 		function newtour(){
 	        $this->load->model('main_admin_model','main');
 	        $this->load->helper('form');
-	        if($this->input->post())
-	        {
-	            $data = array(
-	                'post_title' => $this->input->post('post_title'),
-	                'post' => $this->input->post('post'),
-	                'active' => 1,
-	            );
-	            $this->main->insert_post($data);
-	            // redirect(base_url().'index.php/blog/');
-	            echo "success";
-	        }else{
-	        	$data['categories']= $this->main->get_categories();
-				$this->loadView('tour-form', $data);
-	        }
+	        
+	        $data['default'] = $this->main->insert_post();
+        	$data['categories']= $this->main->get_categories();
+			$this->loadView('tour-form', $data);
 		}
 
 		function browsetour(){
