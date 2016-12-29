@@ -57,6 +57,11 @@ $route['tour_destinations'] = 'home/tour_destinations';
 $route['tour_destination'] = 'home/tour_destinations'; // untuk kemungkinan mis Type
 // end tour destination
 $route['tour_destination/(:any)'] = 'home/tour_destination/$1';
+// car rental
+$route['car_rent'] = 'home/car_rentals';
+$route['car_rental'] = 'home/car_rentals'; // untuk kemungkinan mis Type
+// end car rental
+$route['car_rental/(:any)'] = 'home/car_rental/$1';
 $route['admin/blog'] = 'blog';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
