@@ -154,8 +154,8 @@
 				/* loader init */
 				var base_url = "<?=base_url()?>";
 				var loader_url = "'"+base_url+"'";
-				var delay = 3; // wait and then load the file
-				var delayS = 5; // wait and then load the file
+				var delay = 2; // wait and then load the file
+				var delayS = 4; // wait and then load the file
 				setTimeout("loadDelayedScripts("+loader_url+")", delay * 1000);
 				setTimeout("loadScript("+loader_url+")", delayS * 1000);
 				/* end of loader sections */
