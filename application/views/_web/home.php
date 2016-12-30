@@ -336,7 +336,7 @@
 				  <div class="contact-grids">
 					  <div class="container">
 						  <div class="col-md-4 address">
-								<h4>Lorem ipsum dolor sit amet,consec</h4>
+								<h4>Layanan Tour & Travel Indonesia</h4>
 								<p>Quis nostrud exercitation ullamco laboris nisi ut aliquip 
 								ex ea commodo consequat.</p>
 								<h5><span class="img1"></span>(+1) 234 56 789&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;(+1) 234 56 780</h5>

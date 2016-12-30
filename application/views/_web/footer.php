@@ -1,8 +1,18 @@
+<style>
+	.custom-footer a{
+		color:#fff;
+	}
+</style>
 <div class="fotter">	
 	 <div class="container">
 		 <div class="fotter-grids">
 			 <div class="col-md-4 fotter-left">
-			 <img lsrc="<?=base_url('assets/images/_web/fotter-logo.png')?>" alt="">
+			 <!-- <img lsrc="<?=base_url('assets/images/_web/fotter-logo.png')?>" alt=""> -->
+			 <div class="logo head-logo logo-md custom-footer">
+				<a href="<?=site_url()?>">
+					<span class="">KuiRen Tour</span>
+				</a>
+			 </div>
 			 <p>Voluptatem quia voluptas sit aspernatur aut odit aut fugit, 
 				sed quia consequuntur magni dolores eos qui ratione.</p>
 			 </div>
