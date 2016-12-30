@@ -42,24 +42,24 @@
 			  	<div class="row">
 				  	<div class="col-md-8">
 						<div class="about-head">
-						  <h3 id="title" slug="<?=$tour_destination['tour_destination']->slug?>">
-						  	<?=($tour_destination['tour_destination'])
-						  	?$tour_destination['tour_destination']->title:'No title'?>
+						  <h3 id="title" slug="<?=$data->slug?>">
+						  	<?=($data)
+						  	?$data->title:'No title'?>
 						  </h3>
 						  <span></span>
 						  <img lsrc="<?=base_url('assets/images/_web/star.png')?>" alt="">
 						  <span style="width: 80%"></span>
 						</div>
 						<hr>
-				  		<?=($tour_destination['tour_destination'])
-				  			?$tour_destination['tour_destination']->content
+				  		<?=($data)
+				  			?$data->content
 				  			:'No Content';
 				  		?>
 				  		<div class="row" style="margin-top:50px" >
 							<div class="col-md-12">
 								<div class="about-head text-center">
 								  <h4>
-								  	Gallery Dari "<?=$tour_destination['tour_destination']->title?>"
+								  	Gallery Dari "<?=$data->title?>"
 								  </h4>
 								  <span style="width: 45%"></span>
 								  <img lsrc="<?=base_url('assets/images/_web/about-img.png')?>" alt="">
@@ -93,112 +93,18 @@
 									   <div class="clearfix"></div>	
 									</div>
 							</div>
-				  			<div class="col-md-12" style="margin-top:40px">
-						  		<div class="about-head text-center">
-								  <h4>
-								  	Anda Ingin Berwisata Ke "<?=$tour_destination['tour_destination']->title?>" ? Hubungi Kami Disini.
-								  </h4>
-								  <span style="width: 45%"></span>
-								  <img lsrc="<?=base_url('assets/images/_web/about-img.png')?>" alt="">
-								  <span style="width: 45%"></span>
-								</div>
-								<style>
-									.input-group-lg .input,.input-group-xs .input{
-										border-radius: 0px;
-									}
-								</style>
-								<div class="col-md-12" id="form-offer" 
-									display="<?=(!isset($display_form))?false:true?>" style="padding-top:20px">
-						  			<?php
-						  			if($this->session->flashdata('success')){
-						  				echo '
-						  					<div class="alert alert-success">'
-						  						.$this->session->flashdata('success').
-						  					'</div>';
-						  			}
-						  			?>
-						  			<?php
-						  			if(isset($default)){
-						  				echo '
-						  					<div class="alert alert-danger">'
-						  						.$default['error'].
-						  					'</div>';
-						  			}
-						  			?>
-									<form method="POST">
-									  <div class="form-group col-md-6 input-group-lg">
-									    <!-- <label for="email">Email</label> -->
-									    <input name="email" type="email" class="form-control input" placeholder="Email" value="<?=(isset($default)?$default['email']:'')?>">
-									  </div>
-									  <div class="form-group col-md-6 input-group-lg">
-									    <!-- <label for="notelp">No Telp</label> -->
-									    <input name="telp" type="text" class="form-control input" placeholder="No Telp" value="<?=(isset($default)?$default['telp_number']:'')?>" required>
-									  </div>
-									  <div class="form-group col-md-6 input-group-lg">
-									    <!-- <label for="nama">Nama</label> -->
-									    <input name="name" type="text" class="form-control input" placeholder="Nama Anda" value="<?=(isset($default)?$default['name']:'')?>" required>
-									  </div>
-									  <div class="form-group col-md-6 input-group-lg">
-									    <label for="waktu" style="width:25%;float:left;margin-top:10px">Waktu</label>
-									    <?php
-									    $dropdownData=[
-									    	'1'  => '1 Hari',
-									    	'2'  => '2 Hari',
-									    	'3'  => '3 Hari',
-									    	'4'  => '4 Hari',
-									    	'5'  => '5 Hari',
-									    	'6'  => '6 Hari',
-									    	'7'  => '7 Hari',
-									    	'8'  => '8 Hari',
-									    	'9'  => '9 Hari',
-									    	'other' => '10 Hari Lebih'
-									    ];
-									    echo form_dropdown('time',$dropdownData, (isset($default)?$default['time']:''),'class="form-control input" style="width:74%;float:left"');
-									    ?>
-									  </div>
-									  <div class="form-group col-md-12 input-group-lg">
-									    <!-- <label for="nama">Nama</label> -->
-									    <input name="location" type="text" class="form-control input" placeholder="Berangkat Dari Kota..." value="<?=(isset($default)?$default['from_city']:'')?>">
-									  </div>
-									  <div class="checkbox">
-									  	<b>Penginapan</b>
-									    <label>
-									      <input name="lodging" type="radio" value="" checked> None
-									    </label>
-									    <label>
-									      <input name="lodging" type="radio" value="hotel"> Hotel
-									    </label>
-									    <label>
-									      <input name="lodging" type="radio" value="motel"> Motel
-									    </label>
-									    <label>
-									      <input name="lodging" type="radio" value="guest_house"> Guest House
-									    </label>
-									    <label>
-									      <input name="lodging" type="radio" value="home_stay"> Home Stay
-									    </label>
-									  </div>
-									  <div class="form-group col-md-12 input-group-xs">
-									    <!-- <label for="nama">Nama</label> -->
-									    <textarea name="description" class="form-control input" cols="30" rows="10" placeholder="Masukkan Keinginan Anda" style="height: 200px"> <?=(isset($default)?$default['description']:'')?></textarea>
-									  </div>
-									  <div class="form-group col-md-8">
-									    <!-- <label for="nama">Nama</label> -->
-									    <div class="g-recaptcha" data-sitekey="6Lfy5w8UAAAAAGi_w2i5ciFZmGJDwWM6EKfyE3iK"></div>
-									  </div>
-									  <div class="form-group col-md-4">
-									    <!-- <label for="nama">Nama</label> -->
-									    <button class="btn btn-primary pull-right" type="submit">Minta Penawaran</button>
-									  </div>
-									</form>
-								</div>
-						  	</div>
+				  			<?php
+				  			if(isset($display_form)){
+					  			$this->load->view('_web/'.$display_form, 
+					  				["default"=>(isset($default)?$default:null)]);
+				  			}
+				  			?>
 				  		</div>
 				  	</div>
-				  	<div class="col-md-4">
+				  	<div class="col-md-4" onload="hello()">
 				  		<div class="about-head text-center">
 						  <h3>
-						  	Tempat Lainnya
+						  	<?=isset($display_form)?(($display_form == 'request_car')?'Mobil Lainnya':'Tempat Lainnya'):'Pemandu Lainnya';?>
 						  </h3>
 						  <span style="width: 30%"></span>
 						  <img lsrc="<?=base_url('assets/images/_web/about-img.png')?>" alt="">
@@ -239,12 +145,12 @@
 		
 		<script>
 			$(document).ready(function(){
-				var disp = document.getElementById('form-offer')
+				/*var disp = document.getElementById('form-offer')
 				var dispAttr = disp.getAttribute('display');
 				if(!dispAttr){
 					disp.style.display='none';
 				}else{
-				}
+				}*/
 				/* loader init */
 				var base_url = "<?=base_url()?>";
 				var loader_url = "'"+base_url+"'";
@@ -253,10 +159,10 @@
 				setTimeout("loadDelayedScripts("+loader_url+")", delay * 1000);
 				setTimeout("loadScript("+loader_url+")", delayS * 1000);
 				/* end of loader sections */
-				function get_related(){
+				function get_related(method){
 					var except_slug = document.getElementById('title').getAttribute("slug");
 					$.ajax({
-						url : base_url + 'home/get_related_tour_destinations/' + except_slug + '/json',
+						url : base_url + 'home/'+ method +'/' + except_slug + '/json',
 						method : 'GET',
 						success : function(r){
 							sendToPage(r); /* call function */
@@ -292,8 +198,10 @@
 						template(t, l, c, img);
 					}
 				}
+				var method_selected= "<?=(isset($display_form))?(($display_form == 'request_tour')
+									?'get_related_tour_destinations':'get_related_car'):'get_related_tour_guide'?>";
+				get_related(method_selected);
 
-				get_related();
 			});
 		</script>
 	</body>

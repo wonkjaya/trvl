@@ -55,13 +55,17 @@ $route['offers'] = 'main/offers';
 // tour destination
 $route['tour_destinations'] = 'home/tour_destinations';
 $route['tour_destination'] = 'home/tour_destinations'; // untuk kemungkinan mis Type
-// end tour destination
 $route['tour_destination/(:any)'] = 'home/tour_destination/$1';
+// end tour destination
 // car rental
 $route['car_rent'] = 'home/car_rentals';
 $route['car_rental'] = 'home/car_rentals'; // untuk kemungkinan mis Type
+$route['car_rent/(:any)'] = 'home/car_rental/$1';
 // end car rental
-$route['car_rental/(:any)'] = 'home/car_rental/$1';
+// tour guide
+$route['tour_guide/(:any)'] = 'home/tour_guide/$1';
+
+
 $route['admin/blog'] = 'blog';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

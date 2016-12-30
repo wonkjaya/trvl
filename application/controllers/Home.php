@@ -75,7 +75,7 @@ class Home extends MainController {
         $this->m_comment->add_comment($data);
         redirect(base_url().'index.php/blog/post/'.$postID);
     }
-
+/* tour */
     function tour_destinations($pos=0){
         $this->load->model('moffers', 'offers');
         $data['tour_destinations'] = $this->offers->get_tour_destinations($pos,11); /*start, limit*/
@@ -89,11 +89,11 @@ class Home extends MainController {
         }
         $this->load->model('moffers', 'offers');
         if($_POST){
-            $data['default'] = $this->offers->new_request($slug);
+            $data['default'] = $this->offers->new_tour_request($slug);
         }
         $this->load->helper('form');
-        $data['display_form']= true;
-        $data['tour_destination'] = $this->offers->get_tour_destination($slug); /*start, limit*/
+        $data['display_form']= 'request_tour';
+        $data['data'] = $this->offers->get_tour_destination($slug); /*start, limit*/
         $data['gallery'] = $this->offers->get_gallery($slug);
         $this->loadView('single-product',$data);
     }
@@ -104,7 +104,7 @@ class Home extends MainController {
         if($type == 'json') echo json_encode($data['related_destinations']);
         return $data;
     }
-
+/* car rent */
     function car_rentals($pos=0){
         $this->load->model('moffers', 'offers');
         $data['cars'] = $this->offers->get_car_rent($pos,11); /*start, limit*/
@@ -118,12 +118,37 @@ class Home extends MainController {
         }
         $this->load->model('moffers', 'offers');
         if($_POST){
-            $data['default'] = $this->offers->new_request($slug);
+            $data['default'] = $this->offers->new_car_request($slug);
         }
         $this->load->helper('form');
-        $data['display_form']= true;
-        $data['car_rental'] = $this->offers->get_car($slug); /*start, limit*/
+        $data['display_form']= 'request_car';
+        $data['data'] = $this->offers->get_car($slug); /*start, limit*/
         $data['gallery'] = $this->offers->get_gallery($slug);
         $this->loadView('single-product',$data);
+    }
+
+    function get_related_car($except_slug, $type=''){
+        $this->load->model('moffers', 'offers');
+        $data = $this->offers->get_related_car($except_slug);
+        if($type == 'json') echo json_encode($data['related_car']);
+        return $data;
+    }
+/*tour guide */
+    function tour_guide($slug=''){
+        if(empty($slug)){
+            $this->car_rentals();
+            return;
+        }
+        $this->load->model('moffers', 'offers');
+        $data['data'] = $this->offers->get_tour_guide($slug); /*start, limit*/
+        $data['gallery'] = $this->offers->get_gallery($slug);
+        $this->loadView('single-product',$data);
+    }
+
+    function get_related_tour_guide($except_slug, $type=''){
+        $this->load->model('moffers', 'offers');
+        $data = $this->offers->get_related_tour_guide($except_slug);
+        if($type == 'json') echo json_encode($data['related_guide']);
+        return $data;
     }
 }

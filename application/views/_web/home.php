@@ -282,7 +282,7 @@
 							<a href="#"><span class="fb"> </span></a>
 							<a href="#"><span class="gplus"> </span></a>
 						</div>
-						<p><a href="<?=site_url('home/tour_guides/'.$tg->slug)?>"><?=$tg->title?></a></p>
+						<p><a href="<?=site_url('tour_guide/'.$tg->slug)?>"><?=$tg->title?></a></p>
 					</div>
 				  <?php
 				  	if(count($tour_guides['tour_guide']) == $tg_index){
