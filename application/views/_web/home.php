@@ -88,7 +88,7 @@
 		<!-- //End-slider-->
 	<!--banner-->	
 	<!--About-->
-	     <div class="about section" id="section-2">
+	    <div class="about section" id="section-2">
 			  <div class="about-head text-center">
 				  <h3>TENTANG KAMI</h3>
 				  <span></span><img lsrc="assets/images/_web/about-img.png" alt=""><span></span>

@@ -149,7 +149,7 @@ h6.b-animate.b-from-left.b-delay03{font-family:'Open Sans', sans-serif;font-weig
 .image-grid p{padding-top:1.5em;}
 .image-grid p a{text-decoration:none;color:#253039;font-size:1.5em;font-weight:400;}
 .image-grid p a:hover{color:#80C0EB;}
-.client-say-head h3{color:#60B0E6;font-size:1.4em;padding-top:1.5em;}
+.client-say-head h3{color:#60B0E6;font-size:1.4em;padding-top: 0.5em;padding-bottom: 0.5em;margin-top:0.5em;}
 .client-say{background:url("../images/_smart/client-bg.jpg") no-repeat 0px 0px;background-size:cover;min-height:310px;width:100%;position:relative;}
 .client-say-layer{background:rgba(8, 31, 47, 0.89);background-size:cover;min-height:310px;width:100%;bottom:0;position:absolute;}
 .client-say-head img{margin:1em 0.5em 0 0;}
