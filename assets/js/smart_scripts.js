@@ -96,11 +96,11 @@ $(function(){
 		   if(lsrc.length > 0){
 			// image cache
 				$.cacheImage(lsrc, {
-				    load    : function (e) { console.log('Loaded',    this, e); },
-				    error   : function (e) { console.log('Error',     this, e); },
-				    abort   : function (e) { console.log('Aborted',   this, e); },
+				    load    : function (e) { /*console.log('Loaded',    this, e);*/ },
+				    error   : function (e) { /*console.log('Error',     this, e);*/ },
+				    abort   : function (e) { /*console.log('Aborted',   this, e);*/ },
 				    // complete callback is called on load, error and abort
-				    complete: function (e) { console.log('Completed', this, e); }
+				    complete: function (e) { /*console.log('Completed', this, e);*/ }
 				  });
 			//end cache
 		       var img = new Image();

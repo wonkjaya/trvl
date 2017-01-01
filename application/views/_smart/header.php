@@ -1,22 +1,30 @@
+ <?php
+	 //echo $this->uri->segment(2);exit;
+	 ?>
  <div id="page">
 	 <div id="header">
 		 <a class="navicon" href="#menu-left">
 		 	
 		 </a>
 		<div class="logo head-logo logo-md">
-			<a href="#" style="margin-left: 10%">
-				<img src="assets/images/_smart/logo.gif" id="section-1" class="img-responsive" alt="kuiren tour and travel"/>
+			<a href="<?=site_url()?>" style="margin-left: 10%">
+				<img src="<?=base_url('assets/images/_smart/logo.gif');?>" id="section-1" class="img-responsive" alt="kuiren tour and travel"/>
 				<span class="">KuiRen Tour</span>
 			</a>
 		</div>
 	 </div>
 	 <nav id="menu-left">
+	 <?php
+	 if(!isset($scroll)){
+	 	$link = site_url();
+	 }
+	 ?>
 		 <ul>
-		     <li><a href="#home">Home</a></li>
-			 <li><a href="#about" class="scroll">About</a></li>
-			 <li><a href="#toptours" class="scroll">Top Tours</a></li>
-			 <li><a href="#guides" class="scroll">Guides</a></li>
-			 <li><a href="#contact" class="scroll">Contact</a></li>
+		     <li><a href="<?=(isset($link))?$link:'#home';?>">Home</a></li>
+			 <li><a href="<?=(isset($link))?$link:'#about';?>" class="<?=(!isset($link))?'scroll':''?>">About</a></li>
+			 <li><a href="<?=(isset($link))?$link:'#toptours';?>" class="<?=(!isset($link))?'scroll':''?>">Top Tours</a></li>
+			 <li><a href="<?=(isset($link))?$link:'#guides';?>" class="<?=(!isset($link))?'scroll':''?>">Guides</a></li>
+			 <li><a href="<?=(isset($link))?$link:'#contact';?>" class="<?=(!isset($link))?'scroll':''?>">Contact</a></li>
 			 <div class="clear"> </div>
 		 </ul>
 	 </nav>

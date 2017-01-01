@@ -2,11 +2,11 @@
 // echo $default;
 ?>
 <div class="col-md-12" style="margin-top:40px">
-		<div class="about-head text-center">
+	<div class="about-head text-center">
 	  <h4>
 	  	Anda Ingin Berwisata Ke "<?=$data->title?>" ? Hubungi Kami Disini.
 	  </h4>
-	  <span style="width: 45%"></span>
+	  <span style="width: 40%"></span>
 	  <img lsrc="<?=base_url('assets/images/_web/about-img.png')?>" alt="">
 	  <span style="width: 45%"></span>
 	</div>
@@ -64,6 +64,7 @@
 		    echo form_dropdown('time',$dropdownData, (isset($default)?$default['time']:''),'class="form-control input" style="width:74%;float:left"');
 		    ?>
 		  </div>
+		  <div class="col-md-12 show-xs hidden-md hidden-lg" style="margin-top: 50px;"></div>
 		  <div class="form-group col-md-12 input-group-lg">
 		    <!-- <label for="nama">Nama</label> -->
 		    <input name="location" type="text" class="form-control input" placeholder="Berangkat Dari Kota..." value="<?=(isset($default)?$default['from_city']:'')?>">

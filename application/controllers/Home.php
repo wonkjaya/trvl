@@ -12,6 +12,7 @@ class Home extends MainController {
 
     function index(){
         $this->load->model('moffers', 'offers');
+        $data['scroll'] = true;
         $data['tour_destinations'] = $this->offers->get_tour_destinations(0,7); /*start, limit*/
         $data['tour_guides'] = $this->offers->get_tour_guides(0,8); /*start, limit*/
         $data['car_rental'] = $this->offers->get_car_rent(0,3); /*start, limit*/

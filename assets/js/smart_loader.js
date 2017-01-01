@@ -18,14 +18,14 @@ function $importWithCache(src){
 
 function loadDelayedScripts(base_url){
 	$importWithCache(base_url + 'assets/js/jquery.cacheimage.js');
+	$importWithCache(base_url + 'assets/js/move-top.js');
+	$importWithCache(base_url + 'assets/js/easing.js');
+	$importWithCache(base_url + 'assets/js/jquery.mmenu.js');
 	$importWithCache(base_url + 'assets/js/responsiveslides.min.js');
 	$importWithCache(base_url + 'assets/js/jquery.mixitup.min.js');
 	$importWithCache(base_url + 'assets/js/owl.carousel.js');
-	$importWithCache(base_url + 'assets/js/owl.carousel.js');
-	$importWithCache(base_url + 'assets/js/jquery.scrollTo.js');
-	$importWithCache(base_url + 'assets/js/jquery.nav.js');
 }
 
 function loadScript(base_url){
-	$import(base_url + 'assets/js/web_script.js');
+	$import(base_url + 'assets/js/smart_scripts.js');
 }

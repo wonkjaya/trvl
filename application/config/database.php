@@ -70,7 +70,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | The $query_builder variables lets you determine whether or not to load
 | the query builder class.
 */
-if($_SERVER['HTTP_HOST'] != 'localhost' && $_SERVER['HTTP_HOST'] != '192.168.200.117')
+if($_SERVER['HTTP_HOST'] != 'localhost' 
+	&& $_SERVER['HTTP_HOST'] != '192.168.200.117'
+	&& $_SERVER['HTTP_HOST'] != '192.168.43.65')
 	$active_group = 'server';
 else
 	$active_group = 'default';
