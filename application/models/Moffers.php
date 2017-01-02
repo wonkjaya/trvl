@@ -75,11 +75,10 @@ class Moffers extends CI_Model
         $this->db->join('users','users.username = posts.author','left');
         $query = $this->db->get('posts');
         if($query->num_rows() > 0 ){
-            $data = $query->row();
+            return $data = $query->row();
         }else{
-            $data = null;
+            return false;
         }
-        return $data;
     }
 /* related tour */
     function get_related_tour_destinations($except_slug=''){

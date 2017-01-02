@@ -1,6 +1,6 @@
 <!--MENU SECTION END-->
 <?php
-$type = "location_upload_ganti";
+$typeupload = "location_upload_ganti";
 ?>
 <style>
   .custom-border{
@@ -25,7 +25,7 @@ $type = "location_upload_ganti";
   <div class="container">
     <div class="row pad-botm">
       <div class="col-md-12">
-        <h3 class="header-line">Tour Offers</h3>
+        <h3 class="header-line"><?=($type == 'new')?'Add New':'Edit'?> Post</h3>
       </div>
     </div>
     <?php
@@ -37,7 +37,7 @@ $type = "location_upload_ganti";
 	     <form id="form" action="" method="post">
         <div class="col-md-8">
           <div class="form-group">
-            <input type="text" required name="title" class="form-control custom-border" placeholder="Title...">
+            <input type="text" required name="title" class="form-control custom-border" placeholder="Title..." autocomplete="off">
           </div>
           <div class="form-group">
             <?php
@@ -49,24 +49,30 @@ $type = "location_upload_ganti";
           </div>
         </div>
        </form>
+          <?php
+            $display = '';
+            if($type == 'new'){
+              $display = 'display:none';
+            }
+          ?>
         <div class="col-md-4">
             <button name="draft" type="button" class="btn btn-warning btn-lg col-md-5 custom-border" onclick="submit_form('draft');">Draft</button>
-            <button name="submit" type="buttom" class="btn btn-primary btn-lg col-md-5 custom-border submit" onclick="submit_form('submit');">Publish</button>
+            <button name="submit" type="buttom" class="btn btn-primary btn-lg col-md-5 custom-border submit" onclick="submit_form('submit');" style="<?=$display?>">Publish</button>
           <hr>
             <?=(isset($default['error']))?'<span class="label label-danger">'.$default['error'].'</span>':''?>
           <br>
-            <h3 class="col-md-12">Thumbnail Image</h3>
-          <hr>
-          <div class="row">
+          <div class="row" style="<?=$display?>">
+              <h3 class="col-md-12">Thumbnail Image</h3>
+            <hr>
             <div class="col-md-12 text-center">
               <img src="<?=base_url('assets/images/uploads/no-image.png')?>" alt="..." class="img">
               <input type="file" class="uploadImage" accept="image/jpeg"/>
               <p>400x300 (*.jpg)</p>
             </div>
           </div>
-            <h3 class="col-md-12">Gallery</h3>
-          <hr>
-          <div class="row">
+          <div class="row" style="<?=$display?>">
+              <h3 class="col-md-12">Gallery</h3>
+            <hr>
             <div class="col-md-4 col-xs-6" style="overflow: hidden;">
               <img src="<?=base_url('assets/images/uploads/no-image.png')?>" alt="..." class="img">
               <input type="file" class="uploadImage" accept="image/jpeg"/>

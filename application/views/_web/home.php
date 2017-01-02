@@ -399,7 +399,7 @@
 	        	$importWithCache('assets/js/jquery.nav.js');
 		    }
 		    function loadScript(){
-	        	$import('assets/js/script.js');
+	        	$import('assets/js/web_script.js');
 		    }
 
 		    var delay = 3; // wait and then load the file

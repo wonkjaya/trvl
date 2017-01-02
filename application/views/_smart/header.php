@@ -8,8 +8,8 @@
 		 </a>
 		<div class="logo head-logo logo-md">
 			<a href="<?=site_url()?>" style="margin-left: 10%">
-				<img src="<?=base_url('assets/images/_smart/logo.gif');?>" id="section-1" class="img-responsive" alt="kuiren tour and travel"/>
-				<span class="">KuiRen Tour</span>
+				<img src="<?=base_url('assets/images/_smart/logo.gif');?>" id="section-1" class="img-responsive head-image" alt="kuiren tour and travel"/>
+				<span class="site-title">KuiRen Tour</span>
 			</a>
 		</div>
 	 </div>

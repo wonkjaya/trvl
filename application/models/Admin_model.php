@@ -37,5 +37,20 @@ class Admin_model extends CI_Model {
 		$this->session->set_flashdata('success_message', 'Data Berhasil Diinputkan');
 		redirect('admin/tour_destination');
 	}
+
+	function get_post($slug){
+		$this->db->where(['p.post_slug'=>$slug, 'img.image_key'=>'thumbnail']);
+		$this->db->join('post_images img','img.post_id = p.post_id','left');
+		$q = $this->db->get('posts p');
+		if($q->num_rows() > 0){
+			$data['post'] = $q->row();
+			$this->db->where(['img.post_id'=>$q->row()->id, 'img.image_key'=>'gallery']);
+			$i= $this->db->get('post_images img');
+			if($i->num_rows() > 0){
+				$data['img']=$i->result();
+			}
+		}
+		return $data;
+	}
 }
 // end of file

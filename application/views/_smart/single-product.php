@@ -92,7 +92,7 @@
 							</div>
 				  			<?php
 				  			if(isset($display_form)){
-					  			$this->load->view('_web/'.$display_form, 
+					  			$this->load->view('templates/'.$display_form, 
 					  				["default"=>(isset($default)?$default:null)]);
 				  			}
 				  			?>
@@ -107,7 +107,7 @@
 						  <img lsrc="<?=base_url('assets/images/_web/about-img.png')?>" alt="">
 						  <span style="width: 40%"></span>
 						</div>
-						<div class="col-md-12" id="related_content" style="padding-top:20px">
+						<div class="col-md-12 col-xs-9" id="related_content" style="padding-top:20px">
 							<ul class="media-list" id="otherPosts">
 
 							</ul>						

@@ -1,12 +1,26 @@
+<style>
+	.custom-footer a{
+		color:#fff;
+	}
+</style>
 <div class="fotter">	
 	 <div class="container">
 		 <div class="fotter-grids">
-			 <div class="col-md-4 fotter-left">
-			 <img src="<?=base_url('assets/images/_smart/fotter-logo.png');?>" alt="">
-			 <p>Voluptatem quia voluptas sit aspernatur aut odit aut fugit, 
-				sed quia consequuntur magni dolores eos qui ratione.</p>
+			 <div class="col-md-12 fotter-left">
+				<div class="row">
+					<div class="col-md-12 head-logo logo-md custom-footer">
+						<a href="<?=site_url()?>">
+						<img src="<?=base_url('assets/images/_web/logo.png')?>" id="section-1" class="img-responsive" alt="kuiren tour and travel"/>
+							<span class="site-title">KuiRen Tour</span>
+						</a>
+					</div>
+					
+				</div>
+				 	<div class="col-md-12">
+				 		<p>Semakin mudah untuk berwisata di tempat favoritmu sekarang bersama kami</p>
+					</div>
 			 </div>
-			 <div class="col-md-4 fotter-middle">
+			 <div class="col-md-12 fotter-middle">
 				 <h3>Latest News</h3>
 				 <div class="footer-list">
 						<ul>

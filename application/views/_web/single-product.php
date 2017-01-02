@@ -41,8 +41,11 @@
 			  	<div class="row">
 				  	<div class="col-md-8">
 						<div class="about-head">
-						  <h3 id="title" slug="<?=$data->slug?>">
-						  	<?=($data)
+						  <h3 id="title" slug="<?=(isset($data->slug))?$data->slug:''?>">
+						  <?php
+						  // print_r($data);
+						  ?>
+						  	<?=(isset($data->title))
 						  	?$data->title:'No title'?>
 						  </h3>
 						  <span></span>
@@ -58,7 +61,7 @@
 							<div class="col-md-12">
 								<div class="about-head text-center">
 								  <h4>
-								  	Gallery Dari "<?=$data->title?>"
+								  	Gallery Dari "<?=(isset($data->title))?$data->title:''?>"
 								  </h4>
 								  <span style="width: 45%"></span>
 								  <img lsrc="<?=base_url('assets/images/_web/about-img.png')?>" alt="">
@@ -94,7 +97,7 @@
 							</div>
 				  			<?php
 				  			if(isset($display_form)){
-					  			$this->load->view('_web/'.$display_form, 
+					  			$this->load->view('templates/'.$display_form, 
 					  				["default"=>(isset($default)?$default:null)]);
 				  			}
 				  			?>

@@ -61,7 +61,7 @@
 						?>
 					<div class="portfolio card mix_all custom-portofolio" data-cat="card">
 						<div class="portfolio-wrapper wow bounceIn" data-wow-delay="0.4s">		
-							<a href="car_rental/<?=$r->slug?>" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
+							<a href="car_rent/<?=$r->slug?>" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
 						     	<img lsrc="<?=base_url('assets/images/uploads/post_thumb/'.$r->thumbnail)?>" class="img-responsive" alt=""/>
 								<div class="tour-caption" style="text-align:center">
 									<span></span>
@@ -76,7 +76,7 @@
 						?>
 						<div class="portfolio card mix_all custom-portofolio" data-cat="card">
 						<div class="portfolio-wrapper wow bounceIn" data-wow-delay="0.4s">		
-							<a href="tour_destinations" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
+							<a href="car_rent" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
 							    <img lsrc="<?=base_url('assets/images/uploads/post_thumb/loadmore.jpg')?>" class="img-responsive" alt=""/>
 								<div class="tour-caption" style="text-align:center">
 									<span></span>
@@ -133,7 +133,7 @@
 	        	$importWithCache(base_url + 'assets/js/jquery.nav.js');
 		    }
 		    function loadScript(){
-	        	$import(base_url + 'assets/js/script.js');
+	        	$import(base_url + 'assets/js/web_script.js');
 		    }
 
 		    var delay = 3; // wait and then load the file

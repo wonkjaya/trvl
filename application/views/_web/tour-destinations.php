@@ -132,7 +132,7 @@
 	        	$importWithCache(base_url + 'assets/js/jquery.nav.js');
 		    }
 		    function loadScript(){
-	        	$import(base_url + 'assets/js/script.js');
+	        	$import(base_url + 'assets/js/web_script.js');
 		    }
 
 		    var delay = 3; // wait and then load the file

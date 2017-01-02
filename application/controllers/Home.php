@@ -95,8 +95,12 @@ class Home extends MainController {
         $this->load->helper('form');
         $data['display_form']= 'request_tour';
         $data['data'] = $this->offers->get_tour_destination($slug); /*start, limit*/
-        $data['gallery'] = $this->offers->get_gallery($slug);
-        $this->loadView('single-product',$data);
+        if(!$data['data']){
+            $this->loadView('notfound',$data);
+        }else{
+            $data['gallery'] = $this->offers->get_gallery($slug);
+            $this->loadView('single-product',$data);
+        }
     }
 
     function get_related_tour_destinations($except_slug, $type=''){
