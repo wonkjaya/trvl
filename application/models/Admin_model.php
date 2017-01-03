@@ -33,9 +33,12 @@ class Admin_model extends CI_Model {
 			$data['error'] = "Judul dan Category Kosong";
 			return $data;
 		}
+		/*insert new post*/
 		$this->db->insert('posts', $data);
+		/*insert new images*/
+		$this->db->insert('post_images', ["post_id"=>$this->db->insert_id(),"image_key"=>"thumbnail"]);
 		$this->session->set_flashdata('success_message', 'Data Berhasil Diinputkan');
-		redirect('admin/tour_destination');
+		redirect('admin/tour_destination/edit/'.$data['post_slug']);
 	}
 
 	function get_post($slug){
@@ -44,11 +47,13 @@ class Admin_model extends CI_Model {
 		$q = $this->db->get('posts p');
 		if($q->num_rows() > 0){
 			$data['post'] = $q->row();
-			$this->db->where(['img.post_id'=>$q->row()->id, 'img.image_key'=>'gallery']);
+			$this->db->where(['img.post_id'=>$q->row()->post_id, 'img.image_key'=>'gallery']);
 			$i= $this->db->get('post_images img');
 			if($i->num_rows() > 0){
 				$data['img']=$i->result();
 			}
+		}else{
+			$data['post'] = null;
 		}
 		return $data;
 	}

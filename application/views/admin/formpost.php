@@ -21,6 +21,9 @@ $typeupload = "location_upload_ganti";
     margin-left:10px;
   }
 </style>
+<?php
+$dft = (isset($default['post'])?$default['post']:null);
+?>
 <div class="content-wrapper">
   <div class="container">
     <div class="row pad-botm">
@@ -37,15 +40,17 @@ $typeupload = "location_upload_ganti";
 	     <form id="form" action="" method="post">
         <div class="col-md-8">
           <div class="form-group">
-            <input type="text" required name="title" class="form-control custom-border" placeholder="Title..." autocomplete="off">
+            <input type="text" required name="title" class="form-control custom-border" placeholder="Title..." autocomplete="off" value="<?=($dft)?$dft->post_title:'';?>">
           </div>
           <div class="form-group">
             <?php
-            echo form_dropdown('category', $categories, '', 'class="form-control custom-border"');
+            echo form_dropdown('category', $categories, (($dft)?$dft->category:''), 'class="form-control custom-border"');
             ?>
           </div>
           <div class="form-group">
-            <textarea name="content" id="editor" placeholder="Insert Text" height="500px"></textarea>
+            <textarea name="content" id="editor" placeholder="Insert Text" height="500px">
+              <?=(($dft)?$dft->post:'');?>
+            </textarea>
           </div>
         </div>
        </form>
