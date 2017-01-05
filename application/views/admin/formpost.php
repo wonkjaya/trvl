@@ -161,4 +161,10 @@ $dft = (isset($default['post'])?$default['post']:null);
     automatic_uploads: false
   });
 </script>
+<script src="bower_components/blueimp-file-upload/js/vendor/jquery.ui.widget.js" type="text/javascript"></script>
+<script src="bower_components/blueimp-file-upload/js/jquery.iframe-transport.js" type="text/javascript"></script>
+<script src="bower_components/blueimp-file-upload/js/jquery.fileupload.js" type="text/javascript"></script>
+<script src="bower_components/blueimp-file-upload/js/jquery.fileupload-image.js" type="text/javascript"></script>
+
+<script src="bower_components/cloudinary-jquery-file-upload/cloudinary-jquery-file-upload.js" type="text/javascript"></script>
 <!-- CONTENT-WRAPPER SECTION END-->
