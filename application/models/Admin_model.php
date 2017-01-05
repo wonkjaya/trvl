@@ -57,5 +57,18 @@ class Admin_model extends CI_Model {
 		}
 		return $data;
 	}
+
+	function save_post($data){
+		$post['post_title'] = $this->input->post('title');
+		$post['post_slug'] = str_replace(' ', '-', strtolower($this->input->post('title')));
+		$post['category'] = $this->input->post('category');
+		$post['post'] = $this->input->post('content');
+		if(empty($post['post_title']) || empty($post['category'])){
+			return "field tidak boleh kosong";
+		}
+		$this->db->where('post_slug',$data['slug']);
+		$this->db->update('posts', $post);
+		redirect('admin/tour_destination/edit/'.$post['post_slug']);
+	}
 }
 // end of file
