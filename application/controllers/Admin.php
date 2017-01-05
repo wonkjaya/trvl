@@ -20,7 +20,7 @@ class Admin extends AdminController {
 		$this->loadView('dashboard');
 	}
 
-	function addpost($data){
+	private function addpost($data){
         $this->load->model('main_admin_model','main');
         $this->load->helper('form');
         
@@ -29,8 +29,12 @@ class Admin extends AdminController {
 		$this->loadView('formpost', $data);
 	}
 
-	function editpost($data){
+	private function editpost($data){
         $this->load->model('main_admin_model','main');
+		if($_POST){
+			// print_r($_POST);exit;
+			$this->main->save_post($data);
+		}
         $this->load->helper('form');
         
         $data['default'] = $this->main->get_post($data['slug']);
@@ -38,7 +42,7 @@ class Admin extends AdminController {
 		$this->loadView('formpost', $data);
 	}
 
-	function deletepost($post_id){ //delete post page
+	private function deletepost($post_id){ //delete post page
 		$this->load->model('main_admin_model','main');  
         if(!$this->check_permissions('author'))//when the user is not an andmin and author
         {
@@ -71,35 +75,6 @@ class Admin extends AdminController {
 	        $data['type'] = "blogoffers";
 			$this->loadView('products_data', $data);
 		}
-
-		/*function editoffers(){
-			$this->load->model('main_admin_model','main');  
-			$data['success'] = 0;
-	        
-	        if($this->input->post())
-	        {
-	            $data = array(
-	                'post_title' => $this->input->post('post_title'),
-	                'post' => $this->input->post('post'),
-	                'active' => 1
-	            );
-	            $this->main->update_post($post_id, $data);
-	            $data['success'] = 1;
-	        }
-	        $data['post'] = $this->main->get_post($post_id);
-	        
-	        $this->loadView('addpost',$data);
-		}*/
-
-		/*function deleteoffer($post_id){ //delete post page
-			$this->load->model('main_admin_model','main');  
-	        if(!$this->check_permissions('author'))//when the user is not an andmin and author
-	        {
-	            redirect(base_url().'index.php/users/login');
-	        }
-	        $this->main->delete_post($post_id);
-	        redirect('admin/browseoffers');
-	    }*/
 // end blogoffers group
 
 
@@ -129,34 +104,5 @@ class Admin extends AdminController {
 	        $data['type'] = "tour_destination";
 			$this->loadView('products_data', $data);
 		}
-
-		/*function edittour(){
-			$this->load->model('main_admin_model','main');  
-			$data['success'] = 0;
-	        
-	        if($this->input->post())
-	        {
-	            $data = array(
-	                'post_title' => $this->input->post('post_title'),
-	                'post' => $this->input->post('post'),
-	                'active' => 1
-	            );
-	            $this->main->update_post($post_id, $data);
-	            $data['success'] = 1;
-	        }
-	        $data['post'] = $this->main->get_post($post_id);
-	        
-	        $this->loadView('addpost',$data);
-		}*/
-
-		/*function deletetour($post_id){ //delete post page
-			$this->load->model('main_admin_model','main');  
-	        if(!$this->check_permissions('author'))//when the user is not an andmin and author
-	        {
-	            redirect(base_url().'index.php/users/login');
-	        }
-	        $this->main->delete_post($post_id);
-	        redirect('admin/browseoffers');
-	    }*/
 // end tour group
 }
