@@ -118,7 +118,10 @@ $dft = (isset($default['post'])?$default['post']:null);
       </div>
   </div>
 </div>
+
 <script src="<?=base_url('assets/js/editor/tinymce.min.js')?>"></script>
+
+
 <script>
   function submit_form(type){
       var form = document.getElementById('form');
@@ -160,11 +163,34 @@ $dft = (isset($default['post'])?$default['post']:null);
     images_upload_base_path: '/assets/images/uploads/' + upload_folder,
     automatic_uploads: false
   });
-</script>
-<script src="bower_components/blueimp-file-upload/js/vendor/jquery.ui.widget.js" type="text/javascript"></script>
-<script src="bower_components/blueimp-file-upload/js/jquery.iframe-transport.js" type="text/javascript"></script>
-<script src="bower_components/blueimp-file-upload/js/jquery.fileupload.js" type="text/javascript"></script>
-<script src="bower_components/blueimp-file-upload/js/jquery.fileupload-image.js" type="text/javascript"></script>
+  var base_url = "<?=base_url()?>";
 
-<script src="bower_components/cloudinary-jquery-file-upload/cloudinary-jquery-file-upload.js" type="text/javascript"></script>
-<!-- CONTENT-WRAPPER SECTION END-->
+  setTimeout(function(){
+    loadDelayedScripts(base_url);
+  }, 4000);
+
+  function $import(src){
+    var scriptElem = document.createElement('script');
+    scriptElem.setAttribute('src',src);
+    scriptElem.setAttribute('type','text/javascript');
+    document.getElementsByTagName('head')[0].appendChild(scriptElem);
+  }
+
+  // import with a random query parameter to avoid caching
+  function $importWithCache(src){
+    var ms = new Date().getHours().toString();
+    var seed = "?" + ms;
+    
+    $import(src + seed);
+  }
+
+
+  // console.log(base_url);
+
+  function loadDelayedScripts(base_url){
+    $importWithCache(base_url + 'assets/js/cloud/jquery.ui.widget.js');
+    $importWithCache(base_url + 'assets/js/cloud/jquery.iframe-transport.js');
+    $importWithCache(base_url + 'assets/js/cloud/jquery.fileupload.js');
+    $importWithCache(base_url + 'assets/js/cloud/jquery.cloudinary.js');
+  }
+</script>
