@@ -18,13 +18,28 @@ $typeupload = "location_upload_ganti";
     cursor: pointer;
   }
   .submit{
-    margin-left:10px;
+    margin:0px 10px;
   }
 </style>
 <?php
 $dft = (isset($default['post'])?$default['post']:null);
 $post_id = ($dft)?$dft->post_id:null;
+$no_image = base_url('assets/images/uploads/no-image.png');
 // print_r($dft);
+$imgs['thumbnail'] = isset($dft->image_value)?str_replace('image/upload/','image/upload/w_100,h_100,c_pad/',$dft->image_value):'';
+$images_data = ['img1','img2','img3','img4','img5','img6','img7','img8'];
+// set default 
+for ($a=0; $a <= count($images_data)-1; $a++) { 
+  $imgs[$images_data[$a]] = '<img src="'.$no_image.'" data-empty="true" class="img thumbnail '. $images_data[$a] .'">';
+}
+if(isset($default['img'])){
+  $i= 0;
+  foreach ($default['img'] as $img) {
+    $image = str_replace('image/upload/','image/upload/w_100,h_100,c_pad/',$img->image_value);
+    $imgs[$images_data[$i]] = '<img src="'.$image.'" data-empty="false" class="img thumbnail '. $images_data[$i] .'">';
+    $i++;
+  }  
+}
 ?>
 <div class="content-wrapper">
   <div class="container">
@@ -74,8 +89,9 @@ $post_id = ($dft)?$dft->post_id:null;
             }
           ?>
         <div class="col-md-4">
-            <button name="draft" type="button" class="btn btn-warning btn-lg col-md-5 custom-border" onclick="submit_form('draft');">Draft</button>
-            <button name="submit" type="buttom" class="btn btn-primary btn-lg col-md-5 custom-border submit" onclick="submit_form('submit');" style="<?=$display?>">Publish</button>
+            <button name="draft" type="button" class="btn btn-warning btn-lg col-md-4 custom-border" onclick="submit_form('draft');">Draft</button>
+            <button name="submit" type="buttom" class="btn btn-default btn-lg col-md-3 custom-border submit" onclick="submit_form('submit');" style="<?=$display?>">Publish</button>
+            <a href="<?=site_url('tour_destination/'.$dft->post_slug)?>" class="btn btn-primary btn-lg col-md-4 custom-border">Preview</a>
           <hr>
             <?=(isset($default['error']))?'<span class="label label-danger">'.$default['error'].'</span>':''?>
           <br>
@@ -108,7 +124,7 @@ $post_id = ($dft)?$dft->post_id:null;
             <hr>
             <div class="col-md-12 text-center">
             <center class="thumbnail1-preview">
-              <img src="<?=base_url('assets/images/uploads/no-image.png')?>" alt="..." class="img thumbnail thumbnail1">
+              <img src="<?=isset($imgs['thumbnail'])?$imgs['thumbnail']:$no_image?>" alt="..." class="img thumbnail thumbnail1">
             <center>
             </div>
             <div class="preview">
@@ -119,39 +135,39 @@ $post_id = ($dft)?$dft->post_id:null;
               <h3 class="col-md-12">Gallery</h3>
             <hr>
             <div class="col-md-4 col-xs-6 img1-preview" style="overflow: hidden;">
-              <img src="<?=base_url('assets/images/uploads/no-image.png')?>" alt="..." class="img thumbnail img1">
+              <?=$imgs['img1']?> 
               <!-- <input type="file" class="uploadImage" accept="image/jpeg"/> -->
             </div>
             <div class="col-md-4 col-xs-6 img2-preview">
-              <img src="<?=base_url('assets/images/uploads/no-image.png')?>" alt="..." class="img thumbnail img2">
+              <?=$imgs['img2']?> 
               <!-- <input type="file" class="uploadImage" accept="image/jpeg"/> -->
             </div>
             <div class="col-md-4 col-xs-6 img3-preview">
-              <img src="<?=base_url('assets/images/uploads/no-image.png')?>" alt="..." class="img thumbnail img3">
+              <?=$imgs['img3']?> 
               <!-- <input type="file" class="uploadImage" accept="image/jpeg"/> -->
             </div>
             <div class="col-md-4 col-xs-6 img4-preview">
-              <img src="<?=base_url('assets/images/uploads/no-image.png')?>" alt="..." class="img thumbnail img4">
+              <?=$imgs['img4']?> 
               <!-- <input type="file" class="uploadImage" accept="image/jpeg"/> -->
             </div>
             <div class="col-md-4 col-xs-6 img5-preview">
-              <img src="<?=base_url('assets/images/uploads/no-image.png')?>" alt="..." class="img thumbnail img5">
+              <?=$imgs['img5']?> 
               <!-- <input type="file" class="uploadImage" accept="image/jpeg"/> -->
             </div>
             <div class="col-md-4 col-xs-6 img6-preview">
-              <img src="<?=base_url('assets/images/uploads/no-image.png')?>" alt="..." class="img thumbnail img6">
+              <?=$imgs['img6']?> 
               <!-- <input type="file" class="uploadImage" accept="image/jpeg"/> -->
             </div>
             <div class="col-md-4 col-xs-6 img7-preview">
-              <img src="<?=base_url('assets/images/uploads/no-image.png')?>" alt="..." class="img thumbnail img7">
+              <?=$imgs['img7']?> 
               <!-- <input type="file" class="uploadImage" accept="image/jpeg"/> -->
             </div>
             <div class="col-md-4 col-xs-6 img8-preview">
-              <img src="<?=base_url('assets/images/uploads/no-image.png')?>" alt="..." class="img thumbnail img8">
+              <?=$imgs['img8']?> 
               <!-- <input type="file" class="uploadImage" accept="image/jpeg"/> -->
             </div>
             <div class="col-md-4 hidden-xs">
-              <!-- <img src="<?=base_url('assets/images/uploads/no-image.png')?>" alt="..." class="img"> -->
+              <!-- <img src="<?=isset($imgs['thumbnail'])?$imgs['thumbnail']:$no_image?>" alt="..." class="img"> -->
             </div>
           </div>
         </div>

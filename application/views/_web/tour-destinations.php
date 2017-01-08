@@ -61,7 +61,7 @@
 					<div class="portfolio card mix_all custom-portofolio" data-cat="card">
 						<div class="portfolio-wrapper wow bounceIn" data-wow-delay="0.4s">		
 							<a href="tour_destination/<?=$r->slug?>" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
-						     	<img lsrc="<?=$r->thumbnail?>" class="img-responsive" alt=""/>
+						     	<img lsrc="<?=str_replace('upload/','upload/w_180,h_140,c_pad/',$r->thumbnail)?>" class="img-responsive" alt=""/>
 								<div class="tour-caption" style="text-align:center">
 									<span></span>
 									<p><?=$r->title?></p>
