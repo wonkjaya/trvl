@@ -90,6 +90,8 @@ class Admin extends AdminController {
         	$this->addpost($data);
         }elseif($type == 'edit'){
         	$this->editpost($data);
+        }elseif($type == 'trash'){
+        	$this->trashpost($data);
         }else{
         	$this->browsetour();
         }
@@ -103,6 +105,13 @@ class Admin extends AdminController {
 	        $data['label_title'] = "Data Destinasi Wisata";
 	        $data['type'] = "tour_destination";
 			$this->loadView('products_data', $data);
+		}
+
+		function trashpost($data){
+			if(isset($data['slug'])){
+				$this->load->model('main_admin_model','main');  
+				$this->main->trash_data($data['slug']);
+			}
 		}
 // end tour group
 }

@@ -23,6 +23,8 @@ $typeupload = "location_upload_ganti";
 </style>
 <?php
 $dft = (isset($default['post'])?$default['post']:null);
+$post_id = ($dft)?$dft->post_id:null;
+// print_r($dft);
 ?>
 <div class="content-wrapper">
   <div class="container">
@@ -52,11 +54,22 @@ $dft = (isset($default['post'])?$default['post']:null);
               <?=(($dft)?$dft->post:'');?>
             </textarea>
           </div>
+          <?php
+          $form_data = [
+            "timestamp"=>time(),
+            "tags"=>"kuirent",
+            "api_key"=>"384971664985673",
+            "upload_preset" => "sample_489655fe76",
+          ];
+          $form_data=json_encode($form_data);
+          ?>
+          <?//=str_replace('"',"&quot;",$form_data)?>
+          
         </div>
        </form>
           <?php
             $display = '';
-            if($type == 'new'){
+            if($type == 'new' or !$post_id){
               $display = 'display:none';
             }
           ?>
@@ -67,51 +80,78 @@ $dft = (isset($default['post'])?$default['post']:null);
             <?=(isset($default['error']))?'<span class="label label-danger">'.$default['error'].'</span>':''?>
           <br>
           <div class="row" style="<?=$display?>">
-              <h3 class="col-md-12">Thumbnail Image</h3>
+            <div class="col-md-12 text-center">
+              <div class="form-group">
+                <br>
+                <?php 
+                $type_drop = [
+                  'thumbnail1'=>'Thumbnail',
+                  'img1'=>'Image 1',
+                  'img2'=>'Image 2',
+                  'img3'=>'Image 3',
+                  'img4'=>'Image 4',
+                  'img5'=>'Image 5',
+                  'img6'=>'Image 6',
+                  'img7'=>'Image 7',
+                  'img8'=>'Image 8',
+                  'img9'=>'Image 9',
+                ];
+                echo form_dropdown('type',$type_drop,'','class="form-control selector" onchange="setNewAttribute()"')?>
+                <br>
+                <input class="cloudinary-fileupload form-control" data-cloudinary-field="test" 
+                data-form-data="<?=str_replace('"',"&quot;",$form_data)?>" 
+                data-url="https://api.cloudinary.com/v1_1/ddk1ecibv/auto/upload" 
+                multiple="1" name="file" type="file">
+              </div>
+            </div>
+              <h3 class="col-md-12">Thumbnail Image 400x300 (*.jpg)</h3>
             <hr>
             <div class="col-md-12 text-center">
-              <img src="<?=base_url('assets/images/uploads/no-image.png')?>" alt="..." class="img">
-              <input type="file" class="uploadImage" accept="image/jpeg"/>
-              <p>400x300 (*.jpg)</p>
+            <center class="thumbnail1-preview">
+              <img src="<?=base_url('assets/images/uploads/no-image.png')?>" alt="..." class="img thumbnail thumbnail1">
+            <center>
+            </div>
+            <div class="preview">
+              
             </div>
           </div>
           <div class="row" style="<?=$display?>">
               <h3 class="col-md-12">Gallery</h3>
             <hr>
-            <div class="col-md-4 col-xs-6" style="overflow: hidden;">
-              <img src="<?=base_url('assets/images/uploads/no-image.png')?>" alt="..." class="img">
-              <input type="file" class="uploadImage" accept="image/jpeg"/>
+            <div class="col-md-4 col-xs-6 img1-preview" style="overflow: hidden;">
+              <img src="<?=base_url('assets/images/uploads/no-image.png')?>" alt="..." class="img thumbnail img1">
+              <!-- <input type="file" class="uploadImage" accept="image/jpeg"/> -->
             </div>
-            <div class="col-md-4 col-xs-6">
-              <img src="<?=base_url('assets/images/uploads/no-image.png')?>" alt="..." class="img">
-              <input type="file" class="uploadImage" accept="image/jpeg"/>
+            <div class="col-md-4 col-xs-6 img2-preview">
+              <img src="<?=base_url('assets/images/uploads/no-image.png')?>" alt="..." class="img thumbnail img2">
+              <!-- <input type="file" class="uploadImage" accept="image/jpeg"/> -->
             </div>
-            <div class="col-md-4 col-xs-6">
-              <img src="<?=base_url('assets/images/uploads/no-image.png')?>" alt="..." class="img">
-              <input type="file" class="uploadImage" accept="image/jpeg"/>
+            <div class="col-md-4 col-xs-6 img3-preview">
+              <img src="<?=base_url('assets/images/uploads/no-image.png')?>" alt="..." class="img thumbnail img3">
+              <!-- <input type="file" class="uploadImage" accept="image/jpeg"/> -->
             </div>
-            <div class="col-md-4 col-xs-6">
-              <img src="<?=base_url('assets/images/uploads/no-image.png')?>" alt="..." class="img">
-              <input type="file" class="uploadImage" accept="image/jpeg"/>
+            <div class="col-md-4 col-xs-6 img4-preview">
+              <img src="<?=base_url('assets/images/uploads/no-image.png')?>" alt="..." class="img thumbnail img4">
+              <!-- <input type="file" class="uploadImage" accept="image/jpeg"/> -->
             </div>
-            <div class="col-md-4 col-xs-6">
-              <img src="<?=base_url('assets/images/uploads/no-image.png')?>" alt="..." class="img">
-              <input type="file" class="uploadImage" accept="image/jpeg"/>
+            <div class="col-md-4 col-xs-6 img5-preview">
+              <img src="<?=base_url('assets/images/uploads/no-image.png')?>" alt="..." class="img thumbnail img5">
+              <!-- <input type="file" class="uploadImage" accept="image/jpeg"/> -->
             </div>
-            <div class="col-md-4 col-xs-6">
-              <img src="<?=base_url('assets/images/uploads/no-image.png')?>" alt="..." class="img">
-              <input type="file" class="uploadImage" accept="image/jpeg"/>
+            <div class="col-md-4 col-xs-6 img6-preview">
+              <img src="<?=base_url('assets/images/uploads/no-image.png')?>" alt="..." class="img thumbnail img6">
+              <!-- <input type="file" class="uploadImage" accept="image/jpeg"/> -->
             </div>
-            <div class="col-md-4 col-xs-6">
-              <img src="<?=base_url('assets/images/uploads/no-image.png')?>" alt="..." class="img">
-              <input type="file" class="uploadImage" accept="image/jpeg"/>
+            <div class="col-md-4 col-xs-6 img7-preview">
+              <img src="<?=base_url('assets/images/uploads/no-image.png')?>" alt="..." class="img thumbnail img7">
+              <!-- <input type="file" class="uploadImage" accept="image/jpeg"/> -->
             </div>
-            <div class="col-md-4 col-xs-6">
-              <img src="<?=base_url('assets/images/uploads/no-image.png')?>" alt="..." class="img">
-              <input type="file" class="uploadImage" accept="image/jpeg"/>
+            <div class="col-md-4 col-xs-6 img8-preview">
+              <img src="<?=base_url('assets/images/uploads/no-image.png')?>" alt="..." class="img thumbnail img8">
+              <!-- <input type="file" class="uploadImage" accept="image/jpeg"/> -->
             </div>
             <div class="col-md-4 hidden-xs">
-              <img src="<?=base_url('assets/images/uploads/no-image.png')?>" alt="..." class="img">
+              <!-- <img src="<?=base_url('assets/images/uploads/no-image.png')?>" alt="..." class="img"> -->
             </div>
           </div>
         </div>
@@ -121,6 +161,93 @@ $dft = (isset($default['post'])?$default['post']:null);
 
 <script src="<?=base_url('assets/js/editor/tinymce.min.js')?>"></script>
 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.12.5/js/vendor/jquery.ui.widget.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.12.5/js/jquery.iframe-transport.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.12.5/js/jquery.fileupload.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cloudinary-jquery-file-upload/2.1.2/cloudinary-jquery-file-upload.js"></script>
+
+<script>
+  var activeselector="thumbnail1";
+
+  function resetcss(){
+    $(".thumbnail1").css("background-color","transparent");
+    for (var i = 8; i >= 1; i--) {
+      $(".img"+i).css("background-color","transparent");
+    }
+  }
+
+  function setNewAttribute(){
+    resetcss();
+    var selector = $(".selector");
+    activeselector = selector.val();
+    if(activeselector === "thumbnail1"){
+      $(".thumbnail1").css("background-color","#000");
+    }else{
+      $("."+activeselector).css("background-color","#000");
+    }
+  }
+
+</script>
+
+<script type="text/javascript">
+  $.cloudinary.config({"api_key":"384971664985673","cloud_name":"ddk1ecibv"});
+</script>
+
+<script>
+  function prettydump(obj) {
+    ret = "";
+    $.each(obj, function(key, value) {
+      ret += "<tr><td>" + key + "</td><td>" + value + "</td></tr>";
+    });
+    return ret;
+  }
+  
+  $(function() {
+    $('.cloudinary-fileupload')
+    .cloudinary_fileupload({
+      dropZone: '#direct_upload',
+      start: function () {
+        console.log('Starting direct upload...');
+      },
+      progress: function () {
+        console.log('Uploading...');
+      }
+    })
+    .on('cloudinarydone', function (e, data) {
+        $("."+activeselector+"-preview").html(
+          $.cloudinary.image(data.result.public_id, 
+          { format: data.result.format, version: data.result.version, 
+            crop: 'pad', width: 100, height: 100 ,class:'img thumbnail '+activeselector})
+        );
+        sendData(data.result);
+    });
+  });
+
+  function sendData(data){
+    var imageKey = "";
+    if(activeselector === "thumbnail1"){
+      imageKey = "thumbnail";
+    }else{
+      imageKey = "gallery";
+    }
+    data.imageKey = imageKey;
+    data.post_id = "<?=$post_id?>";
+    $.ajax({
+      url: "<?=site_url('api/notif_upload')?>",
+      type: 'post',
+      data: data,
+      success: function( data, textStatus, jQxhr ){
+          console.info(data);
+      },
+      error: function( jqXhr, textStatus, errorThrown ){
+          console.log( errorThrown );
+      }
+    }).done(function(r){
+      console.log(r);
+    })
+  }
+</script>
 
 <script>
   function submit_form(type){
@@ -163,34 +290,5 @@ $dft = (isset($default['post'])?$default['post']:null);
     images_upload_base_path: '/assets/images/uploads/' + upload_folder,
     automatic_uploads: false
   });
-  var base_url = "<?=base_url()?>";
-
-  setTimeout(function(){
-    loadDelayedScripts(base_url);
-  }, 4000);
-
-  function $import(src){
-    var scriptElem = document.createElement('script');
-    scriptElem.setAttribute('src',src);
-    scriptElem.setAttribute('type','text/javascript');
-    document.getElementsByTagName('head')[0].appendChild(scriptElem);
-  }
-
-  // import with a random query parameter to avoid caching
-  function $importWithCache(src){
-    var ms = new Date().getHours().toString();
-    var seed = "?" + ms;
-    
-    $import(src + seed);
-  }
-
-
-  // console.log(base_url);
-
-  function loadDelayedScripts(base_url){
-    $importWithCache(base_url + 'assets/js/cloud/jquery.ui.widget.js');
-    $importWithCache(base_url + 'assets/js/cloud/jquery.iframe-transport.js');
-    $importWithCache(base_url + 'assets/js/cloud/jquery.fileupload.js');
-    $importWithCache(base_url + 'assets/js/cloud/jquery.cloudinary.js');
-  }
+  
 </script>

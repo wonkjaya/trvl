@@ -75,7 +75,7 @@
 										<div class="portfolio card mix_all custom-portofolio" data-cat="card">
 											<div class="portfolio-wrapper wow bounceIn" data-wow-delay="0.4s">		
 												<a href="#" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
-											     	<img lsrc="<?=base_url('assets/images/uploads/gallery/'.$img->image)?>" alt="..." class="img-responsive" alt=""/>
+											     	<img lsrc="<?=$img->image?>" alt="..." class="img-responsive" alt=""/>
 													<div class="tour-caption" style="text-align:center">
 														<span></span>
 														<p>...</p>
@@ -164,7 +164,7 @@
 						    </div>\
 						    <div class="media-left" style="width:70px">\
 						      <a href="'+ l +'">\
-						        <img class="media-object" width="50px" lsrc="' + base_url + i + '" alt="...">\
+						        <img class="media-object" width="50px" lsrc="' + i + '" alt="'+ l +'">\
 						      </a>\
 						    </div><hr>\
 						  </li>';
@@ -175,7 +175,7 @@
 					var l = jsonData[i].slug;
 					var c = jsonData[i].content + '...';
 					c = c.replace(/<\/?[^>]+(>|$)/g, "");
-					var img = 'assets/images/uploads/post_thumb/' + jsonData[i].thumbnail;
+					var img = jsonData[i].thumbnail;
 					template(t, l, c, img);
 				}
 			}

@@ -59,7 +59,7 @@
 					<div class="portfolio card mix_all custom-portofolio" data-cat="card">
 						<div class="portfolio-wrapper wow bounceIn" data-wow-delay="0.4s">		
 							<a href="tour_destination/<?=$r->slug?>" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
-						     	<img lsrc="assets/images/uploads/post_thumb/<?=$r->thumbnail?>" class="img-responsive" alt=""/>
+						     	<img lsrc="<?=$r->thumbnail?>" class="img-responsive" alt=""/>
 								<div class="tour-caption" style="text-align:center">
 									<span></span>
 									<p><?=$r->title?></p>
@@ -74,7 +74,7 @@
 						<div class="portfolio card mix_all custom-portofolio" data-cat="card">
 						<div class="portfolio-wrapper wow bounceIn" data-wow-delay="0.4s">		
 							<a href="tour_destinations" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
-							    <img lsrc="assets/images/uploads/post_thumb/loadmore.jpg" class="img-responsive" alt=""/>
+							    <img lsrc="//res.cloudinary.com/ddk1ecibv/image/upload/v1483861306/loadmore_tp9s18.jpg" class="img-responsive" alt=""/>
 								<div class="tour-caption" style="text-align:center">
 									<span></span>
 									<p>Lihat Lainnya</p>

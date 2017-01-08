@@ -135,7 +135,7 @@
 							<div class="portfolio card mix_all" data-cat="card" style="display: inline-block; opacity: 1;">
 								<div class="portfolio-wrapper wow bounceIn" data-wow-delay="0.4s">		
 									<a href="tour_destination/<?=$r->slug?>" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
-								     <img lsrc="assets/images/uploads/post_thumb/<?=$r->thumbnail?>" class="img-responsive" alt=""/>
+								     <img lsrc="<?=$r->thumbnail?>" class="img-responsive" alt=""/>
 										<div class="tour-caption">
 											<span> </span>
 											<p><?=$r->title?></p>
@@ -151,7 +151,7 @@
 							<div class="portfolio card mix_all" data-cat="card" style="display: inline-block; opacity: 1;">
 								<div class="portfolio-wrapper wow bounceIn" data-wow-delay="0.4s">		
 									<a href="tour_destinations" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
-								     <img lsrc="assets/images/uploads/post_thumb/loadmore.jpg" class="img-responsive" alt=""/>
+								     <img lsrc="//res.cloudinary.com/ddk1ecibv/image/upload/v1483861306/loadmore_tp9s18.jpg" class="img-responsive" alt=""/>
 										<div class="tour-caption">
 											<span> </span>
 											<p>Lihat Lainnya</p>
@@ -194,7 +194,7 @@
 							<div class="portfolio card mix_all" data-cat="card" style="display: inline-block; opacity: 1;">
 								<div class="portfolio-wrapper wow bounceIn" data-wow-delay="0.4s">		
 									<a href="car_rent/<?=$r->slug?>" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
-								     <img lsrc="assets/images/uploads/post_thumb/<?=$r->thumbnail?>" class="img-responsive" alt=""/>
+								     <img lsrc="<?=$r->thumbnail?>" class="img-responsive" alt=""/>
 										<div class="tour-caption">
 											<span> </span>
 											<p><?=$r->title?></p>
@@ -210,7 +210,7 @@
 							<div class="portfolio card mix_all" data-cat="card" style="display: inline-block; opacity: 1;">
 								<div class="portfolio-wrapper wow bounceIn" data-wow-delay="0.4s">		
 									<a href="car_rent" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
-								     <img lsrc="assets/images/uploads/post_thumb/loadmore.jpg" class="img-responsive" alt=""/>
+								     <img lsrc="//res.cloudinary.com/ddk1ecibv/image/upload/v1483861306/loadmore_tp9s18.jpg" class="img-responsive" alt=""/>
 										<div class="tour-caption">
 											<span> </span>
 											<p>Lihat Lainnya</p>
@@ -251,7 +251,7 @@
 					  		<div class="portfolio card mix_all" data-cat="card" style="display: inline-block; opacity: 1;">
 								<div class="portfolio-wrapper wow bounceIn" data-wow-delay="0.4s">		
 									<a href="tour_guide/<?=$tg->slug?>" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
-								     <img lsrc="assets/images/uploads/post_thumb/<?=$tg->thumbnail?>" class="img-responsive" alt=""/>
+								     <img lsrc="<?=$tg->thumbnail?>" class="img-responsive" alt=""/>
 										<div class="tour-caption">
 											<p style="font-size: 2em"><?=$tg->title?></p>
 										</div>
