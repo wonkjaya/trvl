@@ -48,44 +48,25 @@
 					<li><span class="filter" data-filter="icon">Short Date Tour</span></li>
 					<li><span class="filter" data-filter="fun">Long Date Tour</span></li>
 			    </ul>
-			    <div id="portfoliolist">
+			    <hr>
+			    <div class="about-head text-center">
+				  <h4>Wisata Domestik</h4>
+				  <span></span><img lsrc="<?=base_url('assets/images/_web/star.png')?>" alt=""><span></span>
+				</div>
 			    <style>
 			    	.custom-portofolio{
 			    		display: inline-block; opacity: 1;
 			    	}
 			    </style>
-						<?php
-					if($tour_destinations['tour_destinations']):
-					foreach ($tour_destinations['tour_destinations'] as $r) { 
-						?>
-					<div class="portfolio card mix_all custom-portofolio" data-cat="card">
-						<div class="portfolio-wrapper wow bounceIn" data-wow-delay="0.4s">		
-							<a href="tour_destination/<?=$r->slug?>" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
-						     	<img lsrc="<?=str_replace('upload/','upload/w_180,h_140,c_pad/',$r->thumbnail)?>" class="img-responsive" alt=""/>
-								<div class="tour-caption" style="text-align:center">
-									<span></span>
-									<p><?=$r->title?></p>
-								</div>
-							</a>
-						</div>
-					</div>
-						<?php
-					}
-					endif;
-						?>
-						<div class="portfolio card mix_all custom-portofolio" data-cat="card">
-						<div class="portfolio-wrapper wow bounceIn" data-wow-delay="0.4s">		
-							<a href="tour_destinations" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
-							    <img lsrc="//res.cloudinary.com/ddk1ecibv/image/upload/v1483861306/loadmore_tp9s18.jpg" class="img-responsive" alt=""/>
-								<div class="tour-caption" style="text-align:center">
-									<span></span>
-									<p>Lihat Lainnya</p>
-								</div>
-						    </a>
-
-						</div>
-					</div>
+			    <div id="portfoliolist domestic-destinations">
+					
 				   <div class="clearfix"></div>	
+				</div>
+
+			    <hr>
+			    <div class="about-head text-center">
+				  <h4>Wisata Spesial Malang</h4>
+				  <span></span><img lsrc="<?=base_url('assets/images/_web/star.png')?>" alt=""><span></span>
 				</div>
 		</div>
 		<hr>
@@ -139,6 +120,27 @@
 		    var delayS = 5; // wait and then load the file
 		    setTimeout("loadDelayedScripts()", delay * 1000);
 		    setTimeout("loadScript()", delayS * 1000);
+		</script>
+		<script>
+		$(document).ready(function(){
+			var data = <?=json_encode($tour_destinations['tour_destinations'])?>;
+			for (var i = data.length - 1; i >= 0; i--) {
+				var image = data[i].thumbnail.replace('upload/','upload/w_180,h_140,c_pad/');
+				var link = "tour_destination/"+ data[i].slug;
+				var html = '<div class="portfolio card mix_all custom-portofolio" data-cat="card">\
+								<div class="portfolio-wrapper wow bounceIn" data-wow-delay="0.4s">\
+									<a href="'+ link +'" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">\
+								     	<img lsrc="'+ image +'" class="img-responsive" alt=""/>\
+										<div class="tour-caption" style="text-align:center">\
+											<span></span>\
+											<p>'+ data[i].title +'</p>\
+										</div>\
+									</a>\
+								</div>\
+							</div>';
+				$("#domestic-destinations").append(link);
+			}
+		});
 		</script>
 	</body>
 </html>

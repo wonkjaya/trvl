@@ -80,7 +80,7 @@
 										<div class="portfolio card mix_all custom-portofolio" data-cat="card">
 											<div class="portfolio-wrapper wow bounceIn" data-wow-delay="0.4s">		
 												<a href="tour_destination" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
-											     	<img lsrc="<?=str_replace('upload/','upload/w_180,h_140,c_pad/',$img->image)?>" alt="..." class="img-responsive" alt=""/>
+											     	<img lsrc="<?=str_replace('upload/','upload/w_180,h_140,c_fill/',$img->image)?>" alt="..." class="img-responsive" alt=""/>
 													<div class="tour-caption" style="text-align:center">
 														<span></span>
 														<p>...</p>
@@ -163,8 +163,10 @@
 				/* end of loader sections */
 				function get_related(method){
 					var except_slug = document.getElementById('title').getAttribute("slug");
+					var $url = base_url + 'home/'+ method +'/' + except_slug + '/json';
+					// console.info($url);
 					$.ajax({
-						url : base_url + 'home/'+ method +'/' + except_slug + '/json',
+						url : $url,
 						method : 'GET',
 						success : function(r){
 							sendToPage(r); /* call function */

@@ -6,10 +6,11 @@ class Admin_model extends CI_Model {
 // public functions 
 
 	function get_categories(){
+		$this->db->where(['category_slug <>'=>'tour-destination']);
 		$q = $this->db->get('post_categories');
 		$cat[''] = 'Select Category';
 		foreach($q->result() as $r){
-			$cat[$r->category_slug] = $r->category_name;
+			$cat[$r->category_slug] = ($r->parent > 0)?'--'.$r->category_name:$r->category_name;
 		}
 		return $cat;
 	}

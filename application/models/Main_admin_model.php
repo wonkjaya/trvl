@@ -42,10 +42,11 @@ class Main_admin_model extends Admin_model {
     {
     	$page = (isset($_GET['p']))?$_GET['p']:0; // page position
         $this->db->order_by('p.post_id','DESC');
-        $this->db->where(['cat.category_slug'=>'tour-destination']);
+        $this->db->where(['cat_parent.category_slug'=>'tour-destination']);
         $this->db->select(['p.post_title as title','SUBSTR(p.post,1,100) as content','p.date_added as created',
         	'u.username as author', 'p.post_slug as slug', 'p.status']);
-        $this->db->join('post_categories cat','cat.category_slug = p.category','left');
+        $this->db->join('post_categories cat_child','cat_child.category_slug = p.category','left');
+        $this->db->join('post_categories cat_parent','cat_parent.category_id = cat_child.parent','left');
         $this->db->join('users u','u.username = p.author','left');
         $q = $this->db->get('posts p');
         if($q->num_rows() > 0) return $q->result();

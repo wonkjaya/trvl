@@ -45,9 +45,10 @@ class Moffers extends CI_Model
         $data['cat'] = $this->get_category('tour-destination');
 
         $this->db->limit(abs($limit), abs($start));
-        $this->db->where(['cat.category_slug'=>'tour-destination']);
-        $this->db->select(['posts.post_id as id','posts.post_title as title','posts.post_slug as slug','img.image_value as thumbnail']);
-        $this->db->join('post_categories cat','cat.category_slug = posts.category','left');
+        $this->db->where(['cat_parent.category_slug'=>'tour-destination']);
+        $this->db->select(['posts.post_id as id','posts.post_title as title','posts.post_slug as slug','img.image_value as thumbnail', 'cat_child.category_name as category']);
+        $this->db->join('post_categories cat_child','cat_child.category_slug = posts.category','left');
+        $this->db->join('post_categories cat_parent','cat_parent.category_id = cat_child.parent','left');
         $this->db->join('post_images img','img.post_id = posts.post_id','left');
         $query = $this->db->get('posts');
         if($query->num_rows() > 0 ){
@@ -85,7 +86,10 @@ class Moffers extends CI_Model
         $data = [];
 
         $this->db->limit(5);
-        $this->db->where(['posts.post_slug <>' => $except_slug, 'posts.category'=>'tour-destination']);
+        $this->db->where([
+            'posts.post_slug <>' => $except_slug, 
+            'cat_parent.category_slug' => 'tour-destination'
+        ]);
         $this->db->select([
             'posts.post_id as id',
             'posts.post_title as title',
@@ -94,6 +98,8 @@ class Moffers extends CI_Model
             'img.image_value as thumbnail'
             ]);
         $this->db->join('post_images img','img.post_id = posts.post_id','left');
+        $this->db->join('post_categories cat_child','cat_child.category_slug = posts.category','left');
+        $this->db->join('post_categories cat_parent','cat_parent.category_id = cat_child.parent','left');
         $query = $this->db->get('posts');
         if($query->num_rows() > 0 ){
             $data['related_destinations'] = $query->result();

@@ -25,8 +25,10 @@ $typeupload = "location_upload_ganti";
 $dft = (isset($default['post'])?$default['post']:null);
 $post_id = ($dft)?$dft->post_id:null;
 $no_image = base_url('assets/images/uploads/no-image.png');
-// print_r($dft);
-$imgs['thumbnail'] = isset($dft->image_value)?str_replace('image/upload/','image/upload/w_100,h_100,c_pad/',$dft->image_value):'';
+$imgs['thumbnail'] = isset($dft->image_value)?
+  (($dft->image_value !== "")?
+      str_replace('image/upload/','image/upload/w_100,h_100,c_pad/',$dft->image_value):$no_image):'';
+// print_r($imgs);
 $images_data = ['img1','img2','img3','img4','img5','img6','img7','img8'];
 // set default 
 for ($a=0; $a <= count($images_data)-1; $a++) { 
@@ -91,7 +93,7 @@ if(isset($default['img'])){
         <div class="col-md-4">
             <button name="draft" type="button" class="btn btn-warning btn-lg col-md-4 custom-border" onclick="submit_form('draft');">Draft</button>
             <button name="submit" type="buttom" class="btn btn-default btn-lg col-md-3 custom-border submit" onclick="submit_form('submit');" style="<?=$display?>">Publish</button>
-            <a href="<?=site_url('tour_destination/'.$dft->post_slug)?>" class="btn btn-primary btn-lg col-md-4 custom-border">Preview</a>
+            <a href="<?=site_url('tour_destination/'.(isset($dft)?$dft->post_slug:''))?>" class="btn btn-primary btn-lg col-md-4 custom-border">Preview</a>
           <hr>
             <?=(isset($default['error']))?'<span class="label label-danger">'.$default['error'].'</span>':''?>
           <br>
@@ -124,7 +126,7 @@ if(isset($default['img'])){
             <hr>
             <div class="col-md-12 text-center">
             <center class="thumbnail1-preview">
-              <img src="<?=isset($imgs['thumbnail'])?$imgs['thumbnail']:$no_image?>" alt="..." class="img thumbnail thumbnail1">
+              <img src="<?=$imgs['thumbnail']?>" alt="..." class="img thumbnail thumbnail1">
             <center>
             </div>
             <div class="preview">
