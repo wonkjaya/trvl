@@ -118,6 +118,15 @@
 							</ul>						
 						</div>
 				  	</div>
+				  	<div class="col-md-8">
+				  		<center>
+					  		<?php
+					  			if(!isset($display_form)){
+					  				echo "<h3>Form Not Available For Preview Mode!</h3>";
+					  			}
+					  		?>
+				  		</center>
+				  	</div>
 			  	</div>
 			  </div>
 		</div>

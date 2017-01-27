@@ -1,6 +1,30 @@
 <?php
 class Moffers extends CI_Model
 {
+
+    /*preview only*/
+    function get_posts($slug){
+        $data = [];
+
+        $this->db->limit(1);
+        $this->db->where(['posts.post_slug' => $slug]);
+        $this->db->select([
+            'posts.post_id as id',
+            'posts.post_title as title',
+            'posts.post_slug as slug',
+            'posts.post as content',
+            'posts.date_added as created',
+            'users.username as author',
+            ]);
+        $this->db->join('post_categories cat','cat.category_slug = posts.category','left');
+        $this->db->join('users','users.username = posts.author','left');
+        $query = $this->db->get('posts');
+        if($query->num_rows() > 0 ){
+            return $data = $query->row();
+        }else{
+            return false;
+        }
+    }
 /* not used */
     /*function get_posts($number = 10, $start = 0)
     {
@@ -337,5 +361,14 @@ class Moffers extends CI_Model
         return $data;
     }
 
+/* metas */
+    function get_metas($slug){
+        $this->db->where(['post_slug'=>$slug]);
+        $query = $this->db->get('post_meta');
+        if($query->num_rows() > 0 ){
+            return $query->result();
+        }
+        return null;
+    }
 
 }

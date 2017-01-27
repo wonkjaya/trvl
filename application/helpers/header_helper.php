@@ -2,19 +2,19 @@
 
 function favicon(){
 	return '
-		<link rel="apple-touch-icon" sizes="57x57" href="">
-		<link rel="apple-touch-icon" sizes="60x60" href="">
-		<link rel="apple-touch-icon" sizes="72x72" href="">
-		<link rel="apple-touch-icon" sizes="76x76" href="">
-		<link rel="apple-touch-icon" sizes="114x114" href="">
-		<link rel="apple-touch-icon" sizes="120x120" href="">
-		<link rel="apple-touch-icon" sizes="144x144" href="">
-		<link rel="apple-touch-icon" sizes="152x152" href="">
-		<link rel="apple-touch-icon" sizes="180x180" href="">
-		<link rel="icon" type="image/png" sizes="192x192" href="">
+		<link rel="apple-touch-icon" sizes="57x57" href="favicon.ico">
+		<link rel="apple-touch-icon" sizes="60x60" href="favicon.ico">
+		<link rel="apple-touch-icon" sizes="72x72" href="favicon.ico">
+		<link rel="apple-touch-icon" sizes="76x76" href="favicon.ico">
+		<link rel="apple-touch-icon" sizes="114x114" href="favicon.ico">
+		<link rel="apple-touch-icon" sizes="120x120" href="favicon.ico">
+		<link rel="apple-touch-icon" sizes="144x144" href="favicon.ico">
+		<link rel="apple-touch-icon" sizes="152x152" href="favicon.ico">
+		<link rel="apple-touch-icon" sizes="180x180" href="favicon.ico">
+		<link rel="icon" type="image/png" sizes="192x192" href="favicon.ico">
 		<link rel="icon" type="image/png" sizes="32x32" href="favicon.ico">
-		<link rel="icon" type="image/png" sizes="96x96" href="">
-		<link rel="icon" type="image/png" sizes="16x16" href="">
+		<link rel="icon" type="image/png" sizes="96x96" href="favicon.ico">
+		<link rel="icon" type="image/png" sizes="16x16" href="favicon.ico">
 	';
 }
 
@@ -22,13 +22,12 @@ function generate_metas($data= null){
 	if(!$data){
 		echo default_metas();
 	}else{
+		print_r($data); // meta url tidak deteksi
 		foreach ($data as $m) {
-			if($m->meta_group == 'meta'){
-				echo '<meta property="'.$m->meta_property.'" content="'.$m->meta_content.'">';
-			}elseif($m->meta_group == 'link'){
-				$link_type = ($m->link_type)?'type="'.$m->link_type.'"':'';
-				$link_title = ($m->link_title)?'title="'.$m->link_title.'"':'';
-				echo '<link rel="'.$m->link_rel.'" '.$link_type.' '.$link_title.' href="'.$m->link_href.'/feed">';
+			echo '<meta property="'.$m->meta_property.'" content="'.$m->meta_content.'">';
+			if($m->meta_property == "description"){
+				echo '<meta property="og:'.$m->meta_property.'" content="'.$m->meta_content.'">';
+				echo '<meta name="description" content="'.$m->meta_content.'">';
 			}
 		}
 	}

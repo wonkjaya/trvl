@@ -48,21 +48,21 @@
                 <i class="fa fa-home fa-2x "></i> 
               </a>
             </li>
-            <li>
-              <a href="<?=site_url('admin/blogoffers')?>" title="Penawaran">
+            <!-- <li>
+              <a href="<?=site_url('admin/posts')?>" title="Penawaran">
                 <i class="fa fa-paint-brush fa-2x "></i>
               </a>
-            </li>
+            </li> -->
             <li>
-              <a href="<?=site_url('admin/tour_destination')?>" title="Destinasi Tour">
+              <a href="<?=site_url('admin/posts')?>" title="Destinasi Tour">
                 <i class="fa fa-picture-o fa-2x "></i>
               </a>
             </li> 
-            <li>
-              <a href="<?=site_url('admin/products')?>" title="Rental Mobil">
-                <i class="fa fa-bus fa-2x "></i>
-              </a>
-            </li> 
+            <!-- <li>
+               <a href="<?=site_url('admin/products')?>" title="Rental Mobil">
+                 <i class="fa fa-bus fa-2x "></i>
+               </a>
+             </li> --> 
             <li>
               <a href="<?=site_url('admin/emailmessage')?>" title="Email">
                 <i class="fa fa-envelope fa-2x "></i>

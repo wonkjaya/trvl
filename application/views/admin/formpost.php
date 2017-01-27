@@ -80,7 +80,49 @@ if(isset($default['img'])){
           ];
           $form_data=json_encode($form_data);
           ?>
-          <?//=str_replace('"',"&quot;",$form_data)?>
+          <style>
+            #meta{background: rgba(0, 0, 0, 0.09);padding:5px;margin-bottom: 20px}
+          </style>
+          <?php 
+          if($dft){
+            // $a = meta_options('', true);
+            // echo form_dropdown('meta', $a, '', 'class="form-control custom-border" id="meta"');
+            ?>
+          <div class="form-group">
+            <div class="col-md-12" id="meta">
+              <h4>Meta Options</h4>
+              <hr>
+                <div class="col-md-12">
+                  <label for="meta">Gambaran Singkat</label> 
+                  <a href="javascript:void(0)" class="btn btn-xs btn-default" id="descriptionButton">add</a>
+                  <br>
+                  <textarea name="meta_description" id="description" class="form-control custom-border" placeholder="Masukkan gambaran singkat mengenai inti dari artikel diatas" maxlength="160"></textarea>
+                  <p id="numchar">0/160</p>
+                </div>
+                <div class="col-md-12">
+                  
+                  <label for="meta">Tags</label>
+                  <a href="javascript:void(0)" class="btn btn-xs btn-default" id="tagButton">add</a>
+                  <br>
+                  <textarea name="meta_tags" id="tags" class="form-control custom-border" placeholder="pisah dengan tanda (,) dan gunakan (-) untuk pengganti spasi"></textarea> <br>
+                  <span id="message"></span>
+                </div>
+                <!-- <div class="col-md-12">
+                  <label for="meta">Image Url</label> 
+                  <a href="javascript:void(0)" class="btn btn-xs btn-default" id="imageButton">add</a>
+                  <br>
+                  <input type="text" name="meta_image" class="form-control" id="imageUrl">
+                </div> -->
+                <div class="col-md-12">
+                  <ul style="list-style: none; margin-top:30px" id="list_result">
+                    
+                  </ul>
+                </div>            
+            </div>            
+          </div>
+            <?php
+          }
+          ?>
           
         </div>
        </form>
@@ -89,11 +131,16 @@ if(isset($default['img'])){
             if($type == 'new' or !$post_id){
               $display = 'display:none';
             }
+            if($dft){
+              $status = $dft->status;
+            }else{
+              $status = 0;
+            }
           ?>
         <div class="col-md-4">
-            <button name="draft" type="button" class="btn btn-warning btn-lg col-md-4 custom-border" onclick="submit_form('draft');">Draft</button>
+            <button name="draft" type="button" class="btn btn-warning btn-lg col-md-4 custom-border" onclick="submit_form('draft');"><?=($status == 1)?'Set':''?> Draft</button>
             <button name="submit" type="buttom" class="btn btn-default btn-lg col-md-3 custom-border submit" onclick="submit_form('submit');" style="<?=$display?>">Publish</button>
-            <a href="<?=site_url('tour_destination/'.(isset($dft)?$dft->post_slug:''))?>" class="btn btn-primary btn-lg col-md-4 custom-border">Preview</a>
+            <a href="<?=site_url('posts/'.(isset($dft)?$dft->post_slug:''))?>" class="btn btn-primary btn-lg col-md-4 custom-border">Preview</a>
           <hr>
             <?=(isset($default['error']))?'<span class="label label-danger">'.$default['error'].'</span>':''?>
           <br>
@@ -310,3 +357,120 @@ if(isset($default['img'])){
   });
   
 </script>
+
+<script>
+    var description = $("#description");
+    var tags = $("#tags");
+    var image = $("#imageUrl");
+    var list = $("#list_result");
+
+    metas();
+    
+    function deleteRec(id){
+      var conf = confirm("Yakin Hapus?");
+      if(conf){
+        $.ajax({
+          type : "get",
+          url : "<?=site_url('admin/delete_meta/'.(isset($dft)?$dft->post_slug:''))?>",
+          data : {"id":id},
+          success : function(s){
+            $("[data-id="+id+"]").hide();
+          },
+          error : function(e){
+            console.log(e);
+          }
+        })
+      }
+    }
+
+    function metas(){
+      meta_get({"slug":"<?=(isset($dft)?$dft->post_slug:'')?>"}, function(e, r){
+        if(e) return console.log(e);
+        var json = JSON.parse(r);
+        for(var i=json.data.length-1; i>=0;i--){
+          var alertType = "info";
+
+          if(json.data[i].meta_property === "description"){
+
+          }else if(json.data[i].meta_property === "image"){
+            alertType = "warning";
+          }else{
+            alertType = "success";
+          }
+          list.append("<li data-id="+json.data[i].meta_id+" class='alert alert-"+alertType+" alert-dismissibl'>"+
+            "<button type='button' class='close' aria-label='Close'><span aria-hidden='true' onclick='deleteRec("+json.data[i].meta_id+")'>&times;</span></button>"+
+            "<b>"+ json.data[i].meta_property + "</b> : " + json.data[i].meta_content +"</li>");
+        }
+      })
+    }
+
+    $("#description").on('keyup', function(e){
+      e.preventDefault();
+      var count = description.val().length;
+      $("#numchar").html(count + "/160");
+    });
+
+    function meta_send(data, callback){
+      // console.log(data);return;
+      $.ajax({
+        url :"<?=base_url('admin/upsert_meta/')?>"+ data.slug,
+        type : "post",
+        data : data,
+        "success": function(r){
+          /*console.log(r);*/
+          callback(null, true);
+        },
+        "error": function(e){
+          console.log(e);
+          callback(true, null);
+        }
+      });
+    }
+    function meta_get(data, callback){
+      $.ajax({
+        url :"<?=base_url('admin/get_metas/json')?>",
+        type : "get",
+        data : data,
+        "success": function(r){
+          /*console.log(r);*/
+          callback(null, r);
+        },
+        "error": function(e){
+          console.log(e);
+          callback(true, null);
+        }
+      });
+    }
+    /* description */
+    var data = {};
+    $("#descriptionButton").on('click', function(){
+      data.slug = "<?=(isset($dft)?$dft->post_slug:'')?>";
+      data.meta_description = description.val();
+      meta_send(data, function(e, r){
+        if(r) {
+          console.log("success");
+        }
+        if(e) console.log("error");
+      })
+    });
+    $("#tagButton").on('click', function(){
+      var tags = $("#tags").val();
+      data.slug = "<?=(isset($dft)?$dft->post_slug:'')?>";
+      data.meta_tags = tags;
+      meta_send(data, function(e, r){
+        if(r) {
+          console.log("success");
+          refresh_list();
+        }
+        if(e) console.log("error");
+      });
+    });
+
+
+    function refresh_list(){
+      list.html("");
+      metas();
+    }
+
+
+</script>  

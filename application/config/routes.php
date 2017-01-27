@@ -64,6 +64,7 @@ $route['car_rent/(:any)'] = 'home/car_rental/$1';
 // end car rental
 // tour guide
 $route['tour_guide/(:any)'] = 'home/tour_guide/$1';
+$route['posts/(:any)'] = 'home/posts/preview/$1';
 
 
 $route['admin/blog'] = 'blog';

@@ -20,41 +20,12 @@ class Admin extends AdminController {
 		$this->loadView('dashboard');
 	}
 
-	private function addpost($data){
-        $this->load->model('main_admin_model','main');
-        $this->load->helper('form');
-        
-        $data['default'] = $this->main->insert_post();
-    	$data['categories']= $this->main->get_categories();
-		$this->loadView('formpost', $data);
-	}
-
-	private function editpost($data){
-        $this->load->model('main_admin_model','main');
-		if($_POST){
-			// print_r($_POST);exit;
-			$this->main->save_post($data);
-		}
-        $this->load->helper('form');
-        
-        $data['default'] = $this->main->get_post($data['slug']);
-    	$data['categories']= $this->main->get_categories();
-		$this->loadView('formpost', $data);
-	}
-
-	private function deletepost($post_id){ //delete post page
-		$this->load->model('main_admin_model','main');  
-        if(!$this->check_permissions('author'))//when the user is not an andmin and author
-        {
-            redirect(base_url().'index.php/users/login');
-        }
-        $this->main->delete_post($post_id);
-        redirect('admin/browseoffers');
-    }
-
-// blogoffers group
-	function blogoffers($type='browse'){
+// posts group
+	function posts($type='browse', $slug=''){
 		$data['type'] = $type;
+		if(!empty($slug)){
+			$data['slug'] = $slug;
+		}
 		if(!$this->check_permissions('author')){ // minimal author yang bisa akses ini.
             redirect('admin/login');
         }
@@ -62,21 +33,98 @@ class Admin extends AdminController {
         	$this->addpost($data);
         }elseif($type == 'edit'){
         	$this->editpost($data);
+        }elseif($type == 'trash'){
+        	$this->trashpost($data);
         }else{
-        	$this->browseoffers();
+        	$this->browseposts();
         }
 	}
 
-		function browseoffers(){
+		function browseposts(){
 			$this->load->model('Mcomment','comments');
 			$this->load->model('main_admin_model','main');  
-	        $data['post'] = $this->main->get_post_offers();
+	        $data['post'] = $this->main->get_posts();
 	        $data['label_title'] = "Data Penawaran";
-	        $data['type'] = "blogoffers";
 			$this->loadView('products_data', $data);
 		}
+
+		private function addpost($data){
+	        $this->load->model('main_admin_model','main');
+	        $this->load->helper('form');
+	        
+	        $data['default'] = $this->main->insert_post();
+	    	$data['categories']= $this->main->get_categories();
+			$this->loadView('formpost', $data);
+		}
+
+		private function editpost($data){
+	        $this->load->model('main_admin_model','main');
+			if($_POST){
+				// print_r($_POST);exit;
+				$this->main->save_post($data);
+			}
+	        $this->load->helper(['form', 'custom-form']);
+	        
+	        $data['default'] = $this->main->get_post($data['slug']);
+	    	$data['categories']= $this->main->get_categories();
+			$this->loadView('formpost', $data);
+		}
+
+		function upsert_meta($slug){
+			if($_POST){
+	        	$this->load->model('main_admin_model','main');
+				$this->main->upsert_meta($slug);
+			}else{
+				echo "hello";
+			}
+		}
+
+		function delete_meta($slug=null){
+			if($slug){
+		        $this->load->model('main_admin_model','main');
+				$this->main->delete_meta($slug);
+				return;
+			}
+			echo "error";
+			return;
+		}
+
+		/*private function deletepost($post_id){ //delete post page
+			$this->load->model('main_admin_model','main');  
+	        if(!$this->check_permissions('author'))//when the user is not an andmin and author
+	        {
+	            redirect(base_url().'index.php/users/login');
+	        }
+	        $this->main->delete_post($post_id);
+	        redirect('admin/browseposts');
+	    }*/
+
+		/*function trashpost($data){
+			if(isset($data['slug'])){
+				$this->load->model('main_admin_model','main');  
+				$this->main->trash_post($data['slug']);
+			}
+		}*/
 // end blogoffers group
 
+
+	function emailmessage(){
+		$this->load->model('main_admin_model','main');  
+	    $data['label_title'] = "Pesan Email";
+        $data['requests'] = $this->main->get_requests();
+        $data['emails'] = $this->main->get_email();
+		$this->loadView('messages_data', $data);
+	}
+
+	function get_metas($type="json"){
+		$this->load->model('main_admin_model','main');
+		$data=$this->main->get_metas($type);
+		echo $data;
+	}
+
+}
+
+/*
 
 	function tour_destination($type='browse',$slug=''){
 		if(!empty($slug)){
@@ -106,12 +154,4 @@ class Admin extends AdminController {
 	        $data['type'] = "tour_destination";
 			$this->loadView('products_data', $data);
 		}
-
-		function trashpost($data){
-			if(isset($data['slug'])){
-				$this->load->model('main_admin_model','main');  
-				$this->main->trash_data($data['slug']);
-			}
-		}
-// end tour group
-}
+// end tour group*/

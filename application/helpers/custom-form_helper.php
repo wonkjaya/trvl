@@ -1,6 +1,6 @@
 <?php
 
-function meta_options($default=''){
+function meta_options($default='', $all = null){
 	$property = [
 		'og:locale'=>'og:locale',
 		'og:type'=>'og:type',
@@ -25,10 +25,15 @@ function meta_options($default=''){
 	$rel = [
 		'canonical'=>'canonical',
 		'alternate'=>'alternate',
-	]
+	];
 	$name = [
 		'description'=>'description',
-	]
+	];
+	if($all){
+		$all = array_merge($property, $rel, $name);
+		return $all;
+	}
+	
 	return $property;
 }
 

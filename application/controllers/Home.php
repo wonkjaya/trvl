@@ -98,6 +98,8 @@ class Home extends MainController {
         if(!$data['data']){
             $this->loadView('notfound',$data);
         }else{
+            $data['metas'] = (Object) ['og:url'=>site_url($this->uri->uri_string())];
+            $data['metas'] = $this->offers->get_metas($slug);
             $data['gallery'] = $this->offers->get_gallery($slug);
             $this->loadView('single-product',$data);
         }
@@ -127,7 +129,7 @@ class Home extends MainController {
         }
         $this->load->helper('form');
         $data['display_form']= 'request_car';
-        $data['data'] = $this->offers->get_car($slug); /*start, limit*/
+        $data['data'] = $this->offers->get_car($slug);
         $data['gallery'] = $this->offers->get_gallery($slug);
         $this->loadView('single-product',$data);
     }
@@ -155,5 +157,14 @@ class Home extends MainController {
         $data = $this->offers->get_related_tour_guide($except_slug);
         if($type == 'json') echo json_encode($data['related_guide']);
         return $data;
+    }
+
+    function posts($type='preview', $slug=''){
+        if($type == "preview"){
+            $this->load->model('moffers', 'offers');
+            $data['data'] = $this->offers->get_posts($slug);
+            $data['gallery'] = $this->offers->get_gallery($slug);
+            $this->loadView('single-product',$data);
+        }
     }
 }

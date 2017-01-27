@@ -107,10 +107,10 @@
                                 <option value="user" selected>User</option>
                             </select>
                         </div>
-                        <input class="form-control" type="text" placeholder="Username / Email" name="username" required autofocus />
+                        <input class="form-control" autocomplete="false" type="text" placeholder="Username / Email" name="username" required autofocus />
                         
                     </div>
-                    <input class="form-control" type="password" placeholder="Password" name="password" value="" />
+                    <input class="form-control" type="password" autocomplete="false" placeholder="Password" name="password"/>
                     <button class="btn btn-lg btn-primary btn-block" type="submit">
                         Sign in</button>
                     <label class="checkbox pull-left">
